@@ -299,6 +299,32 @@ kbd {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
+/* ---------- wide screens: answer column + sticky sources rail ---------- */
+@media (min-width: 1100px) {
+  .masthead, .desk, .colophon {
+    max-width: calc(1120px + 2 * var(--s6));
+    padding-left: var(--s6); padding-right: var(--s6);
+  }
+  .examples { max-width: var(--measure); }
+  .result {
+    display: grid; align-items: start;
+    grid-template-columns: minmax(0, var(--measure)) minmax(260px, 1fr);
+    column-gap: var(--s8);
+  }
+  .result > :not(.sources) { grid-column: 1; }
+  .sources {
+    grid-column: 2; grid-row: 1 / span 5;
+    position: sticky; top: var(--s6);
+    max-height: calc(100vh - 2 * var(--s6)); overflow-y: auto;
+    margin-top: 0; padding: var(--s1) 0 var(--s1) var(--s5);
+    border-top: 0; border-left: 1px solid var(--rule);
+  }
+  .sources__list { gap: var(--s5); }
+  .source { grid-template-columns: 1fr; gap: var(--s2); }
+  .source .cite { justify-self: start; margin-left: 0; }
+  .source__excerpt { -webkit-line-clamp: 6; }
+}
+
 /* ---------- small screens ---------- */
 @media (max-width: 640px) {
   :root { --t-2xl: 2.25rem; --t-xl: 1.625rem; --t-body: 1.125rem; }
