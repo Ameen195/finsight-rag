@@ -22,7 +22,8 @@ class Settings(BaseSettings):
     groq_tpm_limit: int = 7000  # under Groq's 8,000 tokens/min free cap
 
     embedding_model: str = "BAAI/bge-small-en-v1.5"
-    reranker_model: str = "BAAI/bge-reranker-base"
+    # 5.5x faster than BAAI/bge-reranker-base on CPU with equal Hit@1 in the Phase 3 eval
+    reranker_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
     retrieval_top_k: int = 20
     rerank_top_n: int = 5
