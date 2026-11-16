@@ -5,6 +5,8 @@ Low-relevance retrieval short-circuits to a refusal before the big model is call
 
 import json
 import logging
+import queue
+import threading
 import time
 from collections.abc import Iterator
 from typing import TypedDict
@@ -225,8 +227,7 @@ def answer(question: str, companies: list[str] | None = None) -> tuple[AnswerRes
     return _response(state, t0, trace_id), state
 
 
-def stream_answer(question: str, companies: list[str] | None = None) -> Iterator[dict]:
-    """Yield a `step` event per finished graph node, then one final `answer` event."""
+def _stream_events(question: str, companies: list[str] | None) -> Iterator[dict]:
     global _graph
     init_tracing()
     t0 = time.perf_counter()
@@ -241,3 +242,30 @@ def stream_answer(question: str, companies: list[str] | None = None) -> Iterator
         trace_id = current_trace_id()
     response = _response(state, t0, trace_id)  # type: ignore[arg-type]
     yield {"type": "answer", **response.model_dump()}
+
+
+_DONE = object()
+
+
+def stream_answer(question: str, companies: list[str] | None = None) -> Iterator[dict]:
+    """Yield a `step` event per finished graph node, then one final `answer` event.
+
+    The graph runs in one dedicated thread: web servers may resume a sync generator on a
+    different thread for every item, which would lose the tracing context between steps.
+    """
+    events: queue.Queue = queue.Queue()
+
+    def work() -> None:
+        try:
+            for event in _stream_events(question, companies):
+                events.put(event)
+        except Exception as exc:  # noqa: BLE001 - re-raised in the consuming thread
+            events.put(exc)
+        finally:
+            events.put(_DONE)
+
+    threading.Thread(target=work, daemon=True, name="finsight-stream").start()
+    while (item := events.get()) is not _DONE:
+        if isinstance(item, Exception):
+            raise item
+        yield item

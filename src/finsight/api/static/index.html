@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinSight · Annual-report research desk</title>
+  <meta name="description" content="Cited answers from the FY2026 annual reports of five Indian IT companies.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script>
+    // apply a saved theme before first paint (no flash); otherwise the system setting applies
+    try { const t = localStorage.getItem("finsight-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#question">Skip to the question</a>
+
+  <header class="masthead">
+    <div class="masthead__row">
+      <div>
+        <p class="masthead__kicker">Annual-report research desk</p>
+        <h1 class="masthead__title">FinSight</h1>
+      </div>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">
+        <span class="theme-toggle__label" id="theme-label">Dark</span>
+      </button>
+    </div>
+    <p class="masthead__sub">Cited answers from the FY2026 annual reports of TCS, Infosys, Wipro, HCLTech and Tech&nbsp;Mahindra. Every claim points to a page you can check.</p>
+  </header>
+
+  <main class="desk" id="main">
+    <form class="ask" id="ask-form" novalidate>
+      <fieldset class="filters">
+        <legend class="filters__legend">Reports</legend>
+        <div class="filters__list" id="filters" role="group" aria-label="Limit to companies">
+          <button type="button" class="filter" data-company="" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-company="TCS" aria-pressed="false">TCS</button>
+          <button type="button" class="filter" data-company="Infosys" aria-pressed="false">Infosys</button>
+          <button type="button" class="filter" data-company="Wipro" aria-pressed="false">Wipro</button>
+          <button type="button" class="filter" data-company="HCLTech" aria-pressed="false">HCLTech</button>
+          <button type="button" class="filter" data-company="Tech Mahindra" aria-pressed="false">Tech Mahindra</button>
+        </div>
+      </fieldset>
+
+      <label class="ask__label" for="question">Your question</label>
+      <div class="ask__field">
+        <textarea id="question" name="question" rows="1" maxlength="500" autocomplete="off"
+                  placeholder="Ask about revenue, headcount, dividends…"
+                  aria-describedby="ask-hint"></textarea>
+        <button class="ask__submit" type="submit" id="ask-submit">Ask <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="ask__hint" id="ask-hint">
+        <span>Enter to ask · Shift+Enter for a new line · <kbd>/</kbd> to focus</span>
+        <span class="ask__count mono" id="ask-count" aria-live="polite">0/500</span>
+      </p>
+    </form>
+
+    <section class="examples" id="examples" aria-labelledby="examples-title">
+      <h2 class="examples__title" id="examples-title">Try asking</h2>
+      <ul class="examples__list">
+        <li><button type="button" class="example">By what percentage did Infosys's consolidated revenue grow in FY2026?</button></li>
+        <li><button type="button" class="example">What was TCS's revenue from operations in FY2026?</button></li>
+        <li><button type="button" class="example">What is Infosys's capital allocation policy for returning cash to shareholders?</button></li>
+        <li><button type="button" class="example">How many permanent employees does Infosys have?</button></li>
+        <li><button type="button" class="example">Compare attrition at Wipro and HCLTech.</button></li>
+      </ul>
+      <p class="examples__coverage mono">5 reports · FY2026 · 2,436 pages indexed</p>
+    </section>
+
+    <section class="result" id="result" aria-live="polite" hidden>
+      <h2 class="result__question" id="result-question"></h2>
+
+      <ol class="steps" id="steps" aria-label="Progress"></ol>
+
+      <div class="notice" id="notice" role="status" hidden>
+        <p class="notice__label" id="notice-label"></p>
+        <p class="notice__text" id="notice-text"></p>
+        <p class="notice__hint" id="notice-hint"></p>
+      </div>
+
+      <article class="answer" id="answer" hidden></article>
+
+      <section class="sources" id="sources" hidden aria-labelledby="sources-title">
+        <h3 class="sources__title" id="sources-title">Sources</h3>
+        <ol class="sources__list" id="sources-list"></ol>
+      </section>
+    </section>
+  </main>
+
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+    <div class="panel__head">
+      <div>
+        <p class="panel__kicker mono" id="panel-ref"></p>
+        <h2 class="panel__title" id="panel-title">Source passage</h2>
+      </div>
+      <button class="panel__close" type="button" id="panel-close" aria-label="Close source passage">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <dl class="panel__meta">
+      <div><dt>Company</dt><dd id="panel-company"></dd></div>
+      <div><dt>Fiscal year</dt><dd class="mono" id="panel-year"></dd></div>
+      <div><dt>PDF page</dt><dd class="mono" id="panel-page"></dd></div>
+    </dl>
+    <pre class="panel__text" id="panel-text" tabindex="0"></pre>
+    <p class="panel__note">Page numbers are physical PDF pages, as a PDF viewer shows them, not the numbers printed on the page.</p>
+  </aside>
+
+  <footer class="colophon">
+    <p class="colophon__run mono" id="run-meta" aria-live="polite">No question asked yet</p>
+    <p class="colophon__limits">Known limits: one fiscal year (FY2026) · five companies · figures as printed in the reports · comparisons are experimental · answers can be incomplete, so check the cited page.</p>
+    <p class="colophon__links"><a href="https://github.com/" id="repo-link">Source on GitHub</a></p>
+  </footer>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
