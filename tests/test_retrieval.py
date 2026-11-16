@@ -4,7 +4,7 @@ from finsight.models import Chunk, RetrievedChunk
 from finsight.retrieval import retriever
 from finsight.retrieval.filters import Filters
 from finsight.retrieval.hybrid import rrf
-from finsight.retrieval.keyword import or_query
+from finsight.retrieval.keyword import or_query, prune_or_terms
 
 
 def item(id_: int, **scores: float) -> RetrievedChunk:
@@ -47,6 +47,24 @@ def test_weighted_rrf_hand_computed() -> None:
 )
 def test_or_query(strict: str, loose: str | None) -> None:
     assert or_query(strict) == loose
+
+
+@pytest.mark.parametrize(
+    ("loose", "expected"),
+    [
+        (
+            "'buyback' | 'infosi' | 'complet' | 'size' | 'price' | 'per' | 'share'",
+            "'buyback' | 'complet' | 'size'",
+        ),
+        ("'much' | 'infosi' | 'spend' | 'csr' | 'fiscal' | '2026'", "'spend' | 'csr'"),
+        ("'revenu' | 'fy2026' | '1' <-> '78' <-> '650'", "'revenu' | '1' <-> '78' <-> '650'"),
+        ("'infosi' | 'fiscal'", None),  # nothing useful left
+        ("'revenu' | '23'", "'revenu' | '23'"),  # a 2-digit number is not a year
+    ],
+)
+def test_prune_or_terms(loose: str, expected: str | None) -> None:
+    drop = frozenset({"infosi", "per", "share", "price", "much", "fiscal", "global"})
+    assert prune_or_terms(loose, drop) == expected
 
 
 def test_unknown_fiscal_year_is_not_enforced(monkeypatch: pytest.MonkeyPatch) -> None:

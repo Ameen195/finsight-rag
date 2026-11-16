@@ -151,7 +151,8 @@ def to_markdown(summary: dict, details: list[dict], meta: dict, tol: int) -> str
         f"companies: {', '.join(meta['companies'])} · k={K}",
         "",
         f"Company filter: **{meta['filters']}** · RRF keyword weight: "
-        f"**{meta['rrf_keyword_weight']}**",
+        f"**{meta['rrf_keyword_weight']}** · candidate pool: **{meta['candidate_pool']}** · "
+        f"keyword OR-fallback pruning: **{meta['keyword_fallback_prune']}**",
         "",
         "## Headline: page tolerance 0 (non-comparison questions)",
         "",
@@ -224,6 +225,8 @@ def main() -> None:
         if args.oracle_companies
         else "extracted from the question",
         "rrf_keyword_weight": get_settings().rrf_keyword_weight,
+        "candidate_pool": get_settings().retrieval_top_k,
+        "keyword_fallback_prune": get_settings().keyword_fallback_prune,
     }
     args.out_dir.mkdir(parents=True, exist_ok=True)
     (args.out_dir / "retrieval.json").write_text(

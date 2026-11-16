@@ -28,6 +28,9 @@ class Settings(BaseSettings):
     rerank_top_n: int = 5
     # weight of the keyword list in RRF (dense = 1.0); 0.5 beat 1.0 on Hit@1/MRR in the Phase 3 eval
     rrf_keyword_weight: float = 0.5
+    # drop company names, years and generic words from the keyword OR fallback
+    # (doubled keyword Hit@5 in the Phase 3 eval at no latency cost)
+    keyword_fallback_prune: bool = True
     max_context_tokens: int = 3000
 
 
