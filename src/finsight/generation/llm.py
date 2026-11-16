@@ -55,13 +55,13 @@ _client: Groq | None = None
     stop=stop_after_attempt(5),
     reraise=True,
 )
-def complete(
+def complete_with_usage(
     messages: list[dict[str, str]],
     model: str,
     json_mode: bool = False,
     max_tokens: int = 1024,
-) -> str:
-    """Run a chat completion and return the text. Rate-limited and retried."""
+) -> tuple[str, int]:
+    """Run a chat completion; return `(text, total_tokens_billed)`. Rate-limited and retried."""
     global _limiter, _client
     s = get_settings()
     _limiter = _limiter or TPMLimiter(s.groq_tpm_limit)
@@ -75,4 +75,15 @@ def complete(
     resp = _client.chat.completions.create(
         model=model, messages=messages, max_tokens=max_tokens, **kwargs
     )
-    return resp.choices[0].message.content or ""
+    tokens = resp.usage.total_tokens if resp.usage else 0
+    return resp.choices[0].message.content or "", tokens
+
+
+def complete(
+    messages: list[dict[str, str]],
+    model: str,
+    json_mode: bool = False,
+    max_tokens: int = 1024,
+) -> str:
+    """Run a chat completion and return the text. Rate-limited and retried."""
+    return complete_with_usage(messages, model, json_mode, max_tokens)[0]

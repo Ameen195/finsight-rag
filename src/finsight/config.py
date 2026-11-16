@@ -36,6 +36,10 @@ class Settings(BaseSettings):
     # (doubled keyword Hit@5 in the Phase 3 eval at no latency cost)
     keyword_fallback_prune: bool = True
     max_context_tokens: int = 3000
+    # refuse without calling the big model if the best rerank score is below this (None = off).
+    # MiniLM gives raw logits that did not separate (un)answerable questions in the Phase 4 run
+    # (Mars 0.13 vs an answerable comparison -1.35); tune with scores printed by scripts/ask.py
+    min_rerank_score: float | None = None
 
 
 @lru_cache
