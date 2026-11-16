@@ -57,6 +57,7 @@ def verify(answer: str, chunks: list[RetrievedChunk]) -> tuple[str, list[Citatio
                     fiscal_year=c.fiscal_year,
                     page=c.page,
                     snippet=c.content[:300],
+                    text=c.content,
                 ),
             )
             kept.append(f"{c.company}, {c.fiscal_year}, p.{c.page}")

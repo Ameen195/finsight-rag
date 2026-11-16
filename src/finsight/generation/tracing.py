@@ -1,6 +1,7 @@
 """Langfuse tracing. Without keys the client is created with tracing disabled, so `@observe`
 becomes a no-op and the app runs unchanged."""
 
+from contextlib import AbstractContextManager, nullcontext
 from functools import lru_cache
 
 from langfuse import Langfuse, get_client, observe
@@ -22,6 +23,14 @@ def init_tracing() -> bool:
         tracing_enabled=enabled,
     )
     return enabled
+
+
+def root_span(name: str) -> AbstractContextManager:
+    """Context manager that opens a root trace span (a no-op when tracing is off).
+
+    Needed for generators, which `@observe` cannot wrap across their whole lifetime.
+    """
+    return get_client().start_as_current_observation(name=name) if init_tracing() else nullcontext()
 
 
 def current_trace_id() -> str | None:

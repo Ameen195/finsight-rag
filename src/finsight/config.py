@@ -41,6 +41,8 @@ class Settings(BaseSettings):
     # (Mars 0.13 vs an answerable comparison -1.35); tune with scores printed by scripts/ask.py
     min_rerank_score: float | None = None
 
+    rate_limit_per_hour: int = 10  # questions per client per rolling hour (API)
+
 
 @lru_cache
 def get_settings() -> Settings:

@@ -1,3 +1,4 @@
+import contextlib
 import json
 
 import pytest
@@ -55,6 +56,7 @@ def wire(monkeypatch: pytest.MonkeyPatch):  # noqa: ANN201
         )
         monkeypatch.setattr(agent, "init_tracing", lambda: False)
         monkeypatch.setattr(agent, "current_trace_id", lambda: None)
+        monkeypatch.setattr(agent, "root_span", lambda name: contextlib.nullcontext())
         monkeypatch.setattr(agent, "_graph", None)
         return fake, calls
 
@@ -67,12 +69,13 @@ def test_single_question_answer_with_valid_citation(wire) -> None:  # noqa: ANN0
     assert resp.answer == "Attrition was 12% [TCS, FY2026, p.40]."
     assert [(c.company, c.page) for c in resp.citations] == [("TCS", 40)]
     assert resp.question_type == "single" and state["tokens"] == 950 and not state["refused"]
+    assert resp.refused is False and resp.citations[0].text == "TCS attrition was 12% on page 40"
 
 
 def test_answer_without_valid_citation_becomes_refusal(wire) -> None:  # noqa: ANN001
     wire("Attrition was 12% [TCS, FY2026, p.99].", {"TCS": [rc("TCS", 40)]})
     resp, state = agent.answer("What was TCS attrition?")
-    assert resp.answer == REFUSAL and resp.citations == []
+    assert resp.answer == REFUSAL and resp.citations == [] and resp.refused
     assert state["invalid_citations"] == ["TCS, FY2026, p.99"]
 
 
@@ -136,6 +139,23 @@ def test_classifier_fills_gaps_but_deterministic_wins(wire) -> None:  # noqa: AN
     )
     _, state = agent.answer("What was TCS attrition?")
     assert state["filters"].companies == ["TCS"] and state["question_type"] == "single"
+
+
+def test_stream_answer_yields_steps_then_answer(wire) -> None:  # noqa: ANN001
+    wire("Attrition was 12% [TCS, FY2026, p.40].", {"TCS": [rc("TCS", 40)]})
+    events = list(agent.stream_answer("What was TCS attrition?"))
+    steps = [e["step"] for e in events if e["type"] == "step"]
+    assert steps == ["classify", "decompose", "retrieve", "generate", "verify_citations"]
+    final = events[-1]
+    assert final["type"] == "answer" and final["refused"] is False
+    assert final["citations"][0]["page"] == 40 and final["latency_ms"] >= 0
+
+
+def test_stream_answer_refusal_path(wire) -> None:  # noqa: ANN001
+    wire("unused", {})
+    events = list(agent.stream_answer("What was TCS attrition?"))
+    assert [e["step"] for e in events[:-1]] == ["classify", "decompose", "retrieve", "refuse"]
+    assert events[-1]["refused"] is True and events[-1]["answer"] == REFUSAL
 
 
 def test_user_company_filter_wins(wire) -> None:  # noqa: ANN001

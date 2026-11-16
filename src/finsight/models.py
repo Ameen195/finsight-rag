@@ -32,6 +32,7 @@ class Citation(BaseModel):
     fiscal_year: str
     page: int
     snippet: str = ""
+    text: str = ""  # full chunk text, for a source panel
 
 
 class AnswerResponse(BaseModel):
@@ -40,5 +41,6 @@ class AnswerResponse(BaseModel):
     answer: str
     citations: list[Citation] = []
     question_type: str = "single"
+    refused: bool = False
     latency_ms: int = 0
     trace_id: str | None = None

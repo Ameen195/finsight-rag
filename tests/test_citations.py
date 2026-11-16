@@ -20,6 +20,7 @@ def test_valid_citation_kept_with_snippet() -> None:
     assert answer == "Revenue was ₹2,67,022 crore [TCS, FY2026, p.211]."
     assert [(c.company, c.page) for c in cits] == [("TCS", 211)] and invalid == []
     assert cits[0].snippet.startswith("Revenue recognised")
+    assert cits[0].text == "Revenue recognised 2,67,022"
 
 
 def test_invalid_citation_removed_and_reported() -> None:

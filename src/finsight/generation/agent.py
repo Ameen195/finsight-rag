@@ -6,6 +6,7 @@ Low-relevance retrieval short-circuits to a refusal before the big model is call
 import json
 import logging
 import time
+from collections.abc import Iterator
 from typing import TypedDict
 
 import groq
@@ -15,7 +16,7 @@ from finsight.config import get_settings
 from finsight.generation import llm
 from finsight.generation.citations import is_refusal, verify
 from finsight.generation.prompts import REFUSAL, answer_messages, chunk_tag, classify_messages
-from finsight.generation.tracing import current_trace_id, init_tracing, observe
+from finsight.generation.tracing import current_trace_id, init_tracing, observe, root_span
 from finsight.ingest.chunk import n_tokens
 from finsight.models import AnswerResponse, RetrievedChunk
 from finsight.retrieval.filters import COMPANY_ALIASES, Filters, extract_fiscal_years
@@ -205,16 +206,38 @@ def _run(question: str, companies: list[str] | None) -> tuple[AgentState, str | 
     return state, current_trace_id()
 
 
+def _response(state: AgentState, t0: float, trace_id: str | None) -> AnswerResponse:
+    return AnswerResponse(
+        answer=state["answer"],
+        citations=state.get("citations", []),
+        question_type=state.get("question_type", "single"),
+        refused=state.get("refused", False),
+        latency_ms=round((time.perf_counter() - t0) * 1000),
+        trace_id=trace_id,
+    )
+
+
 def answer(question: str, companies: list[str] | None = None) -> tuple[AnswerResponse, AgentState]:
     """Answer a question; returns the API response and the final state (for debugging/evals)."""
     init_tracing()
     t0 = time.perf_counter()
     state, trace_id = _run(question, companies)
-    response = AnswerResponse(
-        answer=state["answer"],
-        citations=state.get("citations", []),
-        question_type=state.get("question_type", "single"),
-        latency_ms=round((time.perf_counter() - t0) * 1000),
-        trace_id=trace_id,
-    )
-    return response, state
+    return _response(state, t0, trace_id), state
+
+
+def stream_answer(question: str, companies: list[str] | None = None) -> Iterator[dict]:
+    """Yield a `step` event per finished graph node, then one final `answer` event."""
+    global _graph
+    init_tracing()
+    t0 = time.perf_counter()
+    _graph = _graph or build_graph()
+    state: dict = {}
+    initial = {"question": question, "user_companies": companies or [], "tokens": 0}
+    with root_span("answer"):  # one trace per streamed answer, node spans nest under it
+        for update in _graph.stream(initial, stream_mode="updates"):
+            for node, delta in update.items():
+                state.update(delta)
+                yield {"type": "step", "step": node}
+        trace_id = current_trace_id()
+    response = _response(state, t0, trace_id)  # type: ignore[arg-type]
+    yield {"type": "answer", **response.model_dump()}
