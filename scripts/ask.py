@@ -21,6 +21,7 @@ def main() -> None:
         best = state.get("best_score")
         print(f"\nQ: {q}")
         print(f"type: {resp.question_type} | filters: {state['filters'].model_dump()}")
+        print(f"search queries: {[sq['question'] for sq in state.get('sub_questions', [])]}")
         print(f"A: {resp.answer}")
         for c in resp.citations:
             print(f"   - [{c.company}, {c.fiscal_year}, p.{c.page}]")

@@ -1,0 +1,459 @@
+{
+  "summary": {
+    "n": 16,
+    "hit@1": 0.3125,
+    "hit@5": 0.5625,
+    "small_model_tokens_per_question": 638,
+    "latency_p50_ms": 3394
+  },
+  "details": [
+    {
+      "id": "q001",
+      "rank_tol0": 1,
+      "retrieved": [
+        [
+          "Infosys",
+          16
+        ],
+        [
+          "Infosys",
+          254
+        ],
+        [
+          "Infosys",
+          333
+        ],
+        [
+          "Infosys",
+          352
+        ],
+        [
+          "Infosys",
+          351
+        ]
+      ],
+      "tokens": 645,
+      "latency_ms": 7065
+    },
+    {
+      "id": "q002",
+      "rank_tol0": 1,
+      "retrieved": [
+        [
+          "Infosys",
+          16
+        ],
+        [
+          "Infosys",
+          81
+        ],
+        [
+          "Infosys",
+          35
+        ],
+        [
+          "Infosys",
+          80
+        ],
+        [
+          "Infosys",
+          352
+        ]
+      ],
+      "tokens": 620,
+      "latency_ms": 2015
+    },
+    {
+      "id": "q003",
+      "rank_tol0": 2,
+      "retrieved": [
+        [
+          "Infosys",
+          323
+        ],
+        [
+          "Infosys",
+          16
+        ],
+        [
+          "Infosys",
+          352
+        ],
+        [
+          "Infosys",
+          16
+        ],
+        [
+          "Infosys",
+          352
+        ]
+      ],
+      "tokens": 717,
+      "latency_ms": 2697
+    },
+    {
+      "id": "q004",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Wipro",
+          44
+        ],
+        [
+          "Tech Mahindra",
+          255
+        ],
+        [
+          "Wipro",
+          154
+        ],
+        [
+          "Tech Mahindra",
+          254
+        ],
+        [
+          "TCS",
+          325
+        ]
+      ],
+      "tokens": 633,
+      "latency_ms": 2501
+    },
+    {
+      "id": "q005",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Infosys",
+          36
+        ],
+        [
+          "Infosys",
+          323
+        ],
+        [
+          "Infosys",
+          322
+        ],
+        [
+          "Infosys",
+          26
+        ],
+        [
+          "Infosys",
+          227
+        ]
+      ],
+      "tokens": 668,
+      "latency_ms": 3394
+    },
+    {
+      "id": "q006",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Infosys",
+          323
+        ],
+        [
+          "Infosys",
+          361
+        ],
+        [
+          "Infosys",
+          36
+        ],
+        [
+          "Infosys",
+          227
+        ],
+        [
+          "Infosys",
+          26
+        ]
+      ],
+      "tokens": 640,
+      "latency_ms": 3991
+    },
+    {
+      "id": "q007",
+      "rank_tol0": 1,
+      "retrieved": [
+        [
+          "Infosys",
+          61
+        ],
+        [
+          "Infosys",
+          226
+        ],
+        [
+          "Infosys",
+          226
+        ],
+        [
+          "Infosys",
+          118
+        ],
+        [
+          "Infosys",
+          323
+        ]
+      ],
+      "tokens": 640,
+      "latency_ms": 4045
+    },
+    {
+      "id": "q008",
+      "rank_tol0": 2,
+      "retrieved": [
+        [
+          "HCLTech",
+          217
+        ],
+        [
+          "Infosys",
+          144
+        ],
+        [
+          "Tech Mahindra",
+          303
+        ],
+        [
+          "TCS",
+          108
+        ],
+        [
+          "Tech Mahindra",
+          381
+        ]
+      ],
+      "tokens": 699,
+      "latency_ms": 5747
+    },
+    {
+      "id": "q009",
+      "rank_tol0": 1,
+      "retrieved": [
+        [
+          "Infosys",
+          143
+        ],
+        [
+          "Infosys",
+          40
+        ],
+        [
+          "Infosys",
+          159
+        ],
+        [
+          "Infosys",
+          157
+        ],
+        [
+          "Infosys",
+          157
+        ]
+      ],
+      "tokens": 580,
+      "latency_ms": 31712
+    },
+    {
+      "id": "q010",
+      "rank_tol0": 3,
+      "retrieved": [
+        [
+          "Infosys",
+          27
+        ],
+        [
+          "Infosys",
+          144
+        ],
+        [
+          "Infosys",
+          25
+        ],
+        [
+          "Infosys",
+          144
+        ],
+        [
+          "Infosys",
+          143
+        ]
+      ],
+      "tokens": 594,
+      "latency_ms": 5708
+    },
+    {
+      "id": "q011",
+      "rank_tol0": 1,
+      "retrieved": [
+        [
+          "Infosys",
+          10
+        ],
+        [
+          "Infosys",
+          31
+        ],
+        [
+          "Infosys",
+          75
+        ],
+        [
+          "Infosys",
+          87
+        ],
+        [
+          "Infosys",
+          87
+        ]
+      ],
+      "tokens": 641,
+      "latency_ms": 2508
+    },
+    {
+      "id": "q012",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Infosys",
+          78
+        ],
+        [
+          "Wipro",
+          27
+        ],
+        [
+          "HCLTech",
+          95
+        ],
+        [
+          "Wipro",
+          461
+        ],
+        [
+          "TCS",
+          69
+        ]
+      ],
+      "tokens": 617,
+      "latency_ms": 2714
+    },
+    {
+      "id": "q013",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Infosys",
+          68
+        ],
+        [
+          "Infosys",
+          67
+        ],
+        [
+          "Infosys",
+          105
+        ],
+        [
+          "Infosys",
+          43
+        ],
+        [
+          "Infosys",
+          10
+        ]
+      ],
+      "tokens": 623,
+      "latency_ms": 3057
+    },
+    {
+      "id": "q014",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Infosys",
+          68
+        ],
+        [
+          "Infosys",
+          43
+        ],
+        [
+          "Infosys",
+          67
+        ],
+        [
+          "Infosys",
+          105
+        ],
+        [
+          "Infosys",
+          342
+        ]
+      ],
+      "tokens": 609,
+      "latency_ms": 4611
+    },
+    {
+      "id": "q015",
+      "rank_tol0": 2,
+      "retrieved": [
+        [
+          "Infosys",
+          323
+        ],
+        [
+          "Infosys",
+          26
+        ],
+        [
+          "Infosys",
+          362
+        ],
+        [
+          "Infosys",
+          36
+        ],
+        [
+          "Infosys",
+          16
+        ]
+      ],
+      "tokens": 648,
+      "latency_ms": 4717
+    },
+    {
+      "id": "q016",
+      "rank_tol0": null,
+      "retrieved": [
+        [
+          "Infosys",
+          36
+        ],
+        [
+          "Infosys",
+          26
+        ],
+        [
+          "Infosys",
+          36
+        ],
+        [
+          "Infosys",
+          26
+        ],
+        [
+          "Infosys",
+          242
+        ]
+      ],
+      "tokens": 627,
+      "latency_ms": 2414
+    }
+  ]
+}

@@ -5,6 +5,9 @@ reports:
     pdf: data/raw/tcs_fy2026.pdf
     ocr: true  # broken text layer (split/lost glyphs, ₹ read as "H"); full-page OCR
     pictures: true  # also keep text Docling places inside pictures (KPI tiles, infographics)
+    # OCR reads the page-header logo as body text, often one word per element
+    # ("TATA", "CONSULTANCY", "SERVICES", "tcs"); case-sensitive so prose "TCS ..." survives
+    drop_element_regex: '((TATA|CONSULTANCY|SERVICES|tcs)\s*)+'
   - company: Infosys
     fiscal_year: FY2026
     pdf: data/raw/infosys_fy2026.pdf

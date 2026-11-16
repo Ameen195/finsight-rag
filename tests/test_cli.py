@@ -2,7 +2,26 @@ import logging
 
 import pytest
 
-from finsight.ingest.cli import apply_glyph_map
+from finsight.ingest.cli import apply_glyph_map, drop_elements
+
+TCS_LOGO = r"((TATA|CONSULTANCY|SERVICES|tcs)\s*)+"
+
+
+def test_drop_elements_removes_only_whole_logo_elements() -> None:
+    texts = [
+        "tcs",
+        "CONSULTANCY",
+        "tcs TATA CONSULTANCY SERVICES",
+        "TCS generated revenues",
+        "Services",
+        "Tata Consultancy Services Limited",
+        "About TCS",
+        "Website: www.tcs.com",
+    ]
+    els = [{"type": "text", "text": t, "page": 1} for t in texts]
+    assert [e["text"] for e in drop_elements(els, TCS_LOGO)] == texts[3:]
+    assert drop_elements(els, None) is els
+
 
 RUPEE = {"`": "₹"}
 

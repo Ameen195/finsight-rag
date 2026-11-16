@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import re
 import time
 from collections import Counter
 from pathlib import Path
@@ -25,7 +26,8 @@ def ingest_one(report: dict, force: bool) -> dict:
     data = parse_report(
         pdf, company, fy, report.get("ocr", False), report.get("pictures", False), force
     )
-    elements = apply_glyph_map(data["elements"], report.get("glyph_map", {}))
+    elements = drop_elements(data["elements"], report.get("drop_element_regex"))
+    elements = apply_glyph_map(elements, report.get("glyph_map", {}))
     chunks, dropped = chunk_elements(elements, company, fy, bookmark_sections(pdf))
     texts = [embedding_text(c) for c in chunks]
     replace_report(company, fy, chunks, embed_passages(texts))
@@ -48,6 +50,20 @@ def ingest_one(report: dict, force: bool) -> dict:
         "seconds": round(time.time() - t0),
         "_largest_sections": sections.most_common(5),
     }
+
+
+def drop_elements(elements: list[dict], pattern: str | None) -> list[dict]:
+    """Drop elements whose WHOLE text matches `pattern` (e.g. OCR'd page-header logos).
+
+    Case-sensitive (add `(?i)` to the pattern if needed). Applied at chunk time so the parse
+    cache keeps the raw extraction.
+    """
+    if not pattern:
+        return elements
+    rx = re.compile(pattern)
+    kept = [e for e in elements if not rx.fullmatch(e["text"].strip())]
+    log.info("drop_element_regex %r: %d elements dropped", pattern, len(elements) - len(kept))
+    return kept
 
 
 def apply_glyph_map(elements: list[dict], glyph_map: dict[str, str]) -> list[dict]:
