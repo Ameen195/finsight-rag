@@ -1,5 +1,22 @@
 # Notes to carry into README (Limitations / Data)
 
+## Run locally (Windows PowerShell)
+1. Install uv (`winget install astral-sh.uv`), then in the project folder: `uv sync`.
+2. Copy `.env.example` to `.env` and fill in `GROQ_API_KEY` and `DATABASE_URL` (Supabase session
+   pooler); Langfuse keys are optional. Run `scripts/schema.sql` once in Supabase.
+3. Check the setup: `uv run python scripts/smoke.py` (DB ping, pgvector, Groq).
+4. Ingest (slow on CPU; parses are cached in `data/parsed/`): put the PDFs in `data/raw/` as
+   listed in `config/manifest.yaml`, then `uv run finsight-ingest` (or `--company TCS`).
+   Optional picture-text recovery: `uv run python scripts/recover_picture_text.py --company X`.
+5. Serve the app: `uv run uvicorn finsight.api.main:app --port 7860` and open
+   http://localhost:7860. CLI alternative: `uv run python scripts/ask.py "your question"`.
+6. Tests and lint (offline): `uv run pytest` and `uv run ruff check .`.
+7. Evals: `uv run python eval/convert_golden.py eval/golden_verified_infosys.txt --overwrite`,
+   then `uv run python eval/eval_retrieval.py` and `uv run python eval/eval_agent_retrieval.py
+   --out-dir eval/results/agent_retrieval/<name>`.
+
+## Data and limitations
+
 - **Page numbers are physical PDF pages** (1-based, as a PDF viewer shows them), not the numbers
   printed on the page. For TCS the printed number is physical + 30 (e.g. physical p.211 is printed
   "241"); other reports have their own offsets.
