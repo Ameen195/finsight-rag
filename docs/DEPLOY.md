@@ -1,58 +1,77 @@
-# Deploying FinSight to Hugging Face Spaces
+# Deploying FinSight to Google Cloud Run
 
-The Space runs only the API and frontend (`uvicorn finsight.api.main:app` on port 7860).
+The service runs only the API and frontend (`uvicorn finsight.api.main:app`, port 7860).
 Ingestion runs locally; the Supabase database is already populated.
 
-## 1. Create the Space
-1. On huggingface.co: **New Space** → SDK **Docker** → hardware **CPU basic (free)**.
-2. Add this front-matter at the very top of `README.md` (Spaces reads it):
-   ```yaml
-   ---
-   title: FinSight
-   sdk: docker
-   app_port: 7860
-   ---
-   ```
+## Sizing (measured locally with `docker stats`)
+- Idle after warm-up: ~520 MiB. Peak while answering 3 questions: ~675 MiB.
+- → **1 GiB memory, 1 vCPU** (about 50% headroom over the measured peak).
+- Container ready ~13 s after start (models are baked into the image), so a cold start after
+  scale-to-zero takes roughly 15–20 s before the first answer.
 
-## 2. Add secrets (Space → Settings → Variables and secrets)
-| Name | Value |
-|---|---|
-| `GROQ_API_KEY` | your Groq key |
-| `DATABASE_URL` | Supabase **session pooler** connection string |
-| `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY` | optional; tracing is off without them |
-| `LANGFUSE_HOST` | optional, default `https://cloud.langfuse.com` |
+## Cost notes (check current Google pricing before deploying)
+- Cloud Run has a monthly free tier (request, vCPU-second and GiB-second allowances); with
+  min instances 0 and light demo traffic the service should stay inside it.
+- A **billing account must be linked** to the project even when usage stays in the free tier.
+- The image (~2.4 GB) is stored in Artifact Registry, whose free storage is smaller than that,
+  so expect a small monthly storage charge (cents). Set a budget alert.
 
-Nothing secret is copied into the image (`.env` is in `.dockerignore`); all values are read
-from the environment at runtime by `finsight.config`.
+## 1. One-time setup
+1. Install the gcloud CLI and log in: `gcloud auth login`.
+2. Create or pick a project and set it: `gcloud config set project <PROJECT_ID>`.
+3. Enable APIs: `gcloud services enable run.googleapis.com artifactregistry.googleapis.com`.
+4. Create a Docker repository (pick a region that has the Cloud Run free tier):
+   `gcloud artifacts repositories create finsight --repository-format=docker --location=<REGION>`
+5. Let Docker push there: `gcloud auth configure-docker <REGION>-docker.pkg.dev`.
+6. In the console, **Billing → Budgets & alerts**: create a small budget (e.g. $5) with alerts.
 
-## 3. Push
+## 2. Build and push the image
 ```powershell
-git remote add space https://huggingface.co/spaces/<user>/<space>
-git push space main
+docker build -t <REGION>-docker.pkg.dev/<PROJECT_ID>/finsight/finsight:latest .
+docker push <REGION>-docker.pkg.dev/<PROJECT_ID>/finsight/finsight:latest
 ```
-The Space builds the `Dockerfile`: the locked dependencies (`uv export --frozen --no-dev`)
-with PyTorch swapped for the CPU wheels of the same versions, then the embedding model and
-reranker are downloaded into the image so cold starts skip that step.
+The Dockerfile installs CPU-only PyTorch (same locked version) for the image only;
+`pyproject.toml`, `uv.lock` and local installs are unchanged.
 
-Local test (optional, needs Docker Desktop running). Measured: first build ~5.5 min; about
-2.4 GB on disk inside the image (Docker Desktop lists ~5.9 GB because its store counts the
-compressed and unpacked layers); health check ready ~13 s after start.
+## 3. Secrets (values never go into the image or the repo)
+Store them in Secret Manager (`gcloud services enable secretmanager.googleapis.com`), then
+create one secret per name and paste the value when prompted (console: **Secret Manager →
+Create secret**):
+`GROQ_API_KEY`, `DATABASE_URL` (Supabase session pooler), and optionally
+`LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`. Grant the Cloud Run service account the
+**Secret Manager Secret Accessor** role.
+
+## 4. Deploy
+```powershell
+gcloud run deploy finsight `
+  --image <REGION>-docker.pkg.dev/<PROJECT_ID>/finsight/finsight:latest `
+  --region <REGION> --port 7860 `
+  --memory 1Gi --cpu 1 --cpu-boost `
+  --min-instances 0 --max-instances 1 --concurrency 4 `
+  --allow-unauthenticated `
+  --set-secrets "GROQ_API_KEY=GROQ_API_KEY:latest,DATABASE_URL=DATABASE_URL:latest,LANGFUSE_PUBLIC_KEY=LANGFUSE_PUBLIC_KEY:latest,LANGFUSE_SECRET_KEY=LANGFUSE_SECRET_KEY:latest"
+```
+- `--min-instances 0`: scales to zero when idle (no cost while unused).
+- `--max-instances 1`: caps cost, and keeps the in-memory rate limit (10 questions/hour per IP)
+  meaningful, since that limit is per instance.
+- `--cpu-boost`: extra CPU during start-up to shorten cold starts.
+- `--concurrency 4`: the app shares one DB connection per instance, so keep this low.
+- Drop the two Langfuse entries from `--set-secrets` if you do not use tracing.
+
+## 5. Check
+- `https://<service-url>/api/health` → `{"status": "ok", "db": true}`
+- Open the service URL and ask a question.
+
+## Local container test (optional)
 ```powershell
 docker build -t finsight .
 docker run --rm -p 7860:7860 --env-file .env finsight
 ```
-
-## 4. Check
-- `https://<user>-<space>.hf.space/api/health` → `{"status": "ok", "db": true}`
-- Open the Space URL and ask a question.
+Measured: first build ~5.5 min; ~2.4 GB on disk inside the image (Docker Desktop lists
+~5.9 GB because its store counts compressed and unpacked layers).
 
 ## Notes
-- The free CPU Space sleeps when idle; the first request after waking is slow.
-- Rate limit: 10 questions per hour per client IP (in memory, resets on restart).
 - Supabase pauses after 7 days without traffic; the keep-alive workflow (Phase 6) pings
-  `/api/health` daily.
-- CPU-only PyTorch is applied in the Dockerfile only: `uv.lock` still resolves the CUDA build
-  for Linux, and local Windows installs (CPU PyTorch by default) are unaffected. If the lock's
-  PyTorch version is ever missing from the CPU index, the Docker build fails at that step.
-- Docling (ingestion only) is still installed in the image; moving it to an optional dependency
-  group would shrink the image further.
+  `/api/health` daily, which also wakes the service (one cold start per day).
+- Docling (ingestion only) is still installed in the image; moving it to an optional
+  dependency group would shrink the image.
