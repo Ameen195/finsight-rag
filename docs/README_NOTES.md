@@ -22,6 +22,12 @@
   counting merged spans twice), so tables with genuinely equal adjacent values (e.g. "100 | 100"
   holdings) show false "missing digits".
 - **Infosys ₹ sign** is extracted as a backtick; a per-report `glyph_map` restores it at chunk time.
+- **Wipro ₹ sign** is extracted as a letter that depends on font weight ("I 51,190", "H 39,306",
+  "K 56,910"). Left as is (a blanket replacement would corrupt normal text); numbers and unit words
+  ("in millions", "crore") survive. Golden questions for Wipro must name the currency explicitly.
+- **Docling native crash**: the Wipro picture-text recovery once died with an access violation
+  inside Docling's PDF parser (pdf_parsers.pyd) at pages 172-173; a plain re-run completed, so no
+  pages were skipped.
 - **Sections come from PDF bookmarks** where they exist. Infosys has real section bookmarks;
   HCLTech and Tech Mahindra only have coarse, file-name-like bookmarks; TCS and Wipro have none, so
   their chunks carry no section label.

@@ -1,5 +1,7 @@
 """Postgres connection helper (pgvector registered)."""
 
+from functools import lru_cache
+
 import numpy as np
 import psycopg
 from pgvector.psycopg import register_vector
@@ -12,6 +14,20 @@ def connect() -> psycopg.Connection:
     """Open a connection with the pgvector type registered."""
     conn = psycopg.connect(get_settings().database_url)
     register_vector(conn)
+    return conn
+
+
+@lru_cache(maxsize=1)
+def shared_connection() -> psycopg.Connection:
+    """One long-lived autocommit connection for read queries (avoids a connect per search).
+
+    shortcut: a single connection serialises concurrent requests; switch to psycopg_pool
+    when the API serves parallel traffic (Phase 5).
+    """
+    conn = psycopg.connect(get_settings().database_url, autocommit=True)
+    register_vector(conn)
+    # pgvector >= 0.8: keep scanning the HNSW graph until enough rows pass the WHERE filter
+    conn.execute("set hnsw.iterative_scan = strict_order")
     return conn
 
 

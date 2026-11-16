@@ -1,0 +1,55 @@
+# Retrieval eval (2026-11-16)
+
+Golden file: `eval\golden_set.jsonl` · questions scored: 16 (comparison: 0) · skipped: 3 · companies: Infosys · k=10
+
+Company filter: **extracted from the question** · RRF keyword weight: **0.5**
+
+## Headline: page tolerance 0 (non-comparison questions)
+
+| mode | hit@1 | hit@5 | mrr@10 |
+|---|---|---|---|
+| dense | 0.250 | 0.625 | 0.389 |
+| keyword | 0.062 | 0.250 | 0.160 |
+| hybrid | 0.125 | 0.625 | 0.295 |
+| hybrid_rerank | 0.438 | 0.562 | 0.501 |
+
+## Secondary: page tolerance ±1
+
+| mode | hit@1 | hit@5 | mrr@10 |
+|---|---|---|---|
+| dense | 0.250 | 0.625 | 0.400 |
+| keyword | 0.062 | 0.250 | 0.160 |
+| hybrid | 0.125 | 0.688 | 0.316 |
+| hybrid_rerank | 0.438 | 0.562 | 0.511 |
+
+## Latency per query (ms)
+
+*Measured under load: a Docling parse (Tech Mahindra) was using the CPU during this run.*
+
+| mode | p50 | p95 |
+|---|---|---|
+| dense | 117 | 238 |
+| keyword | 91 | 215 |
+| hybrid | 169 | 266 |
+| hybrid_rerank | 10629 | 12226 |
+
+## By question type (tolerance 0): Hit@5 / MRR@10
+
+| type | n | dense | keyword | hybrid | hybrid_rerank |
+|---|---|---|---|---|---|
+| explanation | 1 | 0.00 / 0.10 | 0.00 / 0.00 | 0.00 / 0.10 | 0.00 / 0.17 |
+| fact | 8 | 0.62 / 0.39 | 0.12 / 0.06 | 0.50 / 0.25 | 0.62 / 0.54 |
+| table | 7 | 0.71 / 0.43 | 0.43 / 0.29 | 0.86 / 0.37 | 0.57 / 0.50 |
+
+## 5 worst questions (hybrid_rerank, tolerance 0)
+
+- **q004** (table) What was the total dividend per share for FY2026?  
+  relevant: Infosys p.38, Infosys p.18 · top-5: Wipro p.154, TCS p.36, Infosys p.243, Wipro p.44, HCLTech p.130
+- **q007** (fact) What buyback did Infosys complete, in size and price per share?  
+  relevant: Infosys p.38, Infosys p.16 · top-5: Infosys p.18, Infosys p.26, Infosys p.227, Infosys p.61, Infosys p.226
+- **q012** (fact) How many clients contribute more than US$100 million in revenue, and how did that change from last year?  
+  relevant: Infosys p.88 · top-5: Wipro p.27, Wipro p.486, Wipro p.362, Infosys p.319, Wipro p.362
+- **q013** (fact) How much did Infosys spend on CSR globally in fiscal 2026?  
+  relevant: Infosys p.25, Infosys p.31 · top-5: Infosys p.68, Infosys p.67, Infosys p.105, Infosys p.16, Infosys p.10
+- **q006** (table) What final dividend per share did Infosys recommend for FY2026?  
+  relevant: Infosys p.38 · top-5: Infosys p.323, Infosys p.36, Infosys p.361, Infosys p.243, Infosys p.26

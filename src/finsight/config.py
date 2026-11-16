@@ -26,6 +26,8 @@ class Settings(BaseSettings):
 
     retrieval_top_k: int = 20
     rerank_top_n: int = 5
+    # weight of the keyword list in RRF (dense = 1.0); 0.5 beat 1.0 on Hit@1/MRR in the Phase 3 eval
+    rrf_keyword_weight: float = 0.5
     max_context_tokens: int = 3000
 
 
