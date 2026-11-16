@@ -34,7 +34,9 @@ The Space builds the `Dockerfile`: the locked dependencies (`uv export --frozen 
 with PyTorch swapped for the CPU wheels of the same versions, then the embedding model and
 reranker are downloaded into the image so cold starts skip that step.
 
-Local test (optional, needs Docker Desktop running; ~0.8 GB download, ~2 GB image):
+Local test (optional, needs Docker Desktop running). Measured: first build ~5.5 min; about
+2.4 GB on disk inside the image (Docker Desktop lists ~5.9 GB because its store counts the
+compressed and unpacked layers); health check ready ~13 s after start.
 ```powershell
 docker build -t finsight .
 docker run --rm -p 7860:7860 --env-file .env finsight
