@@ -83,3 +83,6 @@ def test_hybrid_rerank_pipeline_wiring(monkeypatch: pytest.MonkeyPatch) -> None:
     f = Filters()
     assert [r.chunk.id for r in retriever.retrieve("q", "hybrid", f, k=3)] == [2, 1, 3]
     assert [r.chunk.id for r in retriever.retrieve("q", "hybrid_rerank", f, k=2)] == [3, 2]
+    # rerank only the fused top-2 ([2, 1] -> [2, 1] by -id); chunk 3 stays behind in RRF order
+    monkeypatch.setattr(retriever.get_settings(), "rerank_candidates", 2)
+    assert [r.chunk.id for r in retriever.retrieve("q", "hybrid_rerank", f, k=3)] == [2, 1, 3]

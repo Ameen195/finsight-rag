@@ -18,3 +18,4 @@ reports:
   - company: Tech Mahindra
     fiscal_year: FY2026
     pdf: data/raw/techm_fy2026.pdf
+    glyph_map: {"`": "₹"}  # rupee sign extracted as backtick (all 659 checked: rupee uses)

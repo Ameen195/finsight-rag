@@ -55,4 +55,5 @@ def retrieve(
     fused = fused[:pool]
     if mode == "hybrid":
         return fused[:k]
-    return rerank(query, fused)[:k]
+    n = s.rerank_candidates or pool
+    return (rerank(query, fused[:n]) + fused[n:])[:k]  # unreranked tail keeps its RRF order

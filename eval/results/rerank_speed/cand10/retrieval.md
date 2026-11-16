@@ -1,0 +1,57 @@
+# Retrieval eval (2026-11-16)
+
+Golden file: `eval\golden_set.jsonl` · questions scored: 16 (comparison: 0) · skipped: 3 · companies: Infosys · k=10
+
+Company filter: **extracted from the question** · RRF keyword weight: **0.5** · candidate pool: **20** · keyword OR-fallback pruning: **True**
+
+Reranker: **BAAI/bge-reranker-base, candidates 10, max_length 512, int8 False**
+
+## Headline: page tolerance 0 (non-comparison questions)
+
+| mode | hit@1 | hit@5 | mrr@10 |
+|---|---|---|---|
+| dense | 0.250 | 0.688 | 0.404 |
+| keyword | 0.062 | 0.500 | 0.253 |
+| hybrid | 0.188 | 0.688 | 0.429 |
+| hybrid_rerank | 0.438 | 0.562 | 0.511 |
+
+## Secondary: page tolerance ±1
+
+| mode | hit@1 | hit@5 | mrr@10 |
+|---|---|---|---|
+| dense | 0.250 | 0.688 | 0.416 |
+| keyword | 0.125 | 0.562 | 0.308 |
+| hybrid | 0.250 | 0.688 | 0.477 |
+| hybrid_rerank | 0.438 | 0.625 | 0.524 |
+
+## Latency per query (ms)
+
+*Measured with no Docling job running (machine otherwise idle).*
+
+| mode | p50 | p95 |
+|---|---|---|
+| dense | 66 | 175 |
+| keyword | 48 | 473 |
+| hybrid | 88 | 190 |
+| hybrid_rerank | 3848 | 4131 |
+
+## By question type (tolerance 0): Hit@5 / MRR@10
+
+| type | n | dense | keyword | hybrid | hybrid_rerank |
+|---|---|---|---|---|---|
+| explanation | 1 | 0.00 / 0.10 | 0.00 / 0.00 | 0.00 / 0.11 | 0.00 / 0.17 |
+| fact | 8 | 0.75 / 0.42 | 0.38 / 0.17 | 0.62 / 0.28 | 0.75 / 0.67 |
+| table | 7 | 0.71 / 0.43 | 0.71 / 0.38 | 0.86 / 0.64 | 0.43 / 0.38 |
+
+## 5 worst questions (hybrid_rerank, tolerance 0)
+
+- **q004** (table) What was the total dividend per share for FY2026?  
+  relevant: Infosys p.38, Infosys p.18 · top-5: Tech Mahindra p.255, Wipro p.154, Tech Mahindra p.482, Tech Mahindra p.254, Wipro p.44
+- **q012** (fact) How many clients contribute more than US$100 million in revenue, and how did that change from last year?  
+  relevant: Infosys p.88 · top-5: Wipro p.27, Wipro p.362, Wipro p.236, HCLTech p.95, Infosys p.31
+- **q013** (fact) How much did Infosys spend on CSR globally in fiscal 2026?  
+  relevant: Infosys p.25, Infosys p.31 · top-5: Infosys p.68, Infosys p.67, Infosys p.105, Infosys p.16, Infosys p.26
+- **q001** (table) What was Infosys's consolidated revenue from operations in FY2026, in rupees crore?  
+  relevant: Infosys p.33, Infosys p.10, Infosys p.16 · top-5: Infosys p.254, Infosys p.333, Infosys p.78, Infosys p.296, Infosys p.78
+- **q005** (table) What interim dividend per share did Infosys declare for FY2026?  
+  relevant: Infosys p.38 · top-5: Infosys p.36, Infosys p.323, Infosys p.26, Infosys p.119, Infosys p.243

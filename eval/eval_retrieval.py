@@ -154,6 +154,8 @@ def to_markdown(summary: dict, details: list[dict], meta: dict, tol: int) -> str
         f"**{meta['rrf_keyword_weight']}** · candidate pool: **{meta['candidate_pool']}** · "
         f"keyword OR-fallback pruning: **{meta['keyword_fallback_prune']}**",
         "",
+        f"Reranker: **{meta['reranker']}**",
+        "",
         "## Headline: page tolerance 0 (non-comparison questions)",
         "",
     ]
@@ -227,6 +229,12 @@ def main() -> None:
         "rrf_keyword_weight": get_settings().rrf_keyword_weight,
         "candidate_pool": get_settings().retrieval_top_k,
         "keyword_fallback_prune": get_settings().keyword_fallback_prune,
+        "reranker": (
+            f"{get_settings().reranker_model}, candidates "
+            f"{get_settings().rerank_candidates or get_settings().retrieval_top_k}, "
+            f"max_length {get_settings().reranker_max_length}, "
+            f"int8 {get_settings().reranker_quantize}"
+        ),
     }
     args.out_dir.mkdir(parents=True, exist_ok=True)
     (args.out_dir / "retrieval.json").write_text(

@@ -26,6 +26,9 @@ class Settings(BaseSettings):
 
     retrieval_top_k: int = 20
     rerank_top_n: int = 5
+    rerank_candidates: int | None = None  # rerank only the fused top-N (None = whole pool)
+    reranker_max_length: int = 512
+    reranker_quantize: bool = False  # dynamic int8 quantisation of the reranker's Linear layers
     # weight of the keyword list in RRF (dense = 1.0); 0.5 beat 1.0 on Hit@1/MRR in the Phase 3 eval
     rrf_keyword_weight: float = 0.5
     # drop company names, years and generic words from the keyword OR fallback
