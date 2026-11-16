@@ -1,0 +1,48 @@
+[project]
+name = "finsight"
+version = "0.1.0"
+description = "Agentic RAG copilot for Indian IT annual reports"
+authors = [
+    { name = "Ameen195", email = "ameennaimuddin.dev@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "docling>=2.150.1",
+    "fastapi>=0.163.1",
+    "gradio>=6.32.0",
+    "groq>=1.7.0",
+    "langfuse>=5.2.0",
+    "langgraph>=1.2.22",
+    "pgvector>=0.5.1",
+    "psycopg[binary]>=3.3.9",
+    "pydantic-settings>=2.16.3",
+    "python-dotenv>=1.2.4",
+    "pyyaml>=6.0.3",
+    "sentence-transformers>=6.3.0",
+    "tenacity>=9.2.1",
+    "tiktoken>=0.14.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+finsight-ingest = "finsight.ingest.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "scripts", "eval"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
