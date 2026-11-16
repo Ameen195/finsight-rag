@@ -52,7 +52,7 @@ def contains(text: str, number: str) -> bool:
 def main() -> None:
     """CLI entry point."""
     rows = [r for r in parse_rows(Path(sys.argv[1])) if r["type"] != "unanswerable"]
-    manifest = yaml.safe_load(Path("data/manifest.yaml").read_text(encoding="utf-8"))
+    manifest = yaml.safe_load(Path("config/manifest.yaml").read_text(encoding="utf-8"))
     pdfs = {m["company"]: m["pdf"] for m in manifest["reports"]}
     pdf_cache: dict[str, pypdfium2.PdfDocument] = {}
     passed = 0

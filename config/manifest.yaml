@@ -1,0 +1,20 @@
+# Reports to ingest. fiscal_year FY2026 = financial year 2025-26 (ended 31 March 2026).
+reports:
+  - company: TCS
+    fiscal_year: FY2026
+    pdf: data/raw/tcs_fy2026.pdf
+    ocr: true  # broken text layer (split/lost glyphs, ₹ read as "H"); full-page OCR
+    pictures: true  # also keep text Docling places inside pictures (KPI tiles, infographics)
+  - company: Infosys
+    fiscal_year: FY2026
+    pdf: data/raw/infosys_fy2026.pdf
+    glyph_map: {"`": "₹"}  # rupee sign extracted as backtick (all 802 checked: rupee uses)
+  - company: Wipro
+    fiscal_year: FY2026
+    pdf: data/raw/wipro_fy2026.pdf
+  - company: HCLTech
+    fiscal_year: FY2026
+    pdf: data/raw/hcltech_fy2026.pdf
+  - company: Tech Mahindra
+    fiscal_year: FY2026
+    pdf: data/raw/techm_fy2026.pdf

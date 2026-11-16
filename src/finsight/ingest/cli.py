@@ -82,7 +82,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Ingest annual reports into Postgres.")
     ap.add_argument("--company", help="only ingest this company (as named in the manifest)")
     ap.add_argument("--force", action="store_true", help="re-parse even if a cache exists")
-    ap.add_argument("--manifest", default="data/manifest.yaml")
+    ap.add_argument("--manifest", default="config/manifest.yaml")
     args = ap.parse_args()
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s"

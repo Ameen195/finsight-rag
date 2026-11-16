@@ -22,7 +22,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--company", required=True)
     ap.add_argument("--tolerance", type=int, default=5)
-    ap.add_argument("--manifest", default="data/manifest.yaml")
+    ap.add_argument("--manifest", default="config/manifest.yaml")
     args = ap.parse_args()
 
     reports = yaml.safe_load(Path(args.manifest).read_text(encoding="utf-8"))["reports"]

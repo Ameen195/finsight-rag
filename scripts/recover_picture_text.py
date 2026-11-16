@@ -24,7 +24,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--company", required=True)
     ap.add_argument("--tolerance", type=int, default=5)
-    ap.add_argument("--manifest", default="data/manifest.yaml")
+    ap.add_argument("--manifest", default="config/manifest.yaml")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
