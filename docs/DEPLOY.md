@@ -30,8 +30,15 @@ from the environment at runtime by `finsight.config`.
 git remote add space https://huggingface.co/spaces/<user>/<space>
 git push space main
 ```
-The Space builds the `Dockerfile`: dependencies with `uv sync --frozen --no-dev`, then the
-embedding model and reranker are downloaded into the image so cold starts skip that step.
+The Space builds the `Dockerfile`: the locked dependencies (`uv export --frozen --no-dev`)
+with PyTorch swapped for the CPU wheels of the same versions, then the embedding model and
+reranker are downloaded into the image so cold starts skip that step.
+
+Local test (optional, needs Docker Desktop running; ~0.8 GB download, ~2 GB image):
+```powershell
+docker build -t finsight .
+docker run --rm -p 7860:7860 --env-file .env finsight
+```
 
 ## 4. Check
 - `https://<user>-<space>.hf.space/api/health` → `{"status": "ok", "db": true}`
@@ -42,6 +49,8 @@ embedding model and reranker are downloaded into the image so cold starts skip t
 - Rate limit: 10 questions per hour per client IP (in memory, resets on restart).
 - Supabase pauses after 7 days without traffic; the keep-alive workflow (Phase 6) pings
   `/api/health` daily.
-- Image size: the current `uv.lock` resolves the CUDA build of PyTorch on Linux (several GB of
-  `nvidia-*` wheels). Switching PyTorch to the CPU index in `pyproject.toml` shrinks the image a
-  lot; this is a pending decision.
+- CPU-only PyTorch is applied in the Dockerfile only: `uv.lock` still resolves the CUDA build
+  for Linux, and local Windows installs (CPU PyTorch by default) are unaffected. If the lock's
+  PyTorch version is ever missing from the CPU index, the Docker build fails at that step.
+- Docling (ingestion only) is still installed in the image; moving it to an optional dependency
+  group would shrink the image further.
