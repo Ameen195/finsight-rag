@@ -1,6 +1,6 @@
 # Retrieval eval (2026-11-17)
 
-Golden file: `eval\golden_set.jsonl` · questions scored: 32 (comparison: 0) · skipped: 7 · companies: Infosys, TCS, Wipro · k=10
+Golden file: `eval\golden_set.jsonl` · questions scored: 56 (comparison: 8) · skipped: 11 · companies: HCLTech, Infosys, TCS, Tech Mahindra, Wipro · k=10
 
 Company filter: **extracted from the question** · RRF keyword weight: **0.5** · candidate pool: **20** · keyword OR-fallback pruning: **True**
 
@@ -10,19 +10,28 @@ Reranker: **cross-encoder/ms-marco-MiniLM-L-6-v2, candidates 20, max_length 512,
 
 | mode | hit@1 | hit@5 | mrr@10 |
 |---|---|---|---|
-| dense | 0.250 | 0.688 | 0.408 |
-| keyword | 0.156 | 0.469 | 0.310 |
-| hybrid | 0.344 | 0.719 | 0.517 |
-| hybrid_rerank | 0.438 | 0.812 | 0.584 |
+| dense | 0.250 | 0.646 | 0.399 |
+| keyword | 0.146 | 0.375 | 0.267 |
+| hybrid | 0.354 | 0.688 | 0.494 |
+| hybrid_rerank | 0.375 | 0.750 | 0.514 |
 
 ## Secondary: page tolerance ±1
 
 | mode | hit@1 | hit@5 | mrr@10 |
 |---|---|---|---|
-| dense | 0.250 | 0.750 | 0.437 |
-| keyword | 0.188 | 0.531 | 0.344 |
-| hybrid | 0.406 | 0.750 | 0.572 |
-| hybrid_rerank | 0.438 | 0.812 | 0.588 |
+| dense | 0.271 | 0.688 | 0.435 |
+| keyword | 0.167 | 0.438 | 0.306 |
+| hybrid | 0.396 | 0.708 | 0.539 |
+| hybrid_rerank | 0.375 | 0.750 | 0.518 |
+
+## Comparison questions (tolerance 0, single query, no decomposition)
+
+| mode | hit@1 | hit@5 | mrr@10 | all_companies@10 |
+|---|---|---|---|---|
+| dense | 0.125 | 0.500 | 0.229 | 0.375 |
+| keyword | 0.000 | 0.375 | 0.124 | 0.125 |
+| hybrid | 0.000 | 0.500 | 0.219 | 0.375 |
+| hybrid_rerank | 0.250 | 0.375 | 0.281 | 0.125 |
 
 ## Latency per query (ms)
 
@@ -30,18 +39,19 @@ Reranker: **cross-encoder/ms-marco-MiniLM-L-6-v2, candidates 20, max_length 512,
 
 | mode | p50 | p95 |
 |---|---|---|
-| dense | 71 | 144 |
-| keyword | 45 | 150 |
-| hybrid | 92 | 143 |
-| hybrid_rerank | 1338 | 1460 |
+| dense | 61 | 100 |
+| keyword | 46 | 116 |
+| hybrid | 91 | 197 |
+| hybrid_rerank | 1302 | 1684 |
 
 ## By question type (tolerance 0): Hit@5 / MRR@10
 
 | type | n | dense | keyword | hybrid | hybrid_rerank |
 |---|---|---|---|---|---|
-| explanation | 3 | 0.67 / 0.43 | 0.33 / 0.37 | 0.67 / 0.48 | 0.67 / 0.50 |
-| fact | 16 | 0.81 / 0.48 | 0.44 / 0.29 | 0.75 / 0.52 | 0.88 / 0.63 |
-| table | 13 | 0.54 / 0.31 | 0.54 / 0.32 | 0.69 / 0.52 | 0.77 / 0.55 |
+| comparison | 8 | 0.50 / 0.23 | 0.38 / 0.12 | 0.50 / 0.22 | 0.38 / 0.28 |
+| explanation | 5 | 0.80 / 0.51 | 0.40 / 0.45 | 0.80 / 0.56 | 0.60 / 0.53 |
+| fact | 26 | 0.65 / 0.39 | 0.35 / 0.24 | 0.65 / 0.46 | 0.77 / 0.51 |
+| table | 17 | 0.59 / 0.38 | 0.41 / 0.26 | 0.71 / 0.53 | 0.76 / 0.52 |
 
 ## 5 worst questions (hybrid_rerank, tolerance 0)
 

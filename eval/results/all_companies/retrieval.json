@@ -2,12 +2,14 @@
   "meta": {
     "date": "2026-11-17",
     "golden": "eval\\golden_set.jsonl",
-    "scored": 32,
-    "comparison": 0,
-    "skipped": 7,
+    "scored": 56,
+    "comparison": 8,
+    "skipped": 11,
     "companies": [
+      "HCLTech",
       "Infosys",
       "TCS",
+      "Tech Mahindra",
       "Wipro"
     ],
     "latency_note": "Measured with no Docling job running.",
@@ -21,135 +23,183 @@
     "overall_tol0": {
       "dense": {
         "hit@1": 0.25,
-        "hit@5": 0.6875,
-        "mrr@10": 0.40815972222222224
+        "hit@5": 0.6458333333333334,
+        "mrr@10": 0.39884259259259264
       },
       "keyword": {
-        "hit@1": 0.15625,
-        "hit@5": 0.46875,
-        "mrr@10": 0.3099330357142857
+        "hit@1": 0.14583333333333334,
+        "hit@5": 0.375,
+        "mrr@10": 0.2669229497354497
       },
       "hybrid": {
-        "hit@1": 0.34375,
-        "hit@5": 0.71875,
-        "mrr@10": 0.5170138888888889
+        "hit@1": 0.3541666666666667,
+        "hit@5": 0.6875,
+        "mrr@10": 0.4939814814814815
       },
       "hybrid_rerank": {
-        "hit@1": 0.4375,
-        "hit@5": 0.8125,
-        "mrr@10": 0.584375
+        "hit@1": 0.375,
+        "hit@5": 0.75,
+        "mrr@10": 0.5144097222222223
       }
     },
     "overall_tol1": {
       "dense": {
-        "hit@1": 0.25,
-        "hit@5": 0.75,
-        "mrr@10": 0.43732638888888886
+        "hit@1": 0.2708333333333333,
+        "hit@5": 0.6875,
+        "mrr@10": 0.4351521164021164
       },
       "keyword": {
-        "hit@1": 0.1875,
-        "hit@5": 0.53125,
-        "mrr@10": 0.3435267857142857
+        "hit@1": 0.16666666666666666,
+        "hit@5": 0.4375,
+        "mrr@10": 0.3059854497354497
       },
       "hybrid": {
-        "hit@1": 0.40625,
-        "hit@5": 0.75,
-        "mrr@10": 0.5722222222222222
+        "hit@1": 0.3958333333333333,
+        "hit@5": 0.7083333333333334,
+        "mrr@10": 0.5389715608465608
       },
       "hybrid_rerank": {
-        "hit@1": 0.4375,
-        "hit@5": 0.8125,
-        "mrr@10": 0.5875
+        "hit@1": 0.375,
+        "hit@5": 0.75,
+        "mrr@10": 0.5175347222222222
       }
     },
-    "comparison": {},
+    "comparison": {
+      "dense": {
+        "hit@1": 0.125,
+        "hit@5": 0.5,
+        "mrr@10": 0.22916666666666666,
+        "all_companies@10": 0.375
+      },
+      "keyword": {
+        "hit@1": 0.0,
+        "hit@5": 0.375,
+        "mrr@10": 0.12395833333333334,
+        "all_companies@10": 0.125
+      },
+      "hybrid": {
+        "hit@1": 0.0,
+        "hit@5": 0.5,
+        "mrr@10": 0.21875,
+        "all_companies@10": 0.375
+      },
+      "hybrid_rerank": {
+        "hit@1": 0.25,
+        "hit@5": 0.375,
+        "mrr@10": 0.28125,
+        "all_companies@10": 0.125
+      }
+    },
     "by_type": {
-      "explanation": {
-        "n": 3,
+      "comparison": {
+        "n": 8,
         "dense": {
-          "hit@1": 0.3333333333333333,
-          "hit@5": 0.6666666666666666,
-          "mrr@10": 0.43333333333333335
+          "hit@1": 0.125,
+          "hit@5": 0.5,
+          "mrr@10": 0.22916666666666666
         },
         "keyword": {
-          "hit@1": 0.3333333333333333,
-          "hit@5": 0.3333333333333333,
-          "mrr@10": 0.3666666666666667
+          "hit@1": 0.0,
+          "hit@5": 0.375,
+          "mrr@10": 0.12395833333333334
         },
         "hybrid": {
-          "hit@1": 0.3333333333333333,
-          "hit@5": 0.6666666666666666,
-          "mrr@10": 0.48148148148148145
+          "hit@1": 0.0,
+          "hit@5": 0.5,
+          "mrr@10": 0.21875
         },
         "hybrid_rerank": {
-          "hit@1": 0.3333333333333333,
-          "hit@5": 0.6666666666666666,
-          "mrr@10": 0.5
+          "hit@1": 0.25,
+          "hit@5": 0.375,
+          "mrr@10": 0.28125
+        }
+      },
+      "explanation": {
+        "n": 5,
+        "dense": {
+          "hit@1": 0.4,
+          "hit@5": 0.8,
+          "mrr@10": 0.51
+        },
+        "keyword": {
+          "hit@1": 0.4,
+          "hit@5": 0.4,
+          "mrr@10": 0.4533333333333333
+        },
+        "hybrid": {
+          "hit@1": 0.4,
+          "hit@5": 0.8,
+          "mrr@10": 0.5555555555555556
+        },
+        "hybrid_rerank": {
+          "hit@1": 0.4,
+          "hit@5": 0.6,
+          "mrr@10": 0.525
         }
       },
       "fact": {
-        "n": 16,
+        "n": 26,
         "dense": {
-          "hit@1": 0.3125,
-          "hit@5": 0.8125,
-          "mrr@10": 0.4829861111111111
+          "hit@1": 0.23076923076923078,
+          "hit@5": 0.6538461538461539,
+          "mrr@10": 0.386965811965812
         },
         "keyword": {
-          "hit@1": 0.125,
-          "hit@5": 0.4375,
-          "mrr@10": 0.29069940476190476
+          "hit@1": 0.11538461538461539,
+          "hit@5": 0.34615384615384615,
+          "mrr@10": 0.23626373626373628
         },
         "hybrid": {
-          "hit@1": 0.3125,
-          "hit@5": 0.75,
-          "mrr@10": 0.521875
+          "hit@1": 0.3076923076923077,
+          "hit@5": 0.6538461538461539,
+          "mrr@10": 0.45576923076923076
         },
         "hybrid_rerank": {
-          "hit@1": 0.4375,
-          "hit@5": 0.875,
-          "mrr@10": 0.6302083333333334
+          "hit@1": 0.34615384615384615,
+          "hit@5": 0.7692307692307693,
+          "mrr@10": 0.5076923076923077
         }
       },
       "table": {
-        "n": 13,
+        "n": 17,
         "dense": {
-          "hit@1": 0.15384615384615385,
-          "hit@5": 0.5384615384615384,
-          "mrr@10": 0.31025641025641026
+          "hit@1": 0.23529411764705882,
+          "hit@5": 0.5882352941176471,
+          "mrr@10": 0.38431372549019605
         },
         "keyword": {
-          "hit@1": 0.15384615384615385,
-          "hit@5": 0.5384615384615384,
-          "mrr@10": 0.32051282051282054
+          "hit@1": 0.11764705882352941,
+          "hit@5": 0.4117647058823529,
+          "mrr@10": 0.25898692810457513
         },
         "hybrid": {
-          "hit@1": 0.38461538461538464,
-          "hit@5": 0.6923076923076923,
-          "mrr@10": 0.5192307692307693
+          "hit@1": 0.4117647058823529,
+          "hit@5": 0.7058823529411765,
+          "mrr@10": 0.5343137254901961
         },
         "hybrid_rerank": {
-          "hit@1": 0.46153846153846156,
-          "hit@5": 0.7692307692307693,
-          "mrr@10": 0.5474358974358974
+          "hit@1": 0.4117647058823529,
+          "hit@5": 0.7647058823529411,
+          "mrr@10": 0.5215686274509804
         }
       }
     },
     "latency_ms": {
       "dense": {
-        "p50": 71,
-        "p95": 144
+        "p50": 61,
+        "p95": 100
       },
       "keyword": {
-        "p50": 45,
-        "p95": 150
+        "p50": 46,
+        "p95": 116
       },
       "hybrid": {
-        "p50": 92,
-        "p95": 143
+        "p50": 91,
+        "p95": 197
       },
       "hybrid_rerank": {
-        "p50": 1338,
-        "p95": 1460
+        "p50": 1302,
+        "p95": 1684
       }
     },
     "worst5_hybrid_rerank": [
@@ -181,7 +231,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 54,
+          "latency_ms": 43,
           "retrieved": [
             [
               "Infosys",
@@ -229,7 +279,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 44,
+          "latency_ms": 46,
           "retrieved": [
             [
               "Infosys",
@@ -277,7 +327,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 92,
+          "latency_ms": 84,
           "retrieved": [
             [
               "Infosys",
@@ -325,7 +375,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1402,
+          "latency_ms": 1276,
           "retrieved": [
             [
               "Infosys",
@@ -394,7 +444,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 92,
+          "latency_ms": 71,
           "retrieved": [
             [
               "Infosys",
@@ -490,7 +540,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 91,
+          "latency_ms": 83,
           "retrieved": [
             [
               "Infosys",
@@ -538,7 +588,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1203,
+          "latency_ms": 1094,
           "retrieved": [
             [
               "Infosys",
@@ -599,7 +649,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 74,
+          "latency_ms": 51,
           "retrieved": [
             [
               "Infosys",
@@ -647,7 +697,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 142,
+          "latency_ms": 90,
           "retrieved": [
             [
               "Infosys",
@@ -695,7 +745,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 538,
+          "latency_ms": 353,
           "retrieved": [
             [
               "Infosys",
@@ -743,7 +793,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1338,
+          "latency_ms": 1280,
           "retrieved": [
             [
               "Infosys",
@@ -808,7 +858,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 344,
+          "latency_ms": 100,
           "retrieved": [
             [
               "TCS",
@@ -856,7 +906,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 440,
+          "latency_ms": 84,
           "retrieved": [
             [
               "HCLTech",
@@ -904,7 +954,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 143,
+          "latency_ms": 89,
           "retrieved": [
             [
               "TCS",
@@ -952,7 +1002,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1294,
+          "latency_ms": 1197,
           "retrieved": [
             [
               "Wipro",
@@ -1013,7 +1063,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 57,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Infosys",
@@ -1061,7 +1111,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 42,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Infosys",
@@ -1109,7 +1159,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 109,
+          "latency_ms": 78,
           "retrieved": [
             [
               "Infosys",
@@ -1157,7 +1207,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1230,
+          "latency_ms": 1136,
           "retrieved": [
             [
               "Infosys",
@@ -1218,7 +1268,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 68,
+          "latency_ms": 58,
           "retrieved": [
             [
               "Infosys",
@@ -1266,7 +1316,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 45,
+          "latency_ms": 41,
           "retrieved": [
             [
               "Infosys",
@@ -1314,7 +1364,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 106,
+          "latency_ms": 90,
           "retrieved": [
             [
               "Infosys",
@@ -1362,7 +1412,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1304,
+          "latency_ms": 1164,
           "retrieved": [
             [
               "Infosys",
@@ -1531,7 +1581,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 83,
+          "latency_ms": 81,
           "retrieved": [
             [
               "Infosys",
@@ -1579,7 +1629,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1300,
+          "latency_ms": 1234,
           "retrieved": [
             [
               "Infosys",
@@ -1640,7 +1690,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 235,
+          "latency_ms": 129,
           "retrieved": [
             [
               "TCS",
@@ -1688,7 +1738,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 795,
+          "latency_ms": 732,
           "retrieved": [
             [
               "Infosys",
@@ -1736,7 +1786,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 132,
+          "latency_ms": 175,
           "retrieved": [
             [
               "Infosys",
@@ -1784,7 +1834,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1317,
+          "latency_ms": 1264,
           "retrieved": [
             [
               "Infosys",
@@ -1849,7 +1899,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 79,
+          "latency_ms": 57,
           "retrieved": [
             [
               "Infosys",
@@ -1897,7 +1947,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 40,
+          "latency_ms": 46,
           "retrieved": [
             [
               "Infosys",
@@ -1945,7 +1995,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 81,
+          "latency_ms": 82,
           "retrieved": [
             [
               "Infosys",
@@ -1993,7 +2043,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1252,
+          "latency_ms": 1141,
           "retrieved": [
             [
               "Infosys",
@@ -2058,7 +2108,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 84,
+          "latency_ms": 68,
           "retrieved": [
             [
               "Infosys",
@@ -2154,7 +2204,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 134,
+          "latency_ms": 79,
           "retrieved": [
             [
               "Infosys",
@@ -2202,7 +2252,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1267,
+          "latency_ms": 1171,
           "retrieved": [
             [
               "Infosys",
@@ -2271,7 +2321,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 81,
+          "latency_ms": 70,
           "retrieved": [
             [
               "Infosys",
@@ -2319,7 +2369,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 42,
+          "latency_ms": 87,
           "retrieved": [
             [
               "Infosys",
@@ -2367,7 +2417,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 88,
+          "latency_ms": 107,
           "retrieved": [
             [
               "Infosys",
@@ -2415,7 +2465,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1285,
+          "latency_ms": 1136,
           "retrieved": [
             [
               "Infosys",
@@ -2476,7 +2526,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 144,
+          "latency_ms": 100,
           "retrieved": [
             [
               "HCLTech",
@@ -2524,7 +2574,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 150,
+          "latency_ms": 132,
           "retrieved": [
             [
               "HCLTech",
@@ -2572,7 +2622,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 223,
+          "latency_ms": 212,
           "retrieved": [
             [
               "Wipro",
@@ -2620,7 +2670,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1394,
+          "latency_ms": 1321,
           "retrieved": [
             [
               "HCLTech",
@@ -2685,7 +2735,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 63,
+          "latency_ms": 56,
           "retrieved": [
             [
               "Infosys",
@@ -2733,7 +2783,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 38,
           "retrieved": [
             [
               "Infosys",
@@ -2781,7 +2831,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 83,
+          "latency_ms": 78,
           "retrieved": [
             [
               "Infosys",
@@ -2829,7 +2879,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1310,
+          "latency_ms": 1300,
           "retrieved": [
             [
               "Infosys",
@@ -2890,7 +2940,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 70,
+          "latency_ms": 57,
           "retrieved": [
             [
               "Infosys",
@@ -2938,7 +2988,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 66,
+          "latency_ms": 62,
           "retrieved": [
             [
               "Infosys",
@@ -2986,7 +3036,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 104,
+          "latency_ms": 99,
           "retrieved": [
             [
               "Infosys",
@@ -3034,7 +3084,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1420,
+          "latency_ms": 1270,
           "retrieved": [
             [
               "Infosys",
@@ -3143,7 +3193,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 38,
           "retrieved": [
             [
               "Infosys",
@@ -3191,7 +3241,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 99,
+          "latency_ms": 75,
           "retrieved": [
             [
               "Infosys",
@@ -3239,7 +3289,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1207,
+          "latency_ms": 1215,
           "retrieved": [
             [
               "Infosys",
@@ -3300,7 +3350,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 74,
+          "latency_ms": 64,
           "retrieved": [
             [
               "Infosys",
@@ -3348,7 +3398,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 48,
+          "latency_ms": 45,
           "retrieved": [
             [
               "Infosys",
@@ -3396,7 +3446,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 134,
+          "latency_ms": 107,
           "retrieved": [
             [
               "Infosys",
@@ -3444,7 +3494,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1211,
+          "latency_ms": 1138,
           "retrieved": [
             [
               "Infosys",
@@ -3513,7 +3563,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 71,
+          "latency_ms": 57,
           "retrieved": [
             [
               "TCS",
@@ -3561,7 +3611,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 62,
+          "latency_ms": 74,
           "retrieved": [
             [
               "TCS",
@@ -3609,7 +3659,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 90,
+          "latency_ms": 85,
           "retrieved": [
             [
               "TCS",
@@ -3657,7 +3707,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1144,
+          "latency_ms": 1123,
           "retrieved": [
             [
               "TCS",
@@ -3722,7 +3772,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 81,
+          "latency_ms": 66,
           "retrieved": [
             [
               "TCS",
@@ -3770,7 +3820,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 78,
+          "latency_ms": 41,
           "retrieved": [
             [
               "TCS",
@@ -3818,7 +3868,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 97,
+          "latency_ms": 89,
           "retrieved": [
             [
               "TCS",
@@ -3866,7 +3916,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1343,
+          "latency_ms": 1204,
           "retrieved": [
             [
               "TCS",
@@ -3935,7 +3985,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 54,
+          "latency_ms": 39,
           "retrieved": [
             [
               "TCS",
@@ -3983,7 +4033,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 39,
+          "latency_ms": 41,
           "retrieved": [
             [
               "TCS",
@@ -4031,7 +4081,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 99,
+          "latency_ms": 97,
           "retrieved": [
             [
               "TCS",
@@ -4079,7 +4129,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1460,
+          "latency_ms": 1130,
           "retrieved": [
             [
               "TCS",
@@ -4144,7 +4194,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 66,
+          "latency_ms": 111,
           "retrieved": [
             [
               "TCS",
@@ -4192,7 +4242,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 128,
+          "latency_ms": 60,
           "retrieved": [
             [
               "TCS",
@@ -4240,7 +4290,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 90,
+          "latency_ms": 82,
           "retrieved": [
             [
               "TCS",
@@ -4288,7 +4338,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1411,
+          "latency_ms": 1223,
           "retrieved": [
             [
               "TCS",
@@ -4353,7 +4403,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 131,
+          "latency_ms": 80,
           "retrieved": [
             [
               "TCS",
@@ -4401,7 +4451,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 42,
           "retrieved": [
             [
               "TCS",
@@ -4437,7 +4487,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 106,
+          "latency_ms": 73,
           "retrieved": [
             [
               "TCS",
@@ -4485,7 +4535,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1391,
+          "latency_ms": 1406,
           "retrieved": [
             [
               "TCS",
@@ -4550,7 +4600,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 55,
+          "latency_ms": 48,
           "retrieved": [
             [
               "TCS",
@@ -4598,7 +4648,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 38,
+          "latency_ms": 35,
           "retrieved": [
             [
               "TCS",
@@ -4646,7 +4696,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 77,
+          "latency_ms": 76,
           "retrieved": [
             [
               "TCS",
@@ -4694,7 +4744,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1349,
+          "latency_ms": 1321,
           "retrieved": [
             [
               "TCS",
@@ -4755,7 +4805,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 58,
+          "latency_ms": 49,
           "retrieved": [
             [
               "TCS",
@@ -4803,7 +4853,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 43,
+          "latency_ms": 46,
           "retrieved": [
             [
               "TCS",
@@ -4851,7 +4901,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 90,
+          "latency_ms": 89,
           "retrieved": [
             [
               "TCS",
@@ -4899,7 +4949,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1272,
+          "latency_ms": 1281,
           "retrieved": [
             [
               "TCS",
@@ -4960,7 +5010,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 75,
+          "latency_ms": 63,
           "retrieved": [
             [
               "TCS",
@@ -5008,7 +5058,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 39,
+          "latency_ms": 48,
           "retrieved": [
             [
               "TCS",
@@ -5056,7 +5106,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 82,
+          "latency_ms": 197,
           "retrieved": [
             [
               "TCS",
@@ -5104,7 +5154,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1297,
+          "latency_ms": 1351,
           "retrieved": [
             [
               "TCS",
@@ -5165,7 +5215,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 99,
+          "latency_ms": 68,
           "retrieved": [
             [
               "Wipro",
@@ -5213,7 +5263,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 72,
+          "latency_ms": 67,
           "retrieved": [
             [
               "Wipro",
@@ -5261,7 +5311,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 92,
+          "latency_ms": 94,
           "retrieved": [
             [
               "Wipro",
@@ -5309,7 +5359,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1360,
+          "latency_ms": 1392,
           "retrieved": [
             [
               "Wipro",
@@ -5374,7 +5424,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 74,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Wipro",
@@ -5422,7 +5472,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 51,
+          "latency_ms": 54,
           "retrieved": [
             [
               "Wipro",
@@ -5470,7 +5520,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 99,
+          "latency_ms": 93,
           "retrieved": [
             [
               "Wipro",
@@ -5518,7 +5568,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1692,
+          "latency_ms": 1709,
           "retrieved": [
             [
               "Wipro",
@@ -5587,7 +5637,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 65,
+          "latency_ms": 64,
           "retrieved": [
             [
               "Wipro",
@@ -5635,7 +5685,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 47,
+          "latency_ms": 43,
           "retrieved": [
             [
               "Wipro",
@@ -5683,7 +5733,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 88,
+          "latency_ms": 87,
           "retrieved": [
             [
               "Wipro",
@@ -5731,7 +5781,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1579,
+          "latency_ms": 1578,
           "retrieved": [
             [
               "Wipro",
@@ -5796,7 +5846,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 57,
+          "latency_ms": 47,
           "retrieved": [
             [
               "Wipro",
@@ -5844,7 +5894,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 64,
+          "latency_ms": 65,
           "retrieved": [
             [
               "Wipro",
@@ -5892,7 +5942,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 90,
+          "latency_ms": 88,
           "retrieved": [
             [
               "Wipro",
@@ -5940,7 +5990,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1410,
+          "latency_ms": 1298,
           "retrieved": [
             [
               "Wipro",
@@ -6001,7 +6051,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 86,
+          "latency_ms": 53,
           "retrieved": [
             [
               "Wipro",
@@ -6049,7 +6099,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Wipro",
@@ -6097,7 +6147,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 87,
+          "latency_ms": 138,
           "retrieved": [
             [
               "Wipro",
@@ -6145,7 +6195,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1429,
+          "latency_ms": 1327,
           "retrieved": [
             [
               "Wipro",
@@ -6206,7 +6256,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 48,
+          "latency_ms": 46,
           "retrieved": [
             [
               "Wipro",
@@ -6254,7 +6304,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 60,
+          "latency_ms": 42,
           "retrieved": [
             [
               "Wipro",
@@ -6302,7 +6352,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 86,
+          "latency_ms": 89,
           "retrieved": [
             [
               "Wipro",
@@ -6350,7 +6400,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1404,
+          "latency_ms": 1308,
           "retrieved": [
             [
               "Wipro",
@@ -6419,7 +6469,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 80,
+          "latency_ms": 56,
           "retrieved": [
             [
               "Wipro",
@@ -6467,7 +6517,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 72,
+          "latency_ms": 80,
           "retrieved": [
             [
               "Wipro",
@@ -6515,7 +6565,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 139,
+          "latency_ms": 128,
           "retrieved": [
             [
               "Wipro",
@@ -6563,7 +6613,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1348,
+          "latency_ms": 1311,
           "retrieved": [
             [
               "Wipro",
@@ -6624,7 +6674,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 53,
+          "latency_ms": 44,
           "retrieved": [
             [
               "Wipro",
@@ -6672,7 +6722,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 39,
           "retrieved": [
             [
               "Wipro",
@@ -6720,7 +6770,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 82,
+          "latency_ms": 84,
           "retrieved": [
             [
               "Wipro",
@@ -6768,7 +6818,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1369,
+          "latency_ms": 1204,
           "retrieved": [
             [
               "Wipro",
@@ -6814,6 +6864,5106 @@
           "rank_tol0": 1,
           "rank_tol1": 1,
           "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q040",
+      "type": "table",
+      "question": "What was HCLTech's consolidated revenue from operations in FY2026, in rupees crore?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 129
+        },
+        {
+          "company": "HCLTech",
+          "page": 115
+        },
+        {
+          "company": "HCLTech",
+          "page": 116
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 103,
+          "retrieved": [
+            [
+              "HCLTech",
+              124
+            ],
+            [
+              "HCLTech",
+              115
+            ],
+            [
+              "HCLTech",
+              118
+            ],
+            [
+              "HCLTech",
+              115
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              375
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              124
+            ],
+            [
+              "HCLTech",
+              117
+            ],
+            [
+              "HCLTech",
+              375
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 65,
+          "retrieved": [
+            [
+              "HCLTech",
+              127
+            ],
+            [
+              "HCLTech",
+              122
+            ],
+            [
+              "HCLTech",
+              122
+            ],
+            [
+              "HCLTech",
+              121
+            ],
+            [
+              "HCLTech",
+              120
+            ],
+            [
+              "HCLTech",
+              127
+            ],
+            [
+              "HCLTech",
+              367
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              114
+            ],
+            [
+              "HCLTech",
+              429
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 8,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 88,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              124
+            ],
+            [
+              "HCLTech",
+              115
+            ],
+            [
+              "HCLTech",
+              118
+            ],
+            [
+              "HCLTech",
+              115
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              375
+            ],
+            [
+              "HCLTech",
+              124
+            ],
+            [
+              "HCLTech",
+              117
+            ],
+            [
+              "HCLTech",
+              375
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1225,
+          "retrieved": [
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              13
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              115
+            ],
+            [
+              "HCLTech",
+              124
+            ],
+            [
+              "HCLTech",
+              115
+            ],
+            [
+              "HCLTech",
+              300
+            ],
+            [
+              "HCLTech",
+              57
+            ],
+            [
+              "HCLTech",
+              375
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q041",
+      "type": "fact",
+      "question": "What was HCLTech's profit after tax attributable to owners of the company in FY2026?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 12
+        },
+        {
+          "company": "HCLTech",
+          "page": 115
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 60,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              350
+            ],
+            [
+              "HCLTech",
+              411
+            ],
+            [
+              "HCLTech",
+              376
+            ],
+            [
+              "HCLTech",
+              335
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              114
+            ],
+            [
+              "HCLTech",
+              359
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              429
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 7,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 82,
+          "retrieved": [
+            [
+              "HCLTech",
+              338
+            ],
+            [
+              "HCLTech",
+              385
+            ],
+            [
+              "HCLTech",
+              414
+            ],
+            [
+              "HCLTech",
+              294
+            ],
+            [
+              "HCLTech",
+              309
+            ],
+            [
+              "HCLTech",
+              289
+            ],
+            [
+              "HCLTech",
+              367
+            ],
+            [
+              "HCLTech",
+              205
+            ],
+            [
+              "HCLTech",
+              293
+            ],
+            [
+              "HCLTech",
+              295
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 91,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              350
+            ],
+            [
+              "HCLTech",
+              411
+            ],
+            [
+              "HCLTech",
+              376
+            ],
+            [
+              "HCLTech",
+              335
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              114
+            ],
+            [
+              "HCLTech",
+              359
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              429
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 7,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1331,
+          "retrieved": [
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              12
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              114
+            ],
+            [
+              "HCLTech",
+              376
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              429
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q042",
+      "type": "fact",
+      "question": "What total dividend per share did HCLTech pay for FY2026?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 8
+        },
+        {
+          "company": "HCLTech",
+          "page": 301
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 58,
+          "retrieved": [
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              204
+            ],
+            [
+              "HCLTech",
+              404
+            ],
+            [
+              "HCLTech",
+              203
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              12
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 44,
+          "retrieved": [
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "HCLTech",
+              263
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              286
+            ],
+            [
+              "HCLTech",
+              448
+            ],
+            [
+              "HCLTech",
+              240
+            ],
+            [
+              "HCLTech",
+              454
+            ],
+            [
+              "HCLTech",
+              266
+            ],
+            [
+              "HCLTech",
+              287
+            ],
+            [
+              "HCLTech",
+              133
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 84,
+          "retrieved": [
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              204
+            ],
+            [
+              "HCLTech",
+              404
+            ],
+            [
+              "HCLTech",
+              203
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              12
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1302,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              114
+            ],
+            [
+              "HCLTech",
+              4
+            ],
+            [
+              "HCLTech",
+              129
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q043",
+      "type": "fact",
+      "question": "What was HCLTech's global workforce as of March 31, 2026?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 135
+        },
+        {
+          "company": "HCLTech",
+          "page": 94
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 88,
+          "retrieved": [
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              94
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              360
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              353
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 46,
+          "retrieved": [
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              457
+            ],
+            [
+              "HCLTech",
+              455
+            ],
+            [
+              "HCLTech",
+              456
+            ],
+            [
+              "HCLTech",
+              458
+            ],
+            [
+              "HCLTech",
+              323
+            ],
+            [
+              "HCLTech",
+              454
+            ],
+            [
+              "HCLTech",
+              454
+            ],
+            [
+              "HCLTech",
+              459
+            ],
+            [
+              "HCLTech",
+              343
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 103,
+          "retrieved": [
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              94
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              360
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              353
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1659,
+          "retrieved": [
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              94
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              134
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              434
+            ],
+            [
+              "HCLTech",
+              353
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q044",
+      "type": "fact",
+      "question": "What was HCLTech's IT services voluntary attrition rate in FY2026?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 94
+        },
+        {
+          "company": "HCLTech",
+          "page": 135
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 54,
+          "retrieved": [
+            [
+              "HCLTech",
+              94
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              432
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              430
+            ],
+            [
+              "HCLTech",
+              350
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              62
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 41,
+          "retrieved": [
+            [
+              "HCLTech",
+              294
+            ],
+            [
+              "HCLTech",
+              20
+            ],
+            [
+              "HCLTech",
+              295
+            ],
+            [
+              "HCLTech",
+              33
+            ],
+            [
+              "HCLTech",
+              294
+            ],
+            [
+              "HCLTech",
+              19
+            ],
+            [
+              "HCLTech",
+              42
+            ],
+            [
+              "HCLTech",
+              19
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              87
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 95,
+          "retrieved": [
+            [
+              "HCLTech",
+              94
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              432
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              430
+            ],
+            [
+              "HCLTech",
+              350
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              62
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1684,
+          "retrieved": [
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              94
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              217
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q045",
+      "type": "fact",
+      "question": "What share of HCLTech's workforce were women in FY2026 (highlights)?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 57
+        },
+        {
+          "company": "HCLTech",
+          "page": 13
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 80,
+          "retrieved": [
+            [
+              "HCLTech",
+              64
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              259
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              83
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 38,
+          "retrieved": [
+            [
+              "HCLTech",
+              64
+            ],
+            [
+              "HCLTech",
+              156
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              136
+            ],
+            [
+              "HCLTech",
+              157
+            ],
+            [
+              "HCLTech",
+              148
+            ],
+            [
+              "HCLTech",
+              49
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              148
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 91,
+          "retrieved": [
+            [
+              "HCLTech",
+              64
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              259
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              85
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1786,
+          "retrieved": [
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              61
+            ],
+            [
+              "HCLTech",
+              62
+            ],
+            [
+              "HCLTech",
+              64
+            ],
+            [
+              "HCLTech",
+              25
+            ],
+            [
+              "HCLTech",
+              225
+            ],
+            [
+              "HCLTech",
+              135
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              135
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q046",
+      "type": "table",
+      "question": "How many HCLTech clients contributed more than $100 million in revenue in FY26?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 95
+        },
+        {
+          "company": "HCLTech",
+          "page": 13
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 63,
+          "retrieved": [
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              12
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              93
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 42,
+          "retrieved": [
+            [
+              "HCLTech",
+              437
+            ],
+            [
+              "HCLTech",
+              356
+            ],
+            [
+              "HCLTech",
+              355
+            ],
+            [
+              "HCLTech",
+              436
+            ],
+            [
+              "HCLTech",
+              357
+            ],
+            [
+              "HCLTech",
+              435
+            ],
+            [
+              "HCLTech",
+              354
+            ],
+            [
+              "HCLTech",
+              434
+            ],
+            [
+              "HCLTech",
+              355
+            ],
+            [
+              "HCLTech",
+              438
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 97,
+          "retrieved": [
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              12
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              93
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1588,
+          "retrieved": [
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              129
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q047",
+      "type": "explanation",
+      "question": "Why did HCLTech's consolidated net profit ratio fall in FY26?",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 123
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 72,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              98
+            ],
+            [
+              "HCLTech",
+              114
+            ],
+            [
+              "HCLTech",
+              12
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 44,
+          "retrieved": [
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              448
+            ],
+            [
+              "HCLTech",
+              454
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              367
+            ],
+            [
+              "HCLTech",
+              362
+            ],
+            [
+              "HCLTech",
+              122
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              363
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 91,
+          "retrieved": [
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              362
+            ],
+            [
+              "HCLTech",
+              363
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              97
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1390,
+          "retrieved": [
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              99
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              4
+            ],
+            [
+              "HCLTech",
+              363
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 8,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q050",
+      "type": "table",
+      "question": "What was Tech Mahindra's consolidated revenue from operations in FY2026, in rupees million?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 555
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 253
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 22
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 73,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              470
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              319
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 116,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              321
+            ],
+            [
+              "Tech Mahindra",
+              320
+            ],
+            [
+              "Tech Mahindra",
+              572
+            ],
+            [
+              "Tech Mahindra",
+              323
+            ],
+            [
+              "Tech Mahindra",
+              322
+            ],
+            [
+              "Tech Mahindra",
+              543
+            ],
+            [
+              "Tech Mahindra",
+              544
+            ],
+            [
+              "Tech Mahindra",
+              460
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Tech Mahindra",
+              655
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 107,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              470
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              319
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1425,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              533
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              531
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q051",
+      "type": "fact",
+      "question": "What was Tech Mahindra's net profit for FY2026, in rupees crore?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 19
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 22
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 58,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              319
+            ],
+            [
+              "Tech Mahindra",
+              470
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              486
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 44,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              555
+            ],
+            [
+              "Tech Mahindra",
+              556
+            ],
+            [
+              "Tech Mahindra",
+              94
+            ],
+            [
+              "Tech Mahindra",
+              587
+            ],
+            [
+              "Tech Mahindra",
+              564
+            ],
+            [
+              "Tech Mahindra",
+              22
+            ],
+            [
+              "Tech Mahindra",
+              575
+            ],
+            [
+              "Tech Mahindra",
+              19
+            ],
+            [
+              "Tech Mahindra",
+              445
+            ],
+            [
+              "Tech Mahindra",
+              446
+            ]
+          ],
+          "rank_tol0": 6,
+          "rank_tol1": 6,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 104,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              556
+            ],
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              319
+            ],
+            [
+              "Tech Mahindra",
+              470
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              486
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1295,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              531
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              556
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              486
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              556
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q052",
+      "type": "fact",
+      "question": "What was Tech Mahindra's total dividend per share for FY2026?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 255
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 19
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 33
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 66,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              486
+            ],
+            [
+              "Tech Mahindra",
+              665
+            ],
+            [
+              "Tech Mahindra",
+              283
+            ],
+            [
+              "Tech Mahindra",
+              477
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 43,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              540
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              659
+            ],
+            [
+              "Tech Mahindra",
+              276
+            ],
+            [
+              "Tech Mahindra",
+              594
+            ],
+            [
+              "Tech Mahindra",
+              279
+            ],
+            [
+              "Tech Mahindra",
+              409
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ],
+            [
+              "Tech Mahindra",
+              276
+            ],
+            [
+              "Tech Mahindra",
+              409
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 2,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 95,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              486
+            ],
+            [
+              "Tech Mahindra",
+              665
+            ],
+            [
+              "Tech Mahindra",
+              283
+            ],
+            [
+              "Tech Mahindra",
+              477
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1525,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              477
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              589
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q053",
+      "type": "fact",
+      "question": "What was Tech Mahindra's global headcount as on March 31, 2026?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 324
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 118
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 23
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 81,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              657
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              586
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 58,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              634
+            ],
+            [
+              "Tech Mahindra",
+              320
+            ],
+            [
+              "Tech Mahindra",
+              515
+            ],
+            [
+              "Tech Mahindra",
+              608
+            ],
+            [
+              "Tech Mahindra",
+              489
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Tech Mahindra",
+              625
+            ],
+            [
+              "Tech Mahindra",
+              588
+            ],
+            [
+              "Tech Mahindra",
+              587
+            ],
+            [
+              "Tech Mahindra",
+              608
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 86,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              657
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              586
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1452,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              475
+            ],
+            [
+              "Tech Mahindra",
+              529
+            ],
+            [
+              "Tech Mahindra",
+              360
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              477
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q054",
+      "type": "fact",
+      "question": "What was Tech Mahindra's LTM IT attrition in FY2026?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 324
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 122
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 25
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 78,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              6
+            ],
+            [
+              "Tech Mahindra",
+              317
+            ],
+            [
+              "Tech Mahindra",
+              18
+            ],
+            [
+              "Tech Mahindra",
+              87
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              56
+            ],
+            [
+              "Tech Mahindra",
+              20
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 38,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              317
+            ],
+            [
+              "Tech Mahindra",
+              123
+            ],
+            [
+              "Tech Mahindra",
+              123
+            ],
+            [
+              "Tech Mahindra",
+              137
+            ],
+            [
+              "Tech Mahindra",
+              122
+            ],
+            [
+              "Tech Mahindra",
+              60
+            ],
+            [
+              "Tech Mahindra",
+              324
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ],
+            [
+              "Tech Mahindra",
+              25
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 80,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              123
+            ],
+            [
+              "Tech Mahindra",
+              56
+            ],
+            [
+              "Tech Mahindra",
+              122
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              6
+            ],
+            [
+              "Tech Mahindra",
+              317
+            ],
+            [
+              "Tech Mahindra",
+              18
+            ],
+            [
+              "Tech Mahindra",
+              87
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1244,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              122
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              18
+            ],
+            [
+              "Tech Mahindra",
+              56
+            ],
+            [
+              "Tech Mahindra",
+              20
+            ],
+            [
+              "Tech Mahindra",
+              6
+            ],
+            [
+              "Tech Mahindra",
+              205
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q055",
+      "type": "table",
+      "question": "What percentage of Tech Mahindra's total workforce were women in FY26?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 88
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 118
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 45,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              88
+            ],
+            [
+              "Tech Mahindra",
+              124
+            ],
+            [
+              "Tech Mahindra",
+              23
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ],
+            [
+              "Tech Mahindra",
+              380
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              586
+            ],
+            [
+              "Tech Mahindra",
+              124
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              129
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 59,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              133
+            ],
+            [
+              "Tech Mahindra",
+              409
+            ],
+            [
+              "Tech Mahindra",
+              233
+            ],
+            [
+              "Tech Mahindra",
+              409
+            ],
+            [
+              "Tech Mahindra",
+              243
+            ],
+            [
+              "Tech Mahindra",
+              425
+            ],
+            [
+              "Tech Mahindra",
+              411
+            ],
+            [
+              "Tech Mahindra",
+              155
+            ],
+            [
+              "Tech Mahindra",
+              88
+            ],
+            [
+              "Tech Mahindra",
+              243
+            ]
+          ],
+          "rank_tol0": 9,
+          "rank_tol1": 9,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 87,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              88
+            ],
+            [
+              "Tech Mahindra",
+              124
+            ],
+            [
+              "Tech Mahindra",
+              23
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ],
+            [
+              "Tech Mahindra",
+              380
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              586
+            ],
+            [
+              "Tech Mahindra",
+              124
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              129
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1254,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              88
+            ],
+            [
+              "Tech Mahindra",
+              23
+            ],
+            [
+              "Tech Mahindra",
+              160
+            ],
+            [
+              "Tech Mahindra",
+              122
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              405
+            ],
+            [
+              "Tech Mahindra",
+              380
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q056",
+      "type": "fact",
+      "question": "How much did Tech Mahindra spend on CSR in financial year 2025-26?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 272
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 311
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 43,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              489
+            ],
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ],
+            [
+              "Tech Mahindra",
+              349
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ],
+            [
+              "Tech Mahindra",
+              531
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 75,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              253
+            ],
+            [
+              "Tech Mahindra",
+              442
+            ],
+            [
+              "Tech Mahindra",
+              302
+            ],
+            [
+              "Tech Mahindra",
+              552
+            ],
+            [
+              "Tech Mahindra",
+              575
+            ],
+            [
+              "Tech Mahindra",
+              553
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              311
+            ],
+            [
+              "Tech Mahindra",
+              443
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 8,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 111,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              489
+            ],
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ],
+            [
+              "Tech Mahindra",
+              349
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1411,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              349
+            ],
+            [
+              "Tech Mahindra",
+              489
+            ],
+            [
+              "Tech Mahindra",
+              531
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              646
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              556
+            ],
+            [
+              "Tech Mahindra",
+              488
+            ],
+            [
+              "Tech Mahindra",
+              626
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q057",
+      "type": "explanation",
+      "question": "What is Tech Mahindra's policy for distributing cash to shareholders?",
+      "relevant": [
+        {
+          "company": "Tech Mahindra",
+          "page": 279
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 79,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              279
+            ],
+            [
+              "Tech Mahindra",
+              450
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ],
+            [
+              "Tech Mahindra",
+              298
+            ],
+            [
+              "Tech Mahindra",
+              593
+            ],
+            [
+              "Tech Mahindra",
+              560
+            ],
+            [
+              "Tech Mahindra",
+              370
+            ],
+            [
+              "Tech Mahindra",
+              372
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 43,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              386
+            ],
+            [
+              "Tech Mahindra",
+              386
+            ],
+            [
+              "Tech Mahindra",
+              386
+            ],
+            [
+              "Tech Mahindra",
+              386
+            ],
+            [
+              "Tech Mahindra",
+              387
+            ],
+            [
+              "Tech Mahindra",
+              279
+            ],
+            [
+              "Tech Mahindra",
+              387
+            ],
+            [
+              "Tech Mahindra",
+              387
+            ],
+            [
+              "Tech Mahindra",
+              387
+            ],
+            [
+              "Tech Mahindra",
+              387
+            ]
+          ],
+          "rank_tol0": 6,
+          "rank_tol1": 6,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 81,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              279
+            ],
+            [
+              "Tech Mahindra",
+              450
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ],
+            [
+              "Tech Mahindra",
+              298
+            ],
+            [
+              "Tech Mahindra",
+              593
+            ],
+            [
+              "Tech Mahindra",
+              560
+            ],
+            [
+              "Tech Mahindra",
+              370
+            ],
+            [
+              "Tech Mahindra",
+              372
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1236,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              279
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              374
+            ],
+            [
+              "Tech Mahindra",
+              450
+            ],
+            [
+              "Tech Mahindra",
+              560
+            ],
+            [
+              "Tech Mahindra",
+              298
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              372
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q060",
+      "type": "comparison",
+      "question": "Compare the consolidated revenue from operations of TCS and HCLTech in FY2026.",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 36
+        },
+        {
+          "company": "TCS",
+          "page": 167
+        },
+        {
+          "company": "HCLTech",
+          "page": 129
+        },
+        {
+          "company": "HCLTech",
+          "page": 116
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 50,
+          "retrieved": [
+            [
+              "HCLTech",
+              335
+            ],
+            [
+              "HCLTech",
+              411
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              13
+            ],
+            [
+              "HCLTech",
+              12
+            ],
+            [
+              "HCLTech",
+              412
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 78,
+          "retrieved": [
+            [
+              "TCS",
+              157
+            ],
+            [
+              "HCLTech",
+              367
+            ],
+            [
+              "TCS",
+              158
+            ],
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "TCS",
+              240
+            ],
+            [
+              "HCLTech",
+              448
+            ],
+            [
+              "HCLTech",
+              454
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "TCS",
+              117
+            ],
+            [
+              "HCLTech",
+              45
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 8,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 96,
+          "retrieved": [
+            [
+              "HCLTech",
+              123
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "HCLTech",
+              335
+            ],
+            [
+              "HCLTech",
+              411
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              13
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1461,
+          "retrieved": [
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              116
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              13
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              12
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q061",
+      "type": "comparison",
+      "question": "Compare the consolidated revenue from operations of Infosys and Tech Mahindra in FY2026, in rupees crore.",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 33
+        },
+        {
+          "company": "Infosys",
+          "page": 10
+        },
+        {
+          "company": "Infosys",
+          "page": 16
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 19
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 555
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 45,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              470
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              496
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 92,
+          "retrieved": [
+            [
+              "Infosys",
+              37
+            ],
+            [
+              "Tech Mahindra",
+              322
+            ],
+            [
+              "Infosys",
+              80
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              33
+            ],
+            [
+              "Tech Mahindra",
+              572
+            ],
+            [
+              "Infosys",
+              276
+            ],
+            [
+              "Infosys",
+              334
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              78
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 5,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 119,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              470
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              601
+            ],
+            [
+              "Tech Mahindra",
+              496
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1598,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              22
+            ],
+            [
+              "Tech Mahindra",
+              476
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Tech Mahindra",
+              657
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q062",
+      "type": "comparison",
+      "question": "Compare the year-end employee numbers of HCLTech and Tech Mahindra for FY2026.",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 135
+        },
+        {
+          "company": "HCLTech",
+          "page": 94
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 324
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 118
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 49,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              124
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              640
+            ],
+            [
+              "Tech Mahindra",
+              87
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              129
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 116,
+          "retrieved": [
+            [
+              "HCLTech",
+              244
+            ],
+            [
+              "HCLTech",
+              244
+            ],
+            [
+              "HCLTech",
+              260
+            ],
+            [
+              "Tech Mahindra",
+              395
+            ],
+            [
+              "Tech Mahindra",
+              395
+            ],
+            [
+              "HCLTech",
+              247
+            ],
+            [
+              "HCLTech",
+              244
+            ],
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "Tech Mahindra",
+              130
+            ],
+            [
+              "Tech Mahindra",
+              380
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 119,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              124
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              640
+            ],
+            [
+              "Tech Mahindra",
+              87
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              129
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1304,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              640
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              160
+            ],
+            [
+              "Tech Mahindra",
+              666
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "Tech Mahindra",
+              87
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              505
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q063",
+      "type": "comparison",
+      "question": "Compare the headcount of TCS and Infosys at the end of FY2026.",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 69
+        },
+        {
+          "company": "TCS",
+          "page": 25
+        },
+        {
+          "company": "Infosys",
+          "page": 10
+        },
+        {
+          "company": "Infosys",
+          "page": 143
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 67,
+          "retrieved": [
+            [
+              "TCS",
+              46
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              5
+            ],
+            [
+              "TCS",
+              25
+            ],
+            [
+              "TCS",
+              106
+            ],
+            [
+              "TCS",
+              137
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              23
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 60,
+          "retrieved": [
+            [
+              "TCS",
+              214
+            ],
+            [
+              "Infosys",
+              367
+            ],
+            [
+              "Infosys",
+              325
+            ],
+            [
+              "TCS",
+              296
+            ],
+            [
+              "TCS",
+              297
+            ],
+            [
+              "Infosys",
+              246
+            ],
+            [
+              "Infosys",
+              325
+            ],
+            [
+              "Infosys",
+              245
+            ],
+            [
+              "TCS",
+              238
+            ],
+            [
+              "Infosys",
+              237
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 91,
+          "retrieved": [
+            [
+              "TCS",
+              46
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              5
+            ],
+            [
+              "TCS",
+              25
+            ],
+            [
+              "TCS",
+              106
+            ],
+            [
+              "TCS",
+              137
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              23
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1321,
+          "retrieved": [
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              137
+            ],
+            [
+              "TCS",
+              56
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              5
+            ],
+            [
+              "TCS",
+              46
+            ],
+            [
+              "TCS",
+              26
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "TCS",
+              106
+            ],
+            [
+              "TCS",
+              26
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 7,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q064",
+      "type": "comparison",
+      "question": "Compare attrition at Wipro and HCLTech in FY2026.",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 45
+        },
+        {
+          "company": "HCLTech",
+          "page": 94
+        },
+        {
+          "company": "HCLTech",
+          "page": 135
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 61,
+          "retrieved": [
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              42
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              96
+            ],
+            [
+              "HCLTech",
+              25
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "Wipro",
+              41
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 1,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 57,
+          "retrieved": [
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "Wipro",
+              113
+            ],
+            [
+              "Wipro",
+              139
+            ],
+            [
+              "Wipro",
+              114
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              113
+            ],
+            [
+              "Wipro",
+              113
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              114
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 255,
+          "retrieved": [
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              42
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "HCLTech",
+              96
+            ],
+            [
+              "HCLTech",
+              25
+            ],
+            [
+              "HCLTech",
+              85
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "Wipro",
+              41
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 1,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1686,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "HCLTech",
+              25
+            ],
+            [
+              "Wipro",
+              40
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              270
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "Wipro",
+              41
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "HCLTech",
+              93
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 10,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q065",
+      "type": "comparison",
+      "question": "Compare the IT attrition of TCS and Tech Mahindra in FY2026.",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 55
+        },
+        {
+          "company": "TCS",
+          "page": 25
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 324
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 122
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 48,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              281
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              286
+            ],
+            [
+              "Tech Mahindra",
+              282
+            ],
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              280
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 53,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              322
+            ],
+            [
+              "Tech Mahindra",
+              323
+            ],
+            [
+              "Tech Mahindra",
+              324
+            ],
+            [
+              "Tech Mahindra",
+              320
+            ],
+            [
+              "Tech Mahindra",
+              322
+            ],
+            [
+              "Tech Mahindra",
+              321
+            ],
+            [
+              "Tech Mahindra",
+              94
+            ],
+            [
+              "Tech Mahindra",
+              137
+            ],
+            [
+              "Tech Mahindra",
+              123
+            ],
+            [
+              "Tech Mahindra",
+              317
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 2,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 109,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              505
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ],
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              281
+            ],
+            [
+              "Tech Mahindra",
+              590
+            ],
+            [
+              "Tech Mahindra",
+              286
+            ],
+            [
+              "Tech Mahindra",
+              282
+            ],
+            [
+              "Tech Mahindra",
+              626
+            ],
+            [
+              "Tech Mahindra",
+              280
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1367,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              314
+            ],
+            [
+              "Tech Mahindra",
+              313
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "Tech Mahindra",
+              20
+            ],
+            [
+              "Tech Mahindra",
+              282
+            ],
+            [
+              "Tech Mahindra",
+              87
+            ],
+            [
+              "Tech Mahindra",
+              129
+            ],
+            [
+              "Tech Mahindra",
+              280
+            ],
+            [
+              "Tech Mahindra",
+              281
+            ],
+            [
+              "Tech Mahindra",
+              624
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q066",
+      "type": "comparison",
+      "question": "Compare the total dividend per share of TCS and Infosys for FY2026.",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 24
+        },
+        {
+          "company": "TCS",
+          "page": 36
+        },
+        {
+          "company": "TCS",
+          "page": 70
+        },
+        {
+          "company": "Infosys",
+          "page": 38
+        },
+        {
+          "company": "Infosys",
+          "page": 18
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 69,
+          "retrieved": [
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              362
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              353
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              119
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 42,
+          "retrieved": [
+            [
+              "Infosys",
+              367
+            ],
+            [
+              "TCS",
+              99
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              238
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              172
+            ],
+            [
+              "TCS",
+              133
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 108,
+          "retrieved": [
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              362
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              353
+            ],
+            [
+              "TCS",
+              36
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1355,
+          "retrieved": [
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              352
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              36
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q067",
+      "type": "comparison",
+      "question": "Compare the total dividend per share of HCLTech and Tech Mahindra for FY2026.",
+      "relevant": [
+        {
+          "company": "HCLTech",
+          "page": 8
+        },
+        {
+          "company": "HCLTech",
+          "page": 301
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 255
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 19
+        },
+        {
+          "company": "Tech Mahindra",
+          "page": 33
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 68,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "Tech Mahindra",
+              477
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "HCLTech",
+              4
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              665
+            ],
+            [
+              "HCLTech",
+              129
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 45,
+          "retrieved": [
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "Tech Mahindra",
+              659
+            ],
+            [
+              "Tech Mahindra",
+              540
+            ],
+            [
+              "Tech Mahindra",
+              276
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              409
+            ],
+            [
+              "Tech Mahindra",
+              279
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ],
+            [
+              "Tech Mahindra",
+              594
+            ],
+            [
+              "Tech Mahindra",
+              409
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 5,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 96,
+          "retrieved": [
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "Tech Mahindra",
+              477
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "HCLTech",
+              4
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "Tech Mahindra",
+              665
+            ],
+            [
+              "HCLTech",
+              129
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1346,
+          "retrieved": [
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "Tech Mahindra",
+              477
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              589
+            ],
+            [
+              "HCLTech",
+              84
+            ],
+            [
+              "Tech Mahindra",
+              315
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
+              "HCLTech",
+              4
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": false
         }
       }
     }
