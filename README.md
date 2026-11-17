@@ -79,7 +79,7 @@ and [`eval/results/answers.md`](eval/results/answers.md).
 
 **Answers** (full agent, gpt-oss-120b; LLM judge gpt-oss-20b for explanation and comparison rows):
 
-- Answer correctness: **66.1%**. This rises to **67.9%** when the three questions that name no
+- Answer correctness: **66.1% of 56 answerable questions**. This rises to **67.9%** when the three questions that name no
   company are run with the company filter set, as a user would set it in the UI.
 - Unanswerable questions refused: **100%** (11 of 11).
 - Citations pointing to a retrieved passage: **100%**; on the expected page 60.8% exact, 62.7%
