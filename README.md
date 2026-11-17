@@ -122,7 +122,7 @@ and [`eval/results/answers.md`](eval/results/answers.md).
 | LLMs | Groq: gpt-oss-120b (answers), gpt-oss-20b (classifier, judge) | free rate limits; a client-side tokens-per-minute limiter and retries |
 | Agent, tracing | LangGraph, Langfuse | Langfuse cloud free tier, optional |
 | App | FastAPI (NDJSON streaming), plain HTML/CSS/JS | 10 questions per hour per IP |
-| Deploy | Docker (CPU-only PyTorch), Google Cloud Run (not deployed yet) | see [`docs/DEPLOY.md`](docs/DEPLOY.md) |
+| Run | locally or in Docker (CPU-only PyTorch image) | not hosted; optional guide in [`docs/DEPLOY.md`](docs/DEPLOY.md) |
 | Tooling | uv, ruff, pytest, GitHub Actions | |
 
 ## Run locally (Windows, PowerShell)

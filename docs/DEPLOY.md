@@ -1,4 +1,8 @@
-# Deploying FinSight to Google Cloud Run
+# Deploying FinSight to Google Cloud Run (optional)
+
+> **FinSight is not deployed.** It runs locally or in Docker (see the README). This guide is
+> for anyone who wants to host it. Cloud Run needs a billing account, and storing the image in
+> Artifact Registry costs a few cents a month.
 
 The service runs only the API and frontend (`uvicorn finsight.api.main:app`, port 7860).
 Ingestion runs locally; the Supabase database is already populated.
@@ -71,7 +75,8 @@ Measured: first build ~5.5 min; ~2.4 GB on disk inside the image (Docker Desktop
 ~5.9 GB because its store counts compressed and unpacked layers).
 
 ## Notes
-- Supabase pauses after 7 days without traffic; the keep-alive workflow (Phase 6) pings
-  `/api/health` daily, which also wakes the service (one cold start per day).
+- Supabase pauses after 7 days without traffic; the keep-alive workflow
+  (`.github/workflows/keep-alive.yml`) runs a light query against the database every Monday. It
+  does not call the Cloud Run service, so the service still scales to zero.
 - Docling (ingestion only) is still installed in the image; moving it to an optional
   dependency group would shrink the image.
