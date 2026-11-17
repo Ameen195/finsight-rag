@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      # uv.lock resolves the CUDA build of PyTorch on Linux (several GB); the tests run on CPU,
+      # so install the CPU wheels of the same locked versions (same trick as the Dockerfile).
+      - name: Install dependencies (CPU PyTorch)
+        run: |
+          set -eux
+          uv venv --python 3.12
+          uv export --frozen --no-emit-project --no-hashes -o req.txt
+          torch_v="$(sed -n 's/^torch==\([^ ;]*\).*/\1/p' req.txt)"
+          vision_v="$(sed -n 's/^torchvision==\([^ ;]*\).*/\1/p' req.txt)"
+          grep -vE '^(torch|torchvision|triton|nvidia-[a-z0-9-]+)==' req.txt > req-cpu.txt
+          uv pip install --index-url https://download.pytorch.org/whl/cpu \
+            "torch==${torch_v}" "torchvision==${vision_v}"
+          uv pip install -r req-cpu.txt
+          uv pip install --no-deps -e .
+      - name: Ruff
+        run: |
+          uv run --no-sync ruff check .
+          uv run --no-sync ruff format --check .
+      # tests are offline: no secrets, no database, no Groq calls
+      - name: Tests
+        run: uv run --no-sync pytest -q
