@@ -66,52 +66,52 @@
     },
     "comparison": {
       "dense": {
-        "hit@1": 0.125,
+        "hit@1": 0.375,
         "hit@5": 0.5,
-        "mrr@10": 0.22916666666666666,
-        "all_companies@10": 0.375
+        "mrr@10": 0.43452380952380953,
+        "all_companies@10": 0.25
       },
       "keyword": {
         "hit@1": 0.0,
-        "hit@5": 0.375,
-        "mrr@10": 0.12395833333333334,
-        "all_companies@10": 0.125
+        "hit@5": 0.125,
+        "mrr@10": 0.09285714285714286,
+        "all_companies@10": 0.25
       },
       "hybrid": {
-        "hit@1": 0.0,
+        "hit@1": 0.125,
         "hit@5": 0.5,
-        "mrr@10": 0.21875,
+        "mrr@10": 0.23333333333333334,
         "all_companies@10": 0.375
       },
       "hybrid_rerank": {
-        "hit@1": 0.25,
-        "hit@5": 0.375,
-        "mrr@10": 0.28125,
-        "all_companies@10": 0.125
+        "hit@1": 0.375,
+        "hit@5": 0.5,
+        "mrr@10": 0.4,
+        "all_companies@10": 0.25
       }
     },
     "by_type": {
       "comparison": {
         "n": 8,
         "dense": {
-          "hit@1": 0.125,
+          "hit@1": 0.375,
           "hit@5": 0.5,
-          "mrr@10": 0.22916666666666666
+          "mrr@10": 0.43452380952380953
         },
         "keyword": {
           "hit@1": 0.0,
-          "hit@5": 0.375,
-          "mrr@10": 0.12395833333333334
+          "hit@5": 0.125,
+          "mrr@10": 0.09285714285714286
         },
         "hybrid": {
-          "hit@1": 0.0,
+          "hit@1": 0.125,
           "hit@5": 0.5,
-          "mrr@10": 0.21875
+          "mrr@10": 0.23333333333333334
         },
         "hybrid_rerank": {
-          "hit@1": 0.25,
-          "hit@5": 0.375,
-          "mrr@10": 0.28125
+          "hit@1": 0.375,
+          "hit@5": 0.5,
+          "mrr@10": 0.4
         }
       },
       "explanation": {
@@ -186,20 +186,20 @@
     },
     "latency_ms": {
       "dense": {
-        "p50": 61,
-        "p95": 100
+        "p50": 63,
+        "p95": 114
       },
       "keyword": {
-        "p50": 46,
-        "p95": 116
+        "p50": 49,
+        "p95": 131
       },
       "hybrid": {
-        "p50": 91,
-        "p95": 197
+        "p50": 90,
+        "p95": 203
       },
       "hybrid_rerank": {
-        "p50": 1302,
-        "p95": 1684
+        "p50": 1249,
+        "p95": 2710
       }
     },
     "worst5_hybrid_rerank": [
@@ -231,7 +231,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 43,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Infosys",
@@ -327,7 +327,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 84,
+          "latency_ms": 87,
           "retrieved": [
             [
               "Infosys",
@@ -375,7 +375,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1276,
+          "latency_ms": 1282,
           "retrieved": [
             [
               "Infosys",
@@ -444,7 +444,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 71,
+          "latency_ms": 84,
           "retrieved": [
             [
               "Infosys",
@@ -492,7 +492,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 64,
+          "latency_ms": 68,
           "retrieved": [
             [
               "Infosys",
@@ -588,7 +588,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1094,
+          "latency_ms": 1147,
           "retrieved": [
             [
               "Infosys",
@@ -649,7 +649,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 51,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Infosys",
@@ -697,7 +697,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 90,
+          "latency_ms": 121,
           "retrieved": [
             [
               "Infosys",
@@ -745,7 +745,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 353,
+          "latency_ms": 667,
           "retrieved": [
             [
               "Infosys",
@@ -793,7 +793,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1280,
+          "latency_ms": 1210,
           "retrieved": [
             [
               "Infosys",
@@ -858,7 +858,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 100,
+          "latency_ms": 194,
           "retrieved": [
             [
               "TCS",
@@ -906,7 +906,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 84,
+          "latency_ms": 224,
           "retrieved": [
             [
               "HCLTech",
@@ -954,7 +954,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 89,
+          "latency_ms": 132,
           "retrieved": [
             [
               "TCS",
@@ -1002,7 +1002,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1197,
+          "latency_ms": 1219,
           "retrieved": [
             [
               "Wipro",
@@ -1063,7 +1063,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 40,
+          "latency_ms": 47,
           "retrieved": [
             [
               "Infosys",
@@ -1111,7 +1111,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 40,
+          "latency_ms": 41,
           "retrieved": [
             [
               "Infosys",
@@ -1159,7 +1159,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 78,
+          "latency_ms": 82,
           "retrieved": [
             [
               "Infosys",
@@ -1207,7 +1207,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1136,
+          "latency_ms": 1156,
           "retrieved": [
             [
               "Infosys",
@@ -1268,7 +1268,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 58,
+          "latency_ms": 63,
           "retrieved": [
             [
               "Infosys",
@@ -1316,7 +1316,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 42,
           "retrieved": [
             [
               "Infosys",
@@ -1364,7 +1364,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 90,
+          "latency_ms": 79,
           "retrieved": [
             [
               "Infosys",
@@ -1412,7 +1412,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1164,
+          "latency_ms": 1177,
           "retrieved": [
             [
               "Infosys",
@@ -1485,7 +1485,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 57,
+          "latency_ms": 58,
           "retrieved": [
             [
               "Infosys",
@@ -1533,7 +1533,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 43,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Infosys",
@@ -1629,7 +1629,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1234,
+          "latency_ms": 1219,
           "retrieved": [
             [
               "Infosys",
@@ -1690,7 +1690,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 129,
+          "latency_ms": 114,
           "retrieved": [
             [
               "TCS",
@@ -1738,7 +1738,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 732,
+          "latency_ms": 564,
           "retrieved": [
             [
               "Infosys",
@@ -1786,7 +1786,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 175,
+          "latency_ms": 186,
           "retrieved": [
             [
               "Infosys",
@@ -1834,7 +1834,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1264,
+          "latency_ms": 1245,
           "retrieved": [
             [
               "Infosys",
@@ -1899,7 +1899,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 57,
+          "latency_ms": 73,
           "retrieved": [
             [
               "Infosys",
@@ -1947,7 +1947,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 46,
+          "latency_ms": 45,
           "retrieved": [
             [
               "Infosys",
@@ -1995,7 +1995,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 82,
+          "latency_ms": 90,
           "retrieved": [
             [
               "Infosys",
@@ -2043,7 +2043,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1141,
+          "latency_ms": 1174,
           "retrieved": [
             [
               "Infosys",
@@ -2108,7 +2108,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 68,
+          "latency_ms": 63,
           "retrieved": [
             [
               "Infosys",
@@ -2156,7 +2156,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 40,
+          "latency_ms": 39,
           "retrieved": [
             [
               "Infosys",
@@ -2204,7 +2204,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 79,
+          "latency_ms": 78,
           "retrieved": [
             [
               "Infosys",
@@ -2252,7 +2252,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1171,
+          "latency_ms": 1203,
           "retrieved": [
             [
               "Infosys",
@@ -2321,7 +2321,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 70,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Infosys",
@@ -2369,7 +2369,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 87,
+          "latency_ms": 42,
           "retrieved": [
             [
               "Infosys",
@@ -2417,7 +2417,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 107,
+          "latency_ms": 99,
           "retrieved": [
             [
               "Infosys",
@@ -2465,7 +2465,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1136,
+          "latency_ms": 1157,
           "retrieved": [
             [
               "Infosys",
@@ -2526,7 +2526,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 100,
+          "latency_ms": 137,
           "retrieved": [
             [
               "HCLTech",
@@ -2574,7 +2574,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 132,
+          "latency_ms": 131,
           "retrieved": [
             [
               "HCLTech",
@@ -2622,7 +2622,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 212,
+          "latency_ms": 186,
           "retrieved": [
             [
               "Wipro",
@@ -2670,7 +2670,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1321,
+          "latency_ms": 1284,
           "retrieved": [
             [
               "HCLTech",
@@ -2735,7 +2735,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 56,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Infosys",
@@ -2783,7 +2783,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 38,
+          "latency_ms": 42,
           "retrieved": [
             [
               "Infosys",
@@ -2831,7 +2831,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 78,
+          "latency_ms": 83,
           "retrieved": [
             [
               "Infosys",
@@ -2879,7 +2879,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1300,
+          "latency_ms": 1286,
           "retrieved": [
             [
               "Infosys",
@@ -2940,7 +2940,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 57,
+          "latency_ms": 82,
           "retrieved": [
             [
               "Infosys",
@@ -2988,7 +2988,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 62,
+          "latency_ms": 67,
           "retrieved": [
             [
               "Infosys",
@@ -3036,7 +3036,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 99,
+          "latency_ms": 132,
           "retrieved": [
             [
               "Infosys",
@@ -3084,7 +3084,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1270,
+          "latency_ms": 1369,
           "retrieved": [
             [
               "Infosys",
@@ -3145,7 +3145,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 61,
+          "latency_ms": 55,
           "retrieved": [
             [
               "Infosys",
@@ -3193,7 +3193,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 38,
+          "latency_ms": 44,
           "retrieved": [
             [
               "Infosys",
@@ -3241,7 +3241,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 75,
+          "latency_ms": 81,
           "retrieved": [
             [
               "Infosys",
@@ -3289,7 +3289,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1215,
+          "latency_ms": 1225,
           "retrieved": [
             [
               "Infosys",
@@ -3350,7 +3350,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 64,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Infosys",
@@ -3398,7 +3398,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 45,
+          "latency_ms": 52,
           "retrieved": [
             [
               "Infosys",
@@ -3446,7 +3446,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 107,
+          "latency_ms": 88,
           "retrieved": [
             [
               "Infosys",
@@ -3494,7 +3494,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1138,
+          "latency_ms": 1171,
           "retrieved": [
             [
               "Infosys",
@@ -3563,7 +3563,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 57,
+          "latency_ms": 63,
           "retrieved": [
             [
               "TCS",
@@ -3611,7 +3611,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 74,
+          "latency_ms": 68,
           "retrieved": [
             [
               "TCS",
@@ -3659,7 +3659,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 85,
+          "latency_ms": 89,
           "retrieved": [
             [
               "TCS",
@@ -3707,7 +3707,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1123,
+          "latency_ms": 1197,
           "retrieved": [
             [
               "TCS",
@@ -3772,7 +3772,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 66,
+          "latency_ms": 51,
           "retrieved": [
             [
               "TCS",
@@ -3820,7 +3820,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 45,
           "retrieved": [
             [
               "TCS",
@@ -3916,7 +3916,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1204,
+          "latency_ms": 1285,
           "retrieved": [
             [
               "TCS",
@@ -3985,7 +3985,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 39,
+          "latency_ms": 46,
           "retrieved": [
             [
               "TCS",
@@ -4033,7 +4033,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 43,
           "retrieved": [
             [
               "TCS",
@@ -4081,7 +4081,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 97,
+          "latency_ms": 82,
           "retrieved": [
             [
               "TCS",
@@ -4129,7 +4129,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1130,
+          "latency_ms": 1310,
           "retrieved": [
             [
               "TCS",
@@ -4194,7 +4194,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 111,
+          "latency_ms": 52,
           "retrieved": [
             [
               "TCS",
@@ -4242,7 +4242,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 60,
+          "latency_ms": 71,
           "retrieved": [
             [
               "TCS",
@@ -4290,7 +4290,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 82,
+          "latency_ms": 97,
           "retrieved": [
             [
               "TCS",
@@ -4338,7 +4338,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1223,
+          "latency_ms": 1218,
           "retrieved": [
             [
               "TCS",
@@ -4403,7 +4403,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 80,
+          "latency_ms": 100,
           "retrieved": [
             [
               "TCS",
@@ -4451,7 +4451,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 42,
+          "latency_ms": 39,
           "retrieved": [
             [
               "TCS",
@@ -4487,7 +4487,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 73,
+          "latency_ms": 84,
           "retrieved": [
             [
               "TCS",
@@ -4535,7 +4535,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1406,
+          "latency_ms": 1340,
           "retrieved": [
             [
               "TCS",
@@ -4600,7 +4600,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 48,
+          "latency_ms": 71,
           "retrieved": [
             [
               "TCS",
@@ -4648,7 +4648,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 35,
+          "latency_ms": 52,
           "retrieved": [
             [
               "TCS",
@@ -4696,7 +4696,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 76,
+          "latency_ms": 83,
           "retrieved": [
             [
               "TCS",
@@ -4744,7 +4744,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1321,
+          "latency_ms": 1286,
           "retrieved": [
             [
               "TCS",
@@ -4853,7 +4853,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 46,
+          "latency_ms": 43,
           "retrieved": [
             [
               "TCS",
@@ -4901,7 +4901,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 89,
+          "latency_ms": 90,
           "retrieved": [
             [
               "TCS",
@@ -4949,7 +4949,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1281,
+          "latency_ms": 1197,
           "retrieved": [
             [
               "TCS",
@@ -5058,7 +5058,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 48,
+          "latency_ms": 41,
           "retrieved": [
             [
               "TCS",
@@ -5106,7 +5106,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 197,
+          "latency_ms": 95,
           "retrieved": [
             [
               "TCS",
@@ -5154,7 +5154,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1351,
+          "latency_ms": 1277,
           "retrieved": [
             [
               "TCS",
@@ -5215,7 +5215,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 68,
+          "latency_ms": 79,
           "retrieved": [
             [
               "Wipro",
@@ -5263,7 +5263,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 67,
+          "latency_ms": 88,
           "retrieved": [
             [
               "Wipro",
@@ -5311,7 +5311,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 94,
+          "latency_ms": 107,
           "retrieved": [
             [
               "Wipro",
@@ -5359,7 +5359,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1392,
+          "latency_ms": 1292,
           "retrieved": [
             [
               "Wipro",
@@ -5424,7 +5424,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 61,
+          "latency_ms": 66,
           "retrieved": [
             [
               "Wipro",
@@ -5520,7 +5520,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 93,
+          "latency_ms": 98,
           "retrieved": [
             [
               "Wipro",
@@ -5568,7 +5568,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1709,
+          "latency_ms": 1536,
           "retrieved": [
             [
               "Wipro",
@@ -5637,7 +5637,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 64,
+          "latency_ms": 67,
           "retrieved": [
             [
               "Wipro",
@@ -5685,7 +5685,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 43,
+          "latency_ms": 45,
           "retrieved": [
             [
               "Wipro",
@@ -5733,7 +5733,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 87,
+          "latency_ms": 89,
           "retrieved": [
             [
               "Wipro",
@@ -5781,7 +5781,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1578,
+          "latency_ms": 1544,
           "retrieved": [
             [
               "Wipro",
@@ -5846,7 +5846,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 47,
+          "latency_ms": 54,
           "retrieved": [
             [
               "Wipro",
@@ -5894,7 +5894,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 65,
+          "latency_ms": 70,
           "retrieved": [
             [
               "Wipro",
@@ -5942,7 +5942,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 88,
+          "latency_ms": 92,
           "retrieved": [
             [
               "Wipro",
@@ -5990,7 +5990,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1298,
+          "latency_ms": 1189,
           "retrieved": [
             [
               "Wipro",
@@ -6051,7 +6051,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 53,
+          "latency_ms": 66,
           "retrieved": [
             [
               "Wipro",
@@ -6099,7 +6099,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 40,
+          "latency_ms": 44,
           "retrieved": [
             [
               "Wipro",
@@ -6147,7 +6147,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 138,
+          "latency_ms": 83,
           "retrieved": [
             [
               "Wipro",
@@ -6195,7 +6195,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1327,
+          "latency_ms": 1298,
           "retrieved": [
             [
               "Wipro",
@@ -6256,7 +6256,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 46,
+          "latency_ms": 47,
           "retrieved": [
             [
               "Wipro",
@@ -6304,7 +6304,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 42,
+          "latency_ms": 44,
           "retrieved": [
             [
               "Wipro",
@@ -6352,7 +6352,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 89,
+          "latency_ms": 86,
           "retrieved": [
             [
               "Wipro",
@@ -6400,7 +6400,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1308,
+          "latency_ms": 1233,
           "retrieved": [
             [
               "Wipro",
@@ -6469,7 +6469,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 56,
+          "latency_ms": 46,
           "retrieved": [
             [
               "Wipro",
@@ -6517,7 +6517,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 80,
+          "latency_ms": 74,
           "retrieved": [
             [
               "Wipro",
@@ -6565,7 +6565,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 128,
+          "latency_ms": 114,
           "retrieved": [
             [
               "Wipro",
@@ -6613,7 +6613,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1311,
+          "latency_ms": 1240,
           "retrieved": [
             [
               "Wipro",
@@ -6674,7 +6674,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 44,
+          "latency_ms": 49,
           "retrieved": [
             [
               "Wipro",
@@ -6722,7 +6722,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 39,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Wipro",
@@ -6770,7 +6770,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 84,
+          "latency_ms": 79,
           "retrieved": [
             [
               "Wipro",
@@ -6818,7 +6818,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1204,
+          "latency_ms": 1208,
           "retrieved": [
             [
               "Wipro",
@@ -6887,7 +6887,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 103,
+          "latency_ms": 77,
           "retrieved": [
             [
               "HCLTech",
@@ -6935,7 +6935,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 65,
+          "latency_ms": 72,
           "retrieved": [
             [
               "HCLTech",
@@ -6983,7 +6983,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 88,
+          "latency_ms": 96,
           "retrieved": [
             [
               "HCLTech",
@@ -7031,7 +7031,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1225,
+          "latency_ms": 1234,
           "retrieved": [
             [
               "HCLTech",
@@ -7096,7 +7096,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 60,
+          "latency_ms": 48,
           "retrieved": [
             [
               "HCLTech",
@@ -7144,7 +7144,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 82,
+          "latency_ms": 66,
           "retrieved": [
             [
               "HCLTech",
@@ -7192,7 +7192,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 91,
+          "latency_ms": 90,
           "retrieved": [
             [
               "HCLTech",
@@ -7240,7 +7240,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1331,
+          "latency_ms": 1249,
           "retrieved": [
             [
               "HCLTech",
@@ -7305,7 +7305,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 58,
+          "latency_ms": 48,
           "retrieved": [
             [
               "HCLTech",
@@ -7449,7 +7449,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1302,
+          "latency_ms": 1241,
           "retrieved": [
             [
               "HCLTech",
@@ -7514,7 +7514,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 88,
+          "latency_ms": 111,
           "retrieved": [
             [
               "HCLTech",
@@ -7562,7 +7562,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 46,
+          "latency_ms": 49,
           "retrieved": [
             [
               "HCLTech",
@@ -7610,7 +7610,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 103,
+          "latency_ms": 107,
           "retrieved": [
             [
               "HCLTech",
@@ -7658,7 +7658,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1659,
+          "latency_ms": 1538,
           "retrieved": [
             [
               "HCLTech",
@@ -7723,7 +7723,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 54,
+          "latency_ms": 48,
           "retrieved": [
             [
               "HCLTech",
@@ -7771,7 +7771,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 41,
+          "latency_ms": 44,
           "retrieved": [
             [
               "HCLTech",
@@ -7819,7 +7819,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 95,
+          "latency_ms": 92,
           "retrieved": [
             [
               "HCLTech",
@@ -7867,7 +7867,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1684,
+          "latency_ms": 1484,
           "retrieved": [
             [
               "HCLTech",
@@ -7932,7 +7932,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 80,
+          "latency_ms": 62,
           "retrieved": [
             [
               "HCLTech",
@@ -7980,7 +7980,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 38,
+          "latency_ms": 41,
           "retrieved": [
             [
               "HCLTech",
@@ -8028,7 +8028,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 91,
+          "latency_ms": 79,
           "retrieved": [
             [
               "HCLTech",
@@ -8076,7 +8076,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1786,
+          "latency_ms": 1520,
           "retrieved": [
             [
               "HCLTech",
@@ -8189,7 +8189,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 42,
+          "latency_ms": 50,
           "retrieved": [
             [
               "HCLTech",
@@ -8237,7 +8237,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 97,
+          "latency_ms": 88,
           "retrieved": [
             [
               "HCLTech",
@@ -8285,7 +8285,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1588,
+          "latency_ms": 1329,
           "retrieved": [
             [
               "HCLTech",
@@ -8346,7 +8346,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 72,
+          "latency_ms": 61,
           "retrieved": [
             [
               "HCLTech",
@@ -8394,7 +8394,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 44,
+          "latency_ms": 45,
           "retrieved": [
             [
               "HCLTech",
@@ -8442,7 +8442,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 91,
+          "latency_ms": 84,
           "retrieved": [
             [
               "HCLTech",
@@ -8490,7 +8490,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1390,
+          "latency_ms": 1279,
           "retrieved": [
             [
               "HCLTech",
@@ -8559,7 +8559,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 73,
+          "latency_ms": 63,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8607,7 +8607,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 116,
+          "latency_ms": 132,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8655,7 +8655,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 107,
+          "latency_ms": 116,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8703,7 +8703,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1425,
+          "latency_ms": 1224,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8768,7 +8768,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 58,
+          "latency_ms": 43,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8816,7 +8816,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 44,
+          "latency_ms": 41,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8864,7 +8864,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 104,
+          "latency_ms": 83,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8912,7 +8912,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1295,
+          "latency_ms": 1218,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -8981,7 +8981,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 66,
+          "latency_ms": 55,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9029,7 +9029,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 43,
+          "latency_ms": 40,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9077,7 +9077,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 95,
+          "latency_ms": 94,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9125,7 +9125,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1525,
+          "latency_ms": 1290,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9194,7 +9194,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 81,
+          "latency_ms": 45,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9242,7 +9242,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 58,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9290,7 +9290,7 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 86,
+          "latency_ms": 87,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9338,7 +9338,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1452,
+          "latency_ms": 1123,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9407,7 +9407,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 78,
+          "latency_ms": 63,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9455,7 +9455,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 38,
+          "latency_ms": 37,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9503,7 +9503,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 80,
+          "latency_ms": 81,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9551,7 +9551,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1244,
+          "latency_ms": 1210,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9616,7 +9616,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 45,
+          "latency_ms": 43,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9664,7 +9664,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 59,
+          "latency_ms": 43,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9712,7 +9712,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 87,
+          "latency_ms": 88,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9760,7 +9760,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1254,
+          "latency_ms": 1310,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9873,7 +9873,7 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 75,
+          "latency_ms": 85,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9921,7 +9921,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 111,
+          "latency_ms": 107,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -9969,7 +9969,7 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1411,
+          "latency_ms": 1214,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -10030,7 +10030,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 79,
+          "latency_ms": 61,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -10078,7 +10078,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 43,
+          "latency_ms": 46,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -10126,7 +10126,7 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 81,
+          "latency_ms": 98,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -10174,7 +10174,7 @@
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1236,
+          "latency_ms": 1193,
           "retrieved": [
             [
               "Tech Mahindra",
@@ -10247,15 +10247,27 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 50,
+          "latency_ms": 86,
           "retrieved": [
+            [
+              "TCS",
+              167
+            ],
             [
               "HCLTech",
               335
             ],
             [
+              "TCS",
+              225
+            ],
+            [
               "HCLTech",
               411
+            ],
+            [
+              "TCS",
+              58
             ],
             [
               "HCLTech",
@@ -10270,36 +10282,24 @@
               129
             ],
             [
+              "TCS",
+              253
+            ],
+            [
               "HCLTech",
               8
-            ],
-            [
-              "HCLTech",
-              123
-            ],
-            [
-              "HCLTech",
-              13
-            ],
-            [
-              "HCLTech",
-              12
-            ],
-            [
-              "HCLTech",
-              412
             ]
           ],
-          "rank_tol0": 4,
-          "rank_tol1": 4,
+          "rank_tol0": 1,
+          "rank_tol1": 1,
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 78,
+          "latency_ms": 111,
           "retrieved": [
             [
               "TCS",
-              157
+              158
             ],
             [
               "HCLTech",
@@ -10307,7 +10307,7 @@
             ],
             [
               "TCS",
-              158
+              157
             ],
             [
               "HCLTech",
@@ -10319,15 +10319,15 @@
             ],
             [
               "HCLTech",
-              448
-            ],
-            [
-              "HCLTech",
               454
             ],
             [
+              "TCS",
+              209
+            ],
+            [
               "HCLTech",
-              116
+              448
             ],
             [
               "TCS",
@@ -10335,39 +10335,23 @@
             ],
             [
               "HCLTech",
-              45
+              116
             ]
           ],
-          "rank_tol0": 8,
-          "rank_tol1": 8,
+          "rank_tol0": 10,
+          "rank_tol1": 10,
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 96,
+          "latency_ms": 198,
           "retrieved": [
+            [
+              "TCS",
+              70
+            ],
             [
               "HCLTech",
               123
-            ],
-            [
-              "HCLTech",
-              116
-            ],
-            [
-              "HCLTech",
-              128
-            ],
-            [
-              "HCLTech",
-              335
-            ],
-            [
-              "HCLTech",
-              411
-            ],
-            [
-              "HCLTech",
-              95
             ],
             [
               "TCS",
@@ -10375,47 +10359,15 @@
             ],
             [
               "HCLTech",
-              129
-            ],
-            [
-              "HCLTech",
-              8
-            ],
-            [
-              "HCLTech",
-              13
-            ]
-          ],
-          "rank_tol0": 2,
-          "rank_tol1": 2,
-          "all_companies_covered": true
-        },
-        "hybrid_rerank": {
-          "latency_ms": 1461,
-          "retrieved": [
-            [
-              "HCLTech",
-              83
-            ],
-            [
-              "HCLTech",
-              8
-            ],
-            [
-              "HCLTech",
-              95
-            ],
-            [
-              "HCLTech",
               116
             ],
             [
-              "HCLTech",
-              60
+              "TCS",
+              225
             ],
             [
               "HCLTech",
-              13
+              128
             ],
             [
               "TCS",
@@ -10423,20 +10375,68 @@
             ],
             [
               "HCLTech",
-              129
+              335
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "HCLTech",
+              411
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 2580,
+          "retrieved": [
+            [
+              "TCS",
+              58
+            ],
+            [
+              "HCLTech",
+              83
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "TCS",
+              167
             ],
             [
               "HCLTech",
               95
             ],
             [
+              "TCS",
+              70
+            ],
+            [
               "HCLTech",
-              12
+              116
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "HCLTech",
+              60
             ]
           ],
-          "rank_tol0": 4,
-          "rank_tol1": 4,
-          "all_companies_covered": false
+          "rank_tol0": 5,
+          "rank_tol1": 3,
+          "all_companies_covered": true
         }
       }
     },
@@ -10468,55 +10468,55 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 45,
+          "latency_ms": 99,
           "retrieved": [
+            [
+              "Infosys",
+              47
+            ],
             [
               "Tech Mahindra",
               626
+            ],
+            [
+              "Infosys",
+              16
             ],
             [
               "Tech Mahindra",
               507
             ],
             [
+              "Infosys",
+              334
+            ],
+            [
               "Tech Mahindra",
               656
+            ],
+            [
+              "Infosys",
+              356
             ],
             [
               "Tech Mahindra",
               506
             ],
             [
+              "Infosys",
+              33
+            ],
+            [
               "Tech Mahindra",
               505
-            ],
-            [
-              "Tech Mahindra",
-              624
-            ],
-            [
-              "Tech Mahindra",
-              470
-            ],
-            [
-              "Tech Mahindra",
-              656
-            ],
-            [
-              "Tech Mahindra",
-              601
-            ],
-            [
-              "Tech Mahindra",
-              496
             ]
           ],
-          "rank_tol0": null,
-          "rank_tol1": null,
+          "rank_tol0": 3,
+          "rank_tol1": 3,
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 92,
+          "latency_ms": 112,
           "retrieved": [
             [
               "Infosys",
@@ -10531,8 +10531,16 @@
               80
             ],
             [
+              "Tech Mahindra",
+              572
+            ],
+            [
               "Infosys",
               77
+            ],
+            [
+              "Tech Mahindra",
+              543
             ],
             [
               "Infosys",
@@ -10540,123 +10548,115 @@
             ],
             [
               "Tech Mahindra",
-              572
+              460
             ],
             [
               "Infosys",
               276
             ],
             [
-              "Infosys",
-              334
-            ],
+              "Tech Mahindra",
+              544
+            ]
+          ],
+          "rank_tol0": 7,
+          "rank_tol1": 7,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 202,
+          "retrieved": [
             [
               "Infosys",
               254
             ],
             [
+              "Tech Mahindra",
+              626
+            ],
+            [
               "Infosys",
-              78
+              47
+            ],
+            [
+              "Tech Mahindra",
+              507
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Tech Mahindra",
+              656
+            ],
+            [
+              "Infosys",
+              334
+            ],
+            [
+              "Tech Mahindra",
+              506
+            ],
+            [
+              "Infosys",
+              356
+            ],
+            [
+              "Tech Mahindra",
+              505
             ]
           ],
           "rank_tol0": 5,
           "rank_tol1": 5,
           "all_companies_covered": false
         },
-        "hybrid": {
-          "latency_ms": 119,
-          "retrieved": [
-            [
-              "Tech Mahindra",
-              626
-            ],
-            [
-              "Tech Mahindra",
-              507
-            ],
-            [
-              "Tech Mahindra",
-              656
-            ],
-            [
-              "Tech Mahindra",
-              506
-            ],
-            [
-              "Tech Mahindra",
-              505
-            ],
-            [
-              "Tech Mahindra",
-              624
-            ],
-            [
-              "Tech Mahindra",
-              470
-            ],
-            [
-              "Tech Mahindra",
-              656
-            ],
-            [
-              "Tech Mahindra",
-              601
-            ],
-            [
-              "Tech Mahindra",
-              496
-            ]
-          ],
-          "rank_tol0": null,
-          "rank_tol1": null,
-          "all_companies_covered": false
-        },
         "hybrid_rerank": {
-          "latency_ms": 1598,
+          "latency_ms": 2778,
           "retrieved": [
+            [
+              "Infosys",
+              16
+            ],
             [
               "Tech Mahindra",
               315
+            ],
+            [
+              "Infosys",
+              254
             ],
             [
               "Tech Mahindra",
               22
             ],
             [
+              "Infosys",
+              352
+            ],
+            [
               "Tech Mahindra",
               476
+            ],
+            [
+              "Infosys",
+              351
             ],
             [
               "Tech Mahindra",
               656
             ],
             [
+              "Infosys",
+              354
+            ],
+            [
               "Tech Mahindra",
               657
-            ],
-            [
-              "Tech Mahindra",
-              506
-            ],
-            [
-              "Tech Mahindra",
-              505
-            ],
-            [
-              "Tech Mahindra",
-              590
-            ],
-            [
-              "Tech Mahindra",
-              507
-            ],
-            [
-              "Tech Mahindra",
-              624
             ]
           ],
-          "rank_tol0": null,
-          "rank_tol1": null,
+          "rank_tol0": 1,
+          "rank_tol1": 1,
           "all_companies_covered": false
         }
       }
@@ -10685,47 +10685,47 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 49,
+          "latency_ms": 101,
           "retrieved": [
+            [
+              "HCLTech",
+              84
+            ],
             [
               "Tech Mahindra",
               624
             ],
             [
+              "HCLTech",
+              374
+            ],
+            [
               "Tech Mahindra",
               505
+            ],
+            [
+              "HCLTech",
+              381
             ],
             [
               "Tech Mahindra",
               124
             ],
             [
+              "HCLTech",
+              61
+            ],
+            [
               "Tech Mahindra",
               505
             ],
             [
+              "HCLTech",
+              85
+            ],
+            [
               "Tech Mahindra",
               624
-            ],
-            [
-              "Tech Mahindra",
-              315
-            ],
-            [
-              "Tech Mahindra",
-              640
-            ],
-            [
-              "Tech Mahindra",
-              87
-            ],
-            [
-              "Tech Mahindra",
-              397
-            ],
-            [
-              "Tech Mahindra",
-              129
             ]
           ],
           "rank_tol0": null,
@@ -10733,15 +10733,23 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 116,
+          "latency_ms": 127,
           "retrieved": [
             [
               "HCLTech",
               244
             ],
             [
+              "Tech Mahindra",
+              395
+            ],
+            [
               "HCLTech",
               244
+            ],
+            [
+              "Tech Mahindra",
+              395
             ],
             [
               "HCLTech",
@@ -10749,19 +10757,7 @@
             ],
             [
               "Tech Mahindra",
-              395
-            ],
-            [
-              "Tech Mahindra",
-              395
-            ],
-            [
-              "HCLTech",
-              247
-            ],
-            [
-              "HCLTech",
-              244
+              130
             ],
             [
               "HCLTech",
@@ -10769,7 +10765,11 @@
             ],
             [
               "Tech Mahindra",
-              130
+              269
+            ],
+            [
+              "HCLTech",
+              244
             ],
             [
               "Tech Mahindra",
@@ -10781,47 +10781,47 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 119,
+          "latency_ms": 228,
           "retrieved": [
+            [
+              "HCLTech",
+              61
+            ],
             [
               "Tech Mahindra",
               624
             ],
             [
+              "HCLTech",
+              245
+            ],
+            [
               "Tech Mahindra",
               505
+            ],
+            [
+              "HCLTech",
+              84
             ],
             [
               "Tech Mahindra",
               124
             ],
             [
+              "HCLTech",
+              374
+            ],
+            [
               "Tech Mahindra",
               505
             ],
             [
+              "HCLTech",
+              381
+            ],
+            [
               "Tech Mahindra",
               624
-            ],
-            [
-              "Tech Mahindra",
-              315
-            ],
-            [
-              "Tech Mahindra",
-              640
-            ],
-            [
-              "Tech Mahindra",
-              87
-            ],
-            [
-              "Tech Mahindra",
-              397
-            ],
-            [
-              "Tech Mahindra",
-              129
             ]
           ],
           "rank_tol0": null,
@@ -10829,47 +10829,47 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1304,
+          "latency_ms": 2796,
           "retrieved": [
+            [
+              "HCLTech",
+              84
+            ],
             [
               "Tech Mahindra",
               315
+            ],
+            [
+              "HCLTech",
+              98
             ],
             [
               "Tech Mahindra",
               314
             ],
             [
+              "HCLTech",
+              61
+            ],
+            [
               "Tech Mahindra",
               640
+            ],
+            [
+              "HCLTech",
+              183
             ],
             [
               "Tech Mahindra",
               313
             ],
             [
+              "HCLTech",
+              245
+            ],
+            [
               "Tech Mahindra",
               160
-            ],
-            [
-              "Tech Mahindra",
-              666
-            ],
-            [
-              "Tech Mahindra",
-              397
-            ],
-            [
-              "Tech Mahindra",
-              87
-            ],
-            [
-              "Tech Mahindra",
-              624
-            ],
-            [
-              "Tech Mahindra",
-              505
             ]
           ],
           "rank_tol0": null,
@@ -10902,55 +10902,55 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 67,
+          "latency_ms": 85,
           "retrieved": [
             [
               "TCS",
               46
             ],
             [
+              "Infosys",
+              141
+            ],
+            [
               "TCS",
               225
+            ],
+            [
+              "Infosys",
+              334
             ],
             [
               "TCS",
               5
             ],
             [
+              "Infosys",
+              333
+            ],
+            [
               "TCS",
               25
+            ],
+            [
+              "Infosys",
+              356
             ],
             [
               "TCS",
               106
             ],
             [
-              "TCS",
-              137
-            ],
-            [
-              "TCS",
-              58
-            ],
-            [
-              "TCS",
-              35
-            ],
-            [
-              "TCS",
-              225
-            ],
-            [
-              "TCS",
-              23
+              "Infosys",
+              287
             ]
           ],
-          "rank_tol0": 4,
-          "rank_tol1": 4,
+          "rank_tol0": 7,
+          "rank_tol1": 7,
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 60,
+          "latency_ms": 106,
           "retrieved": [
             [
               "TCS",
@@ -10961,12 +10961,12 @@
               367
             ],
             [
-              "Infosys",
-              325
-            ],
-            [
               "TCS",
               296
+            ],
+            [
+              "Infosys",
+              325
             ],
             [
               "TCS",
@@ -10977,20 +10977,20 @@
               246
             ],
             [
-              "Infosys",
-              325
-            ],
-            [
-              "Infosys",
-              245
-            ],
-            [
               "TCS",
               238
             ],
             [
               "Infosys",
-              237
+              325
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "Infosys",
+              245
             ]
           ],
           "rank_tol0": null,
@@ -10998,83 +10998,11 @@
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 91,
+          "latency_ms": 203,
           "retrieved": [
             [
               "TCS",
-              46
-            ],
-            [
-              "TCS",
-              225
-            ],
-            [
-              "TCS",
-              5
-            ],
-            [
-              "TCS",
-              25
-            ],
-            [
-              "TCS",
-              106
-            ],
-            [
-              "TCS",
-              137
-            ],
-            [
-              "TCS",
-              58
-            ],
-            [
-              "TCS",
-              35
-            ],
-            [
-              "TCS",
-              225
-            ],
-            [
-              "TCS",
-              23
-            ]
-          ],
-          "rank_tol0": 4,
-          "rank_tol1": 4,
-          "all_companies_covered": false
-        },
-        "hybrid_rerank": {
-          "latency_ms": 1321,
-          "retrieved": [
-            [
-              "TCS",
-              35
-            ],
-            [
-              "TCS",
-              137
-            ],
-            [
-              "TCS",
-              56
-            ],
-            [
-              "TCS",
-              58
-            ],
-            [
-              "TCS",
-              5
-            ],
-            [
-              "TCS",
-              46
-            ],
-            [
-              "TCS",
-              26
+              280
             ],
             [
               "Infosys",
@@ -11082,15 +11010,87 @@
             ],
             [
               "TCS",
-              106
+              196
+            ],
+            [
+              "Infosys",
+              334
             ],
             [
               "TCS",
-              26
+              46
+            ],
+            [
+              "Infosys",
+              333
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "Infosys",
+              356
+            ],
+            [
+              "TCS",
+              5
+            ],
+            [
+              "Infosys",
+              287
             ]
           ],
           "rank_tol0": null,
-          "rank_tol1": 7,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 2710,
+          "retrieved": [
+            [
+              "TCS",
+              35
+            ],
+            [
+              "Infosys",
+              272
+            ],
+            [
+              "TCS",
+              137
+            ],
+            [
+              "Infosys",
+              272
+            ],
+            [
+              "TCS",
+              56
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "Infosys",
+              270
+            ],
+            [
+              "TCS",
+              5
+            ],
+            [
+              "Infosys",
+              8
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
           "all_companies_covered": false
         }
       }
@@ -11115,159 +11115,15 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 61,
+          "latency_ms": 90,
           "retrieved": [
-            [
-              "HCLTech",
-              93
-            ],
-            [
-              "HCLTech",
-              32
-            ],
-            [
-              "HCLTech",
-              97
-            ],
-            [
-              "HCLTech",
-              42
-            ],
-            [
-              "HCLTech",
-              97
-            ],
-            [
-              "HCLTech",
-              96
-            ],
-            [
-              "HCLTech",
-              25
-            ],
-            [
-              "HCLTech",
-              85
-            ],
-            [
-              "HCLTech",
-              32
-            ],
             [
               "Wipro",
               41
-            ]
-          ],
-          "rank_tol0": null,
-          "rank_tol1": 1,
-          "all_companies_covered": false
-        },
-        "keyword": {
-          "latency_ms": 57,
-          "retrieved": [
-            [
-              "HCLTech",
-              235
             ],
-            [
-              "Wipro",
-              113
-            ],
-            [
-              "Wipro",
-              139
-            ],
-            [
-              "Wipro",
-              114
-            ],
-            [
-              "Wipro",
-              25
-            ],
-            [
-              "Wipro",
-              26
-            ],
-            [
-              "Wipro",
-              113
-            ],
-            [
-              "Wipro",
-              113
-            ],
-            [
-              "Wipro",
-              27
-            ],
-            [
-              "Wipro",
-              114
-            ]
-          ],
-          "rank_tol0": null,
-          "rank_tol1": null,
-          "all_companies_covered": false
-        },
-        "hybrid": {
-          "latency_ms": 255,
-          "retrieved": [
             [
               "HCLTech",
               93
-            ],
-            [
-              "HCLTech",
-              32
-            ],
-            [
-              "HCLTech",
-              97
-            ],
-            [
-              "HCLTech",
-              42
-            ],
-            [
-              "HCLTech",
-              97
-            ],
-            [
-              "HCLTech",
-              96
-            ],
-            [
-              "HCLTech",
-              25
-            ],
-            [
-              "HCLTech",
-              85
-            ],
-            [
-              "HCLTech",
-              32
-            ],
-            [
-              "Wipro",
-              41
-            ]
-          ],
-          "rank_tol0": null,
-          "rank_tol1": 1,
-          "all_companies_covered": false
-        },
-        "hybrid_rerank": {
-          "latency_ms": 1686,
-          "retrieved": [
-            [
-              "HCLTech",
-              8
-            ],
-            [
-              "HCLTech",
-              25
             ],
             [
               "Wipro",
@@ -11275,15 +11131,151 @@
             ],
             [
               "HCLTech",
-              60
+              32
+            ],
+            [
+              "Wipro",
+              70
             ],
             [
               "HCLTech",
-              270
+              97
+            ],
+            [
+              "Wipro",
+              23
             ],
             [
               "HCLTech",
-              84
+              42
+            ],
+            [
+              "Wipro",
+              23
+            ],
+            [
+              "HCLTech",
+              97
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 2,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 107,
+          "retrieved": [
+            [
+              "Wipro",
+              113
+            ],
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "HCLTech",
+              138
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "HCLTech",
+              80
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "HCLTech",
+              128
+            ],
+            [
+              "Wipro",
+              113
+            ],
+            [
+              "HCLTech",
+              134
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 10,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 191,
+          "retrieved": [
+            [
+              "Wipro",
+              41
+            ],
+            [
+              "HCLTech",
+              97
+            ],
+            [
+              "Wipro",
+              40
+            ],
+            [
+              "HCLTech",
+              93
+            ],
+            [
+              "Wipro",
+              70
+            ],
+            [
+              "HCLTech",
+              32
+            ],
+            [
+              "Wipro",
+              23
+            ],
+            [
+              "HCLTech",
+              42
+            ],
+            [
+              "Wipro",
+              23
+            ],
+            [
+              "HCLTech",
+              97
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 4,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 2951,
+          "retrieved": [
+            [
+              "Wipro",
+              40
+            ],
+            [
+              "HCLTech",
+              8
+            ],
+            [
+              "Wipro",
+              83
+            ],
+            [
+              "HCLTech",
+              25
             ],
             [
               "Wipro",
@@ -11291,19 +11283,27 @@
             ],
             [
               "HCLTech",
-              32
+              60
+            ],
+            [
+              "Wipro",
+              70
             ],
             [
               "HCLTech",
-              32
+              270
+            ],
+            [
+              "Wipro",
+              4
             ],
             [
               "HCLTech",
-              93
+              84
             ]
           ],
           "rank_tol0": null,
-          "rank_tol1": 10,
+          "rank_tol1": null,
           "all_companies_covered": false
         }
       }
@@ -11332,47 +11332,47 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 48,
+          "latency_ms": 131,
           "retrieved": [
+            [
+              "TCS",
+              202
+            ],
             [
               "Tech Mahindra",
               505
+            ],
+            [
+              "TCS",
+              283
             ],
             [
               "Tech Mahindra",
               624
             ],
             [
+              "TCS",
+              285
+            ],
+            [
               "Tech Mahindra",
               314
+            ],
+            [
+              "TCS",
+              200
             ],
             [
               "Tech Mahindra",
               313
             ],
             [
+              "TCS",
+              163
+            ],
+            [
               "Tech Mahindra",
               281
-            ],
-            [
-              "Tech Mahindra",
-              590
-            ],
-            [
-              "Tech Mahindra",
-              286
-            ],
-            [
-              "Tech Mahindra",
-              282
-            ],
-            [
-              "Tech Mahindra",
-              626
-            ],
-            [
-              "Tech Mahindra",
-              280
             ]
           ],
           "rank_tol0": null,
@@ -11380,95 +11380,95 @@
           "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 53,
+          "latency_ms": 94,
           "retrieved": [
+            [
+              "TCS",
+              45
+            ],
             [
               "Tech Mahindra",
               322
+            ],
+            [
+              "TCS",
+              31
             ],
             [
               "Tech Mahindra",
               323
             ],
             [
+              "TCS",
+              23
+            ],
+            [
               "Tech Mahindra",
               324
             ],
             [
-              "Tech Mahindra",
-              320
-            ],
-            [
-              "Tech Mahindra",
-              322
-            ],
-            [
-              "Tech Mahindra",
-              321
-            ],
-            [
-              "Tech Mahindra",
-              94
-            ],
-            [
-              "Tech Mahindra",
-              137
+              "TCS",
+              25
             ],
             [
               "Tech Mahindra",
               123
             ],
             [
+              "TCS",
+              30
+            ],
+            [
               "Tech Mahindra",
-              317
+              94
             ]
           ],
-          "rank_tol0": 3,
-          "rank_tol1": 2,
-          "all_companies_covered": false
+          "rank_tol0": 6,
+          "rank_tol1": 4,
+          "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 109,
+          "latency_ms": 170,
           "retrieved": [
+            [
+              "TCS",
+              202
+            ],
             [
               "Tech Mahindra",
               505
+            ],
+            [
+              "TCS",
+              283
             ],
             [
               "Tech Mahindra",
               624
             ],
             [
+              "TCS",
+              285
+            ],
+            [
               "Tech Mahindra",
               314
+            ],
+            [
+              "TCS",
+              200
             ],
             [
               "Tech Mahindra",
               313
             ],
             [
+              "TCS",
+              163
+            ],
+            [
               "Tech Mahindra",
               281
-            ],
-            [
-              "Tech Mahindra",
-              590
-            ],
-            [
-              "Tech Mahindra",
-              286
-            ],
-            [
-              "Tech Mahindra",
-              282
-            ],
-            [
-              "Tech Mahindra",
-              626
-            ],
-            [
-              "Tech Mahindra",
-              280
             ]
           ],
           "rank_tol0": null,
@@ -11476,51 +11476,51 @@
           "all_companies_covered": false
         },
         "hybrid_rerank": {
-          "latency_ms": 1367,
+          "latency_ms": 2631,
           "retrieved": [
+            [
+              "TCS",
+              5
+            ],
             [
               "Tech Mahindra",
               314
+            ],
+            [
+              "TCS",
+              58
             ],
             [
               "Tech Mahindra",
               313
             ],
             [
+              "TCS",
+              54
+            ],
+            [
               "Tech Mahindra",
               315
+            ],
+            [
+              "TCS",
+              26
             ],
             [
               "Tech Mahindra",
               20
             ],
             [
+              "TCS",
+              18
+            ],
+            [
               "Tech Mahindra",
               282
-            ],
-            [
-              "Tech Mahindra",
-              87
-            ],
-            [
-              "Tech Mahindra",
-              129
-            ],
-            [
-              "Tech Mahindra",
-              280
-            ],
-            [
-              "Tech Mahindra",
-              281
-            ],
-            [
-              "Tech Mahindra",
-              624
             ]
           ],
           "rank_tol0": null,
-          "rank_tol1": null,
+          "rank_tol1": 5,
           "all_companies_covered": false
         }
       }
@@ -11553,11 +11553,19 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 69,
+          "latency_ms": 94,
           "retrieved": [
+            [
+              "TCS",
+              24
+            ],
             [
               "Infosys",
               26
+            ],
+            [
+              "TCS",
+              36
             ],
             [
               "Infosys",
@@ -11565,67 +11573,59 @@
             ],
             [
               "TCS",
-              24
+              228
             ],
             [
               "Infosys",
               323
             ],
             [
+              "TCS",
+              33
+            ],
+            [
               "Infosys",
               36
+            ],
+            [
+              "TCS",
+              70
             ],
             [
               "Infosys",
               353
-            ],
-            [
-              "TCS",
-              36
-            ],
-            [
-              "Infosys",
-              38
-            ],
-            [
-              "Infosys",
-              296
-            ],
-            [
-              "Infosys",
-              119
             ]
           ],
-          "rank_tol0": 3,
-          "rank_tol1": 3,
-          "all_companies_covered": true
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": false
         },
         "keyword": {
-          "latency_ms": 42,
+          "latency_ms": 87,
           "retrieved": [
+            [
+              "TCS",
+              99
+            ],
             [
               "Infosys",
               367
             ],
             [
               "TCS",
-              99
+              36
             ],
             [
-              "TCS",
-              36
+              "Infosys",
+              243
             ],
             [
               "TCS",
               238
             ],
             [
-              "TCS",
-              316
-            ],
-            [
               "Infosys",
-              243
+              172
             ],
             [
               "TCS",
@@ -11636,12 +11636,12 @@
               38
             ],
             [
-              "Infosys",
-              172
+              "TCS",
+              316
             ],
             [
-              "TCS",
-              133
+              "Infosys",
+              26
             ]
           ],
           "rank_tol0": 3,
@@ -11649,100 +11649,100 @@
           "all_companies_covered": true
         },
         "hybrid": {
-          "latency_ms": 108,
+          "latency_ms": 205,
           "retrieved": [
+            [
+              "TCS",
+              24
+            ],
             [
               "Infosys",
               26
             ],
             [
+              "TCS",
+              33
+            ],
+            [
               "Infosys",
               38
+            ],
+            [
+              "TCS",
+              36
             ],
             [
               "Infosys",
               119
             ],
             [
+              "TCS",
+              316
+            ],
+            [
               "Infosys",
               38
+            ],
+            [
+              "TCS",
+              325
             ],
             [
               "Infosys",
               362
-            ],
-            [
-              "TCS",
-              24
-            ],
-            [
-              "Infosys",
-              323
-            ],
-            [
-              "Infosys",
-              36
-            ],
-            [
-              "Infosys",
-              353
-            ],
-            [
-              "TCS",
-              36
-            ]
-          ],
-          "rank_tol0": 2,
-          "rank_tol1": 2,
-          "all_companies_covered": true
-        },
-        "hybrid_rerank": {
-          "latency_ms": 1355,
-          "retrieved": [
-            [
-              "TCS",
-              36
-            ],
-            [
-              "TCS",
-              24
-            ],
-            [
-              "Infosys",
-              26
-            ],
-            [
-              "Infosys",
-              226
-            ],
-            [
-              "Infosys",
-              323
-            ],
-            [
-              "Infosys",
-              119
-            ],
-            [
-              "Infosys",
-              226
-            ],
-            [
-              "Infosys",
-              352
-            ],
-            [
-              "Infosys",
-              38
-            ],
-            [
-              "Infosys",
-              36
             ]
           ],
           "rank_tol0": 1,
           "rank_tol1": 1,
           "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 2635,
+          "retrieved": [
+            [
+              "TCS",
+              36
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "TCS",
+              70
+            ],
+            [
+              "Infosys",
+              226
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": false
         }
       }
     },
@@ -11774,7 +11774,7 @@
       ],
       "modes": {
         "dense": {
-          "latency_ms": 68,
+          "latency_ms": 85,
           "retrieved": [
             [
               "HCLTech",
@@ -11785,24 +11785,24 @@
               477
             ],
             [
-              "Tech Mahindra",
-              254
-            ],
-            [
               "HCLTech",
               4
+            ],
+            [
+              "Tech Mahindra",
+              254
             ],
             [
               "HCLTech",
               60
             ],
             [
-              "HCLTech",
-              130
-            ],
-            [
               "Tech Mahindra",
               255
+            ],
+            [
+              "HCLTech",
+              130
             ],
             [
               "Tech Mahindra",
@@ -11822,7 +11822,7 @@
           "all_companies_covered": true
         },
         "keyword": {
-          "latency_ms": 45,
+          "latency_ms": 85,
           "retrieved": [
             [
               "HCLTech",
@@ -11833,45 +11833,49 @@
               659
             ],
             [
-              "Tech Mahindra",
-              540
+              "HCLTech",
+              263
             ],
             [
               "Tech Mahindra",
               276
             ],
             [
+              "HCLTech",
+              286
+            ],
+            [
+              "Tech Mahindra",
+              540
+            ],
+            [
+              "HCLTech",
+              130
+            ],
+            [
               "Tech Mahindra",
               254
             ],
             [
-              "Tech Mahindra",
-              409
+              "HCLTech",
+              240
             ],
             [
               "Tech Mahindra",
               279
-            ],
-            [
-              "Tech Mahindra",
-              482
-            ],
-            [
-              "Tech Mahindra",
-              594
-            ],
-            [
-              "Tech Mahindra",
-              409
             ]
           ],
           "rank_tol0": null,
-          "rank_tol1": 5,
+          "rank_tol1": 8,
           "all_companies_covered": false
         },
         "hybrid": {
-          "latency_ms": 96,
+          "latency_ms": 190,
           "retrieved": [
+            [
+              "HCLTech",
+              130
+            ],
             [
               "Tech Mahindra",
               254
@@ -11882,7 +11886,19 @@
             ],
             [
               "Tech Mahindra",
+              255
+            ],
+            [
+              "HCLTech",
+              4
+            ],
+            [
+              "Tech Mahindra",
               477
+            ],
+            [
+              "HCLTech",
+              60
             ],
             [
               "Tech Mahindra",
@@ -11890,35 +11906,19 @@
             ],
             [
               "HCLTech",
-              4
-            ],
-            [
-              "HCLTech",
-              60
-            ],
-            [
-              "HCLTech",
-              130
-            ],
-            [
-              "Tech Mahindra",
-              255
+              129
             ],
             [
               "Tech Mahindra",
               665
-            ],
-            [
-              "HCLTech",
-              129
             ]
           ],
-          "rank_tol0": 2,
-          "rank_tol1": 1,
+          "rank_tol0": 3,
+          "rank_tol1": 2,
           "all_companies_covered": true
         },
         "hybrid_rerank": {
-          "latency_ms": 1346,
+          "latency_ms": 2608,
           "retrieved": [
             [
               "HCLTech",
@@ -11933,16 +11933,8 @@
               83
             ],
             [
-              "HCLTech",
-              60
-            ],
-            [
               "Tech Mahindra",
               254
-            ],
-            [
-              "Tech Mahindra",
-              589
             ],
             [
               "HCLTech",
@@ -11950,20 +11942,28 @@
             ],
             [
               "Tech Mahindra",
+              589
+            ],
+            [
+              "HCLTech",
+              60
+            ],
+            [
+              "Tech Mahindra",
               315
             ],
             [
               "HCLTech",
-              130
+              84
             ],
             [
-              "HCLTech",
-              4
+              "Tech Mahindra",
+              255
             ]
           ],
           "rank_tol0": 1,
           "rank_tol1": 1,
-          "all_companies_covered": false
+          "all_companies_covered": true
         }
       }
     }

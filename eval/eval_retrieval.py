@@ -64,6 +64,20 @@ def question_filters(q: dict, oracle: bool) -> Filters:
     return f.model_copy(update={"companies": q["companies"]}) if oracle else f
 
 
+def retrieve_for(q: dict, mode: str, filters: Filters) -> list:
+    """Top-K for one question. Comparisons mirror the agent: one search per company
+    (K // n each, same question, that company's filter), interleaved round-robin."""
+    if q["type"] != "comparison" or len(filters.companies) < 2:
+        return retrieve(q["question"], mode, filters, k=K)
+    per = max(1, K // len(filters.companies))
+    groups = [
+        retrieve(q["question"], mode, filters.model_copy(update={"companies": [c]}), k=per)
+        for c in filters.companies
+    ]
+    merged = [g[i] for i in range(per) for g in groups if i < len(g)]
+    return merged[:K]
+
+
 def run(questions: list[dict], tol: int, oracle: bool = False) -> dict:
     """Retrieve for every question and mode; return per-question details."""
     for mode in MODES:  # warm-up: load models and open the DB connection outside the timing
@@ -80,7 +94,7 @@ def run(questions: list[dict], tol: int, oracle: bool = False) -> dict:
         }
         for mode in MODES:
             t0 = time.perf_counter()
-            res = retrieve(q["question"], mode, filters, k=K)
+            res = retrieve_for(q, mode, filters)
             ms = (time.perf_counter() - t0) * 1000
             got = [(r.chunk.company, r.chunk.page) for r in res]
             row["modes"][mode] = {
@@ -163,7 +177,11 @@ def to_markdown(summary: dict, details: list[dict], meta: dict, tol: int) -> str
     md += ["", f"## Secondary: page tolerance ±{tol}", ""]
     md += table(summary[f"overall_tol{tol}"], ["hit@1", "hit@5", "mrr@10"])
     if summary["comparison"]:
-        md += ["", "## Comparison questions (tolerance 0, single query, no decomposition)", ""]
+        md += [
+            "",
+            "## Comparison questions (tolerance 0, one search per company, interleaved)",
+            "",
+        ]
         md += table(summary["comparison"], ["hit@1", "hit@5", "mrr@10", "all_companies@10"])
     md += ["", "## Latency per query (ms)", ""]
     if meta.get("latency_note"):
