@@ -2,12 +2,12 @@
   "commit": "d9fdb2c68134dc939d50e78ba0d23cacc3794ae8",
   "overall": {
     "n": 67,
-    "correct": 0.661,
-    "false_refusals": 9,
+    "correct": 0.679,
+    "false_refusals": 10,
     "refusal_acc_unanswerable": 1.0,
     "citation_retrieved": 1.0,
-    "citation_golden_exact": 0.517,
-    "citation_golden_pm1": 0.534,
+    "citation_golden_exact": 0.608,
+    "citation_golden_pm1": 0.627,
     "faithfulness": 0.556
   },
   "by_company": {
@@ -23,12 +23,12 @@
     },
     "Infosys": {
       "n": 19,
-      "correct": 0.688,
-      "false_refusals": 0,
+      "correct": 0.75,
+      "false_refusals": 1,
       "refusal_acc_unanswerable": 1.0,
       "citation_retrieved": 1.0,
-      "citation_golden_exact": 0.318,
-      "citation_golden_pm1": 0.318,
+      "citation_golden_exact": 0.533,
+      "citation_golden_pm1": 0.533,
       "faithfulness": 0
     },
     "TCS": {
@@ -96,21 +96,21 @@
     "fact": {
       "n": 26,
       "correct": 0.615,
-      "false_refusals": 4,
+      "false_refusals": 5,
       "refusal_acc_unanswerable": null,
       "citation_retrieved": 1.0,
-      "citation_golden_exact": 0.696,
-      "citation_golden_pm1": 0.696,
+      "citation_golden_exact": 0.762,
+      "citation_golden_pm1": 0.762,
       "faithfulness": null
     },
     "table": {
       "n": 17,
-      "correct": 0.824,
+      "correct": 0.882,
       "false_refusals": 1,
       "refusal_acc_unanswerable": null,
       "citation_retrieved": 1.0,
-      "citation_golden_exact": 0.381,
-      "citation_golden_pm1": 0.381,
+      "citation_golden_exact": 0.562,
+      "citation_golden_pm1": 0.562,
       "faithfulness": null
     },
     "unanswerable": {
@@ -125,12 +125,12 @@
     }
   },
   "tokens": {
-    "openai/gpt-oss-20b": 29668,
-    "openai/gpt-oss-120b": 144486
+    "openai/gpt-oss-20b": 29570,
+    "openai/gpt-oss-120b": 144384
   },
-  "tokens_per_question": 2599,
+  "tokens_per_question": 2596,
   "latency_ms": {
-    "p50": 53639,
+    "p50": 53644,
     "p95": 59641
   },
   "rows": [
@@ -193,17 +193,17 @@
       "type": "table",
       "question": "What was the total dividend per share for FY2026?",
       "expected": "₹48 per share (interim ₹23 + final ₹25)",
-      "answer": "- **Wipro** – The interim dividend of ₹11 per equity share was adopted as the final dividend for the year ended 31 March 2026, giving a total dividend of **₹11 per share**[Wipro, FY2026, p.44].  \n\n- **Tech Mahindra** – The Board proposed a final dividend of ₹36 per equity share and an interim dividend of ₹15 per equity share for FY 2025‑26, resulting in a total dividend of **₹51 per share**[Tech Mahindra, FY2026, p.255].  \n\n- **TCS** – The Board recommended a final dividend of ₹31 per equity share for the financial year ended 31 March 2026[TCS, FY2026, p.325].  \n\n**Comparison:**  \nTech Mahindra’s total FY 2026 dividend per share (₹51) is higher than both Wipro’s (₹11) and TCS’s (₹31).",
+      "answer": "The total dividend per share for FY 2026 was ₹48.00 per share[Infosys, FY2026, p.38].",
       "refused": false,
-      "number_match": false,
-      "code_correct": 0.0,
+      "number_match": true,
+      "code_correct": 1.0,
       "citations": {
-        "n": 3,
-        "retrieved": 3,
-        "golden_exact": 0,
-        "golden_pm1": 0
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
       },
-      "correct": 0.0,
+      "correct": 1.0,
       "judge": null
     },
     {
@@ -265,13 +265,13 @@
       "type": "table",
       "question": "What was the total voluntary attrition (turnover) rate for permanent employees in fiscal 2026?",
       "expected": "12.6%",
-      "answer": "- Infosys: total voluntary attrition rate for permanent employees was **12.6 %** in fiscal 2026[Infosys, FY2026, p.144].  \n- TCS: total voluntary attrition rate for permanent employees was **13.7 %** in fiscal 2026[TCS, FY2026, p.108].  \n- HCLTech: total voluntary attrition rate for permanent employees was **12.51 %** in fiscal 2026[HCLTech, FY2026, p.217].  \n- Tech Mahindra: total voluntary attrition rate for permanent employees was **12.1 %** in fiscal 2026[Tech Mahindra, FY2026, p.381].  \n\n**Comparison:** Among the four companies, TCS had the highest total turnover rate (13.7 %), while Infosys (12.6 %) and HCLTech (12.51 %) were close, and Tech Mahindra had the lowest (12.1 %).",
+      "answer": "The total voluntary attrition (turnover) rate for permanent employees in fiscal 2026 was **12.6 %**[Infosys, FY2026, p.144].",
       "refused": false,
       "number_match": true,
       "code_correct": 1.0,
       "citations": {
-        "n": 4,
-        "retrieved": 4,
+        "n": 1,
+        "retrieved": 1,
         "golden_exact": 1,
         "golden_pm1": 1
       },
@@ -337,13 +337,13 @@
       "type": "fact",
       "question": "How many clients contribute more than US$100 million in revenue, and how did that change from last year?",
       "expected": "41, up from 39",
-      "answer": "- HCLTech had **23 clients** contributing more than US $100 million in FY 26, up from **22** in FY 25 (an increase of 1)[HCLTech, FY2026, p.95].  \n- Wipro had **16 clients** in the >$100 million revenue bucket in FY 26, down from **17** in FY 25 (a decrease of 1)[Wipro, FY2026, p.27].  \n\n**Comparison:** HCLTech’s count of >$100 million clients rose by one, while Wipro’s fell by one over the same period.",
-      "refused": false,
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
       "number_match": false,
       "code_correct": 0.0,
       "citations": {
-        "n": 2,
-        "retrieved": 2,
+        "n": 0,
+        "retrieved": 0,
         "golden_exact": 0,
         "golden_pm1": 0
       },

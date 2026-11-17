@@ -6,14 +6,14 @@ correct = code check (numbers / phrases), or the LLM judge's correctness for exp
 
 | group | n | correct | false_refusals | refusal_acc_unanswerable | citation_retrieved | citation_golden_exact | citation_golden_pm1 | faithfulness |
 |---|---|---|---|---|---|---|---|---|
-| all | 67 | 0.661 | 9 | 1.0 | 1.0 | 0.517 | 0.534 | 0.556 |
+| all | 67 | 0.679 | 10 | 1.0 | 1.0 | 0.608 | 0.627 | 0.556 |
 
 ## By company
 
 | group | n | correct | false_refusals | refusal_acc_unanswerable | citation_retrieved | citation_golden_exact | citation_golden_pm1 | faithfulness |
 |---|---|---|---|---|---|---|---|---|
 | HCLTech | 10 | 0.75 | 1 | 1.0 | 1.0 | 0.857 | 0.857 | 0 |
-| Infosys | 19 | 0.688 | 0 | 1.0 | 1.0 | 0.318 | 0.318 | 0 |
+| Infosys | 19 | 0.75 | 1 | 1.0 | 1.0 | 0.533 | 0.533 | 0 |
 | TCS | 10 | 0.875 | 0 | 1.0 | 1.0 | 0.75 | 0.75 | 1 |
 | Tech Mahindra | 10 | 0.625 | 2 | 1.0 | 1.0 | 0.429 | 0.429 | 1 |
 | Wipro | 10 | 0.625 | 2 | 1.0 | 1.0 | 0.833 | 0.833 | 1 |
@@ -25,17 +25,16 @@ correct = code check (numbers / phrases), or the LLM judge's correctness for exp
 |---|---|---|---|---|---|---|---|---|
 | comparison | 8 | 0.375 | 4 | — | 1.0 | 0.375 | 0.5 | 0.5 |
 | explanation | 5 | 0.8 | 0 | — | 1.0 | 0.5 | 0.5 | 0.6 |
-| fact | 26 | 0.615 | 4 | — | 1.0 | 0.696 | 0.696 | — |
-| table | 17 | 0.824 | 1 | — | 1.0 | 0.381 | 0.381 | — |
+| fact | 26 | 0.615 | 5 | — | 1.0 | 0.762 | 0.762 | — |
+| table | 17 | 0.882 | 1 | — | 1.0 | 0.562 | 0.562 | — |
 | unanswerable | 11 | — | 0 | 1.0 | — | — | — | — |
 
-Tokens: {'openai/gpt-oss-20b': 29668, 'openai/gpt-oss-120b': 144486} · per question 2599 · latency p50/p95 53639/59641 ms (includes waits on the Groq rate limit)
+Tokens: {'openai/gpt-oss-20b': 29570, 'openai/gpt-oss-120b': 144384} · per question 2596 · latency p50/p95 53644/59641 ms (includes waits on the Groq rate limit)
 
 ## Failed rows
 
-- **q004** (table) What was the total dividend per share for FY2026? — expected figure not found
 - **q007** (fact) What buyback did Infosys complete, in size and price per share? — expected figure not found
-- **q012** (fact) How many clients contribute more than US$100 million in revenue, and how did that change from last year? — expected figure not found
+- **q012** (fact) How many clients contribute more than US$100 million in revenue, and how did that change from last year? — refused
 - **q013** (fact) How much did Infosys spend on CSR globally in fiscal 2026? — expected figure not found
 - **q015** (fact) How much has Infosys returned to shareholders for fiscal 2026? — expected figure not found
 - **q025** (fact) How much did TCS spend on CSR globally in FY2026? — expected figure not found
