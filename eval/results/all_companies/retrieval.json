@@ -1,0 +1,6821 @@
+{
+  "meta": {
+    "date": "2026-11-17",
+    "golden": "eval\\golden_set.jsonl",
+    "scored": 32,
+    "comparison": 0,
+    "skipped": 7,
+    "companies": [
+      "Infosys",
+      "TCS",
+      "Wipro"
+    ],
+    "latency_note": "Measured with no Docling job running.",
+    "filters": "extracted from the question",
+    "rrf_keyword_weight": 0.5,
+    "candidate_pool": 20,
+    "keyword_fallback_prune": true,
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2, candidates 20, max_length 512, int8 False"
+  },
+  "summary": {
+    "overall_tol0": {
+      "dense": {
+        "hit@1": 0.25,
+        "hit@5": 0.6875,
+        "mrr@10": 0.40815972222222224
+      },
+      "keyword": {
+        "hit@1": 0.15625,
+        "hit@5": 0.46875,
+        "mrr@10": 0.3099330357142857
+      },
+      "hybrid": {
+        "hit@1": 0.34375,
+        "hit@5": 0.71875,
+        "mrr@10": 0.5170138888888889
+      },
+      "hybrid_rerank": {
+        "hit@1": 0.4375,
+        "hit@5": 0.8125,
+        "mrr@10": 0.584375
+      }
+    },
+    "overall_tol1": {
+      "dense": {
+        "hit@1": 0.25,
+        "hit@5": 0.75,
+        "mrr@10": 0.43732638888888886
+      },
+      "keyword": {
+        "hit@1": 0.1875,
+        "hit@5": 0.53125,
+        "mrr@10": 0.3435267857142857
+      },
+      "hybrid": {
+        "hit@1": 0.40625,
+        "hit@5": 0.75,
+        "mrr@10": 0.5722222222222222
+      },
+      "hybrid_rerank": {
+        "hit@1": 0.4375,
+        "hit@5": 0.8125,
+        "mrr@10": 0.5875
+      }
+    },
+    "comparison": {},
+    "by_type": {
+      "explanation": {
+        "n": 3,
+        "dense": {
+          "hit@1": 0.3333333333333333,
+          "hit@5": 0.6666666666666666,
+          "mrr@10": 0.43333333333333335
+        },
+        "keyword": {
+          "hit@1": 0.3333333333333333,
+          "hit@5": 0.3333333333333333,
+          "mrr@10": 0.3666666666666667
+        },
+        "hybrid": {
+          "hit@1": 0.3333333333333333,
+          "hit@5": 0.6666666666666666,
+          "mrr@10": 0.48148148148148145
+        },
+        "hybrid_rerank": {
+          "hit@1": 0.3333333333333333,
+          "hit@5": 0.6666666666666666,
+          "mrr@10": 0.5
+        }
+      },
+      "fact": {
+        "n": 16,
+        "dense": {
+          "hit@1": 0.3125,
+          "hit@5": 0.8125,
+          "mrr@10": 0.4829861111111111
+        },
+        "keyword": {
+          "hit@1": 0.125,
+          "hit@5": 0.4375,
+          "mrr@10": 0.29069940476190476
+        },
+        "hybrid": {
+          "hit@1": 0.3125,
+          "hit@5": 0.75,
+          "mrr@10": 0.521875
+        },
+        "hybrid_rerank": {
+          "hit@1": 0.4375,
+          "hit@5": 0.875,
+          "mrr@10": 0.6302083333333334
+        }
+      },
+      "table": {
+        "n": 13,
+        "dense": {
+          "hit@1": 0.15384615384615385,
+          "hit@5": 0.5384615384615384,
+          "mrr@10": 0.31025641025641026
+        },
+        "keyword": {
+          "hit@1": 0.15384615384615385,
+          "hit@5": 0.5384615384615384,
+          "mrr@10": 0.32051282051282054
+        },
+        "hybrid": {
+          "hit@1": 0.38461538461538464,
+          "hit@5": 0.6923076923076923,
+          "mrr@10": 0.5192307692307693
+        },
+        "hybrid_rerank": {
+          "hit@1": 0.46153846153846156,
+          "hit@5": 0.7692307692307693,
+          "mrr@10": 0.5474358974358974
+        }
+      }
+    },
+    "latency_ms": {
+      "dense": {
+        "p50": 71,
+        "p95": 144
+      },
+      "keyword": {
+        "p50": 45,
+        "p95": 150
+      },
+      "hybrid": {
+        "p50": 92,
+        "p95": 143
+      },
+      "hybrid_rerank": {
+        "p50": 1338,
+        "p95": 1460
+      }
+    },
+    "worst5_hybrid_rerank": [
+      "q004",
+      "q012",
+      "q013",
+      "q016",
+      "q030"
+    ]
+  },
+  "details": [
+    {
+      "id": "q001",
+      "type": "table",
+      "question": "What was Infosys's consolidated revenue from operations in FY2026, in rupees crore?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 33
+        },
+        {
+          "company": "Infosys",
+          "page": 10
+        },
+        {
+          "company": "Infosys",
+          "page": 16
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 54,
+          "retrieved": [
+            [
+              "Infosys",
+              333
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              356
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              309
+            ],
+            [
+              "Infosys",
+              294
+            ],
+            [
+              "Infosys",
+              308
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 44,
+          "retrieved": [
+            [
+              "Infosys",
+              37
+            ],
+            [
+              "Infosys",
+              80
+            ],
+            [
+              "Infosys",
+              33
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              276
+            ],
+            [
+              "Infosys",
+              334
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              334
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              78
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 92,
+          "retrieved": [
+            [
+              "Infosys",
+              333
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              356
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              309
+            ],
+            [
+              "Infosys",
+              294
+            ],
+            [
+              "Infosys",
+              308
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1402,
+          "retrieved": [
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              333
+            ],
+            [
+              "Infosys",
+              33
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              353
+            ],
+            [
+              "Infosys",
+              356
+            ],
+            [
+              "Infosys",
+              209
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              78
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q002",
+      "type": "fact",
+      "question": "By what percentage did Infosys's consolidated revenue grow in FY2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 33
+        },
+        {
+          "company": "Infosys",
+          "page": 16
+        },
+        {
+          "company": "Infosys",
+          "page": 26
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 92,
+          "retrieved": [
+            [
+              "Infosys",
+              319
+            ],
+            [
+              "Infosys",
+              240
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              333
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              304
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              78
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 64,
+          "retrieved": [
+            [
+              "Infosys",
+              334
+            ],
+            [
+              "Infosys",
+              276
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              334
+            ],
+            [
+              "Infosys",
+              277
+            ],
+            [
+              "Infosys",
+              80
+            ],
+            [
+              "Infosys",
+              196
+            ],
+            [
+              "Infosys",
+              279
+            ],
+            [
+              "Infosys",
+              280
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 91,
+          "retrieved": [
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              319
+            ],
+            [
+              "Infosys",
+              240
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              333
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              304
+            ]
+          ],
+          "rank_tol0": 6,
+          "rank_tol1": 6,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1203,
+          "retrieved": [
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              353
+            ],
+            [
+              "Infosys",
+              80
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              240
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q003",
+      "type": "table",
+      "question": "What was Infosys's net profit attributable to owners of the company in FY2026, in rupees crore?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 16
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 74,
+          "retrieved": [
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              33
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              47
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              294
+            ],
+            [
+              "Infosys",
+              308
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              352
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 142,
+          "retrieved": [
+            [
+              "Infosys",
+              37
+            ],
+            [
+              "Infosys",
+              261
+            ],
+            [
+              "Infosys",
+              241
+            ],
+            [
+              "Infosys",
+              250
+            ],
+            [
+              "Infosys",
+              65
+            ],
+            [
+              "Infosys",
+              250
+            ],
+            [
+              "Infosys",
+              81
+            ],
+            [
+              "Infosys",
+              33
+            ],
+            [
+              "Infosys",
+              329
+            ],
+            [
+              "Infosys",
+              205
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 538,
+          "retrieved": [
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              33
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              47
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              294
+            ],
+            [
+              "Infosys",
+              308
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              352
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1338,
+          "retrieved": [
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              352
+            ],
+            [
+              "Infosys",
+              288
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              354
+            ],
+            [
+              "Infosys",
+              351
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              353
+            ],
+            [
+              "Infosys",
+              268
+            ],
+            [
+              "Infosys",
+              226
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q004",
+      "type": "table",
+      "question": "What was the total dividend per share for FY2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 38
+        },
+        {
+          "company": "Infosys",
+          "page": 18
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 344,
+          "retrieved": [
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "TCS",
+              97
+            ],
+            [
+              "TCS",
+              238
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              95
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Wipro",
+              154
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 440,
+          "retrieved": [
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "TCS",
+              99
+            ],
+            [
+              "Wipro",
+              100
+            ],
+            [
+              "Tech Mahindra",
+              540
+            ],
+            [
+              "Tech Mahindra",
+              276
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              659
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Tech Mahindra",
+              279
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 143,
+          "retrieved": [
+            [
+              "TCS",
+              316
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              238
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              594
+            ],
+            [
+              "Wipro",
+              44
+            ],
+            [
+              "Tech Mahindra",
+              482
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              97
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1294,
+          "retrieved": [
+            [
+              "Wipro",
+              44
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "Tech Mahindra",
+              255
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "Wipro",
+              154
+            ],
+            [
+              "Tech Mahindra",
+              254
+            ],
+            [
+              "TCS",
+              97
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              238
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q005",
+      "type": "table",
+      "question": "What interim dividend per share did Infosys declare for FY2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 38
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 57,
+          "retrieved": [
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              227
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              243
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 5,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 42,
+          "retrieved": [
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              42
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              120
+            ],
+            [
+              "Infosys",
+              119
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 109,
+          "retrieved": [
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              226
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1230,
+          "retrieved": [
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              227
+            ],
+            [
+              "Infosys",
+              226
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q006",
+      "type": "table",
+      "question": "What final dividend per share did Infosys recommend for FY2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 38
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 68,
+          "retrieved": [
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              362
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              361
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              75
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 45,
+          "retrieved": [
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              361
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              42
+            ],
+            [
+              "Infosys",
+              120
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              322
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 106,
+          "retrieved": [
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              361
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              322
+            ],
+            [
+              "Infosys",
+              362
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1304,
+          "retrieved": [
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              361
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              119
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              227
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              243
+            ],
+            [
+              "Infosys",
+              322
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q007",
+      "type": "fact",
+      "question": "What buyback did Infosys complete, in size and price per share?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 38
+        },
+        {
+          "company": "Infosys",
+          "page": 16
+        },
+        {
+          "company": "Infosys",
+          "page": 36
+        },
+        {
+          "company": "Infosys",
+          "page": 61
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 57,
+          "retrieved": [
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              228
+            ],
+            [
+              "Infosys",
+              61
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              118
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              299
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              321
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 43,
+          "retrieved": [
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              278
+            ],
+            [
+              "Infosys",
+              197
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              197
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              278
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              38
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 8,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 83,
+          "retrieved": [
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              75
+            ],
+            [
+              "Infosys",
+              228
+            ],
+            [
+              "Infosys",
+              61
+            ],
+            [
+              "Infosys",
+              226
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1300,
+          "retrieved": [
+            [
+              "Infosys",
+              61
+            ],
+            [
+              "Infosys",
+              227
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              226
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              75
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              118
+            ],
+            [
+              "Infosys",
+              228
+            ],
+            [
+              "Infosys",
+              18
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q008",
+      "type": "table",
+      "question": "What was the total voluntary attrition (turnover) rate for permanent employees in fiscal 2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 144
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 235,
+          "retrieved": [
+            [
+              "TCS",
+              108
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "Infosys",
+              167
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "HCLTech",
+              246
+            ],
+            [
+              "Tech Mahindra",
+              396
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 795,
+          "retrieved": [
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              167
+            ],
+            [
+              "HCLTech",
+              260
+            ],
+            [
+              "Infosys",
+              157
+            ],
+            [
+              "TCS",
+              117
+            ],
+            [
+              "TCS",
+              117
+            ],
+            [
+              "HCLTech",
+              244
+            ],
+            [
+              "HCLTech",
+              244
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Tech Mahindra",
+              395
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 132,
+          "retrieved": [
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              167
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "Tech Mahindra",
+              397
+            ],
+            [
+              "HCLTech",
+              246
+            ],
+            [
+              "Tech Mahindra",
+              396
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1317,
+          "retrieved": [
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "Tech Mahindra",
+              381
+            ],
+            [
+              "HCLTech",
+              217
+            ],
+            [
+              "Tech Mahindra",
+              303
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "Infosys",
+              167
+            ],
+            [
+              "Tech Mahindra",
+              123
+            ],
+            [
+              "Infosys",
+              160
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q009",
+      "type": "fact",
+      "question": "How many permanent employees does Infosys have?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 10
+        },
+        {
+          "company": "Infosys",
+          "page": 143
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 79,
+          "retrieved": [
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              271
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              269
+            ],
+            [
+              "Infosys",
+              14
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 40,
+          "retrieved": [
+            [
+              "Infosys",
+              167
+            ],
+            [
+              "Infosys",
+              157
+            ],
+            [
+              "Infosys",
+              157
+            ],
+            [
+              "Infosys",
+              27
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              158
+            ],
+            [
+              "Infosys",
+              167
+            ],
+            [
+              "Infosys",
+              372
+            ],
+            [
+              "Infosys",
+              40
+            ],
+            [
+              "Infosys",
+              161
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 5,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 81,
+          "retrieved": [
+            [
+              "Infosys",
+              40
+            ],
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              271
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              269
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1252,
+          "retrieved": [
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              40
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              269
+            ],
+            [
+              "Infosys",
+              14
+            ],
+            [
+              "Infosys",
+              144
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q010",
+      "type": "fact",
+      "question": "What share of Infosys's workforce is women?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 25
+        },
+        {
+          "company": "Infosys",
+          "page": 143
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 84,
+          "retrieved": [
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              39
+            ],
+            [
+              "Infosys",
+              143
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 40,
+          "retrieved": [
+            [
+              "Infosys",
+              27
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              21
+            ],
+            [
+              "Infosys",
+              19
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              64
+            ],
+            [
+              "Infosys",
+              21
+            ],
+            [
+              "Infosys",
+              19
+            ],
+            [
+              "Infosys",
+              27
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 134,
+          "retrieved": [
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              21
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              27
+            ],
+            [
+              "Infosys",
+              31
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1267,
+          "retrieved": [
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              144
+            ],
+            [
+              "Infosys",
+              31
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              25
+            ],
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              143
+            ],
+            [
+              "Infosys",
+              18
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q011",
+      "type": "fact",
+      "question": "How many active clients does Infosys have?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 10
+        },
+        {
+          "company": "Infosys",
+          "page": 25
+        },
+        {
+          "company": "Infosys",
+          "page": 88
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 81,
+          "retrieved": [
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              31
+            ],
+            [
+              "Infosys",
+              87
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              39
+            ],
+            [
+              "Infosys",
+              87
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              85
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              18
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 42,
+          "retrieved": [
+            [
+              "Infosys",
+              87
+            ],
+            [
+              "Infosys",
+              31
+            ],
+            [
+              "Infosys",
+              31
+            ],
+            [
+              "Infosys",
+              165
+            ],
+            [
+              "Infosys",
+              75
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              22
+            ],
+            [
+              "Infosys",
+              88
+            ],
+            [
+              "Infosys",
+              63
+            ],
+            [
+              "Infosys",
+              28
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 88,
+          "retrieved": [
+            [
+              "Infosys",
+              87
+            ],
+            [
+              "Infosys",
+              31
+            ],
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              39
+            ],
+            [
+              "Infosys",
+              85
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              75
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              22
+            ],
+            [
+              "Infosys",
+              18
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1285,
+          "retrieved": [
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              31
+            ],
+            [
+              "Infosys",
+              87
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              85
+            ],
+            [
+              "Infosys",
+              18
+            ],
+            [
+              "Infosys",
+              84
+            ],
+            [
+              "Infosys",
+              75
+            ],
+            [
+              "Infosys",
+              87
+            ],
+            [
+              "Infosys",
+              142
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q012",
+      "type": "fact",
+      "question": "How many clients contribute more than US$100 million in revenue, and how did that change from last year?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 88
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 144,
+          "retrieved": [
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "Wipro",
+              362
+            ],
+            [
+              "TCS",
+              293
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              236
+            ],
+            [
+              "Infosys",
+              72
+            ],
+            [
+              "Infosys",
+              319
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 150,
+          "retrieved": [
+            [
+              "HCLTech",
+              235
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "HCLTech",
+              98
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Tech Mahindra",
+              320
+            ],
+            [
+              "Wipro",
+              26
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 223,
+          "retrieved": [
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "Wipro",
+              362
+            ],
+            [
+              "TCS",
+              293
+            ],
+            [
+              "Wipro",
+              236
+            ],
+            [
+              "Infosys",
+              72
+            ],
+            [
+              "Infosys",
+              319
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1394,
+          "retrieved": [
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "HCLTech",
+              95
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              362
+            ],
+            [
+              "Wipro",
+              486
+            ],
+            [
+              "Wipro",
+              486
+            ],
+            [
+              "Wipro",
+              362
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Infosys",
+              319
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q013",
+      "type": "fact",
+      "question": "How much did Infosys spend on CSR globally in fiscal 2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 25
+        },
+        {
+          "company": "Infosys",
+          "page": 31
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 63,
+          "retrieved": [
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              68
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              72
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              26
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 10,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 41,
+          "retrieved": [
+            [
+              "Infosys",
+              104
+            ],
+            [
+              "Infosys",
+              63
+            ],
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              63
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              65
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              31
+            ]
+          ],
+          "rank_tol0": 10,
+          "rank_tol1": 10,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 83,
+          "retrieved": [
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              68
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              72
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              26
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 10,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1310,
+          "retrieved": [
+            [
+              "Infosys",
+              68
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              10
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              342
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              26
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 10,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q014",
+      "type": "table",
+      "question": "Under the Companies Act CSR disclosure, what total amount did Infosys spend for the financial year?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 65
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 70,
+          "retrieved": [
+            [
+              "Infosys",
+              68
+            ],
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              336
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              256
+            ],
+            [
+              "Infosys",
+              63
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 66,
+          "retrieved": [
+            [
+              "Infosys",
+              283
+            ],
+            [
+              "Infosys",
+              65
+            ],
+            [
+              "Infosys",
+              284
+            ],
+            [
+              "Infosys",
+              201
+            ],
+            [
+              "Infosys",
+              201
+            ],
+            [
+              "Infosys",
+              193
+            ],
+            [
+              "Infosys",
+              205
+            ],
+            [
+              "Infosys",
+              104
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              65
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 104,
+          "retrieved": [
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              65
+            ],
+            [
+              "Infosys",
+              68
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              336
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              141
+            ],
+            [
+              "Infosys",
+              256
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1420,
+          "retrieved": [
+            [
+              "Infosys",
+              105
+            ],
+            [
+              "Infosys",
+              68
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              43
+            ],
+            [
+              "Infosys",
+              65
+            ],
+            [
+              "Infosys",
+              260
+            ],
+            [
+              "Infosys",
+              63
+            ],
+            [
+              "Infosys",
+              296
+            ],
+            [
+              "Infosys",
+              273
+            ],
+            [
+              "Infosys",
+              141
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 5,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q015",
+      "type": "fact",
+      "question": "How much has Infosys returned to shareholders for fiscal 2026?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 26
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 61,
+          "retrieved": [
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              329
+            ],
+            [
+              "Infosys",
+              72
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              330
+            ],
+            [
+              "Infosys",
+              254
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 41,
+          "retrieved": [
+            [
+              "Infosys",
+              366
+            ],
+            [
+              "Infosys",
+              365
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              367
+            ],
+            [
+              "Infosys",
+              374
+            ],
+            [
+              "Infosys",
+              362
+            ],
+            [
+              "Infosys",
+              121
+            ],
+            [
+              "Infosys",
+              121
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              120
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 99,
+          "retrieved": [
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              77
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              329
+            ],
+            [
+              "Infosys",
+              72
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              330
+            ],
+            [
+              "Infosys",
+              254
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1207,
+          "retrieved": [
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              330
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              16
+            ],
+            [
+              "Infosys",
+              302
+            ],
+            [
+              "Infosys",
+              67
+            ],
+            [
+              "Infosys",
+              254
+            ],
+            [
+              "Infosys",
+              78
+            ],
+            [
+              "Infosys",
+              329
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q016",
+      "type": "explanation",
+      "question": "What is Infosys's capital allocation policy for returning cash to shareholders?",
+      "relevant": [
+        {
+          "company": "Infosys",
+          "page": 38
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 74,
+          "retrieved": [
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              38
+            ]
+          ],
+          "rank_tol0": 10,
+          "rank_tol1": 10,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 48,
+          "retrieved": [
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              74
+            ],
+            [
+              "Infosys",
+              295
+            ],
+            [
+              "Infosys",
+              73
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 134,
+          "retrieved": [
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              38
+            ],
+            [
+              "Infosys",
+              242
+            ]
+          ],
+          "rank_tol0": 9,
+          "rank_tol1": 9,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1211,
+          "retrieved": [
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              36
+            ],
+            [
+              "Infosys",
+              321
+            ],
+            [
+              "Infosys",
+              242
+            ],
+            [
+              "Infosys",
+              26
+            ],
+            [
+              "Infosys",
+              244
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              323
+            ],
+            [
+              "Infosys",
+              365
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q020",
+      "type": "table",
+      "question": "What was TCS's consolidated revenue from operations in FY2026, in rupees crore?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 36
+        },
+        {
+          "company": "TCS",
+          "page": 35
+        },
+        {
+          "company": "TCS",
+          "page": 167
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 71,
+          "retrieved": [
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              170
+            ],
+            [
+              "TCS",
+              59
+            ],
+            [
+              "TCS",
+              285
+            ],
+            [
+              "TCS",
+              229
+            ],
+            [
+              "TCS",
+              254
+            ],
+            [
+              "TCS",
+              205
+            ],
+            [
+              "TCS",
+              228
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 62,
+          "retrieved": [
+            [
+              "TCS",
+              226
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              157
+            ],
+            [
+              "TCS",
+              158
+            ],
+            [
+              "TCS",
+              240
+            ],
+            [
+              "TCS",
+              200
+            ],
+            [
+              "TCS",
+              292
+            ],
+            [
+              "TCS",
+              232
+            ],
+            [
+              "TCS",
+              283
+            ],
+            [
+              "TCS",
+              219
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 90,
+          "retrieved": [
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              170
+            ],
+            [
+              "TCS",
+              59
+            ],
+            [
+              "TCS",
+              285
+            ],
+            [
+              "TCS",
+              229
+            ],
+            [
+              "TCS",
+              254
+            ],
+            [
+              "TCS",
+              205
+            ],
+            [
+              "TCS",
+              228
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1144,
+          "retrieved": [
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              59
+            ],
+            [
+              "TCS",
+              172
+            ],
+            [
+              "TCS",
+              230
+            ],
+            [
+              "TCS",
+              229
+            ],
+            [
+              "TCS",
+              170
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q021",
+      "type": "fact",
+      "question": "What was TCS's consolidated profit attributable to shareholders excluding exceptional items in FY2026?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 36
+        },
+        {
+          "company": "TCS",
+          "page": 35
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 81,
+          "retrieved": [
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              223
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              4
+            ],
+            [
+              "TCS",
+              172
+            ],
+            [
+              "TCS",
+              166
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 78,
+          "retrieved": [
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              157
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              99
+            ],
+            [
+              "TCS",
+              159
+            ],
+            [
+              "TCS",
+              253
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              96
+            ],
+            [
+              "TCS",
+              3
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 97,
+          "retrieved": [
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              4
+            ],
+            [
+              "TCS",
+              253
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              223
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1343,
+          "retrieved": [
+            [
+              "TCS",
+              4
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              41
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q022",
+      "type": "fact",
+      "question": "What was TCS's total dividend per share for FY2026?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 24
+        },
+        {
+          "company": "TCS",
+          "page": 36
+        },
+        {
+          "company": "TCS",
+          "page": 70
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 54,
+          "retrieved": [
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              169
+            ],
+            [
+              "TCS",
+              229
+            ],
+            [
+              "TCS",
+              205
+            ],
+            [
+              "TCS",
+              232
+            ],
+            [
+              "TCS",
+              231
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 39,
+          "retrieved": [
+            [
+              "TCS",
+              99
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              238
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "TCS",
+              133
+            ],
+            [
+              "TCS",
+              326
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              97
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 99,
+          "retrieved": [
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              169
+            ],
+            [
+              "TCS",
+              229
+            ],
+            [
+              "TCS",
+              205
+            ],
+            [
+              "TCS",
+              232
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1460,
+          "retrieved": [
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              232
+            ],
+            [
+              "TCS",
+              229
+            ],
+            [
+              "TCS",
+              229
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q023",
+      "type": "table",
+      "question": "What was TCS's headcount at the end of FY2026 in its ten-year financial summary?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 69
+        },
+        {
+          "company": "TCS",
+          "page": 25
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 66,
+          "retrieved": [
+            [
+              "TCS",
+              166
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              172
+            ],
+            [
+              "TCS",
+              70
+            ],
+            [
+              "TCS",
+              166
+            ],
+            [
+              "TCS",
+              252
+            ],
+            [
+              "TCS",
+              166
+            ],
+            [
+              "TCS",
+              252
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              58
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 4,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 128,
+          "retrieved": [
+            [
+              "TCS",
+              250
+            ],
+            [
+              "TCS",
+              250
+            ],
+            [
+              "TCS",
+              164
+            ],
+            [
+              "TCS",
+              165
+            ],
+            [
+              "TCS",
+              179
+            ],
+            [
+              "TCS",
+              164
+            ],
+            [
+              "TCS",
+              261
+            ],
+            [
+              "TCS",
+              239
+            ],
+            [
+              "TCS",
+              179
+            ],
+            [
+              "TCS",
+              260
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 90,
+          "retrieved": [
+            [
+              "TCS",
+              166
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              172
+            ],
+            [
+              "TCS",
+              70
+            ],
+            [
+              "TCS",
+              166
+            ],
+            [
+              "TCS",
+              252
+            ],
+            [
+              "TCS",
+              166
+            ],
+            [
+              "TCS",
+              252
+            ],
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              58
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 4,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1411,
+          "retrieved": [
+            [
+              "TCS",
+              35
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              69
+            ],
+            [
+              "TCS",
+              70
+            ],
+            [
+              "TCS",
+              225
+            ],
+            [
+              "TCS",
+              70
+            ],
+            [
+              "TCS",
+              173
+            ],
+            [
+              "TCS",
+              70
+            ],
+            [
+              "TCS",
+              167
+            ],
+            [
+              "TCS",
+              286
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q024",
+      "type": "fact",
+      "question": "What was TCS's voluntary attrition in IT services for FY2026?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 55
+        },
+        {
+          "company": "TCS",
+          "page": 25
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 131,
+          "retrieved": [
+            [
+              "TCS",
+              55
+            ],
+            [
+              "TCS",
+              210
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              358
+            ],
+            [
+              "TCS",
+              151
+            ],
+            [
+              "TCS",
+              21
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              28
+            ],
+            [
+              "TCS",
+              13
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 41,
+          "retrieved": [
+            [
+              "TCS",
+              55
+            ],
+            [
+              "TCS",
+              25
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              63
+            ],
+            [
+              "TCS",
+              99
+            ],
+            [
+              "TCS",
+              33
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 106,
+          "retrieved": [
+            [
+              "TCS",
+              55
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              25
+            ],
+            [
+              "TCS",
+              210
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              358
+            ],
+            [
+              "TCS",
+              151
+            ],
+            [
+              "TCS",
+              21
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              28
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1391,
+          "retrieved": [
+            [
+              "TCS",
+              25
+            ],
+            [
+              "TCS",
+              55
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              29
+            ],
+            [
+              "TCS",
+              5
+            ],
+            [
+              "TCS",
+              28
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              28
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q025",
+      "type": "fact",
+      "question": "How much did TCS spend on CSR globally in FY2026?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 28
+        },
+        {
+          "company": "TCS",
+          "page": 23
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 55,
+          "retrieved": [
+            [
+              "TCS",
+              302
+            ],
+            [
+              "TCS",
+              23
+            ],
+            [
+              "TCS",
+              301
+            ],
+            [
+              "TCS",
+              219
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              46
+            ],
+            [
+              "TCS",
+              277
+            ],
+            [
+              "TCS",
+              205
+            ],
+            [
+              "TCS",
+              56
+            ],
+            [
+              "TCS",
+              193
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 38,
+          "retrieved": [
+            [
+              "TCS",
+              47
+            ],
+            [
+              "TCS",
+              111
+            ],
+            [
+              "TCS",
+              47
+            ],
+            [
+              "TCS",
+              40
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              88
+            ],
+            [
+              "TCS",
+              23
+            ],
+            [
+              "TCS",
+              302
+            ],
+            [
+              "TCS",
+              47
+            ],
+            [
+              "TCS",
+              48
+            ]
+          ],
+          "rank_tol0": 7,
+          "rank_tol1": 7,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 77,
+          "retrieved": [
+            [
+              "TCS",
+              302
+            ],
+            [
+              "TCS",
+              23
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              301
+            ],
+            [
+              "TCS",
+              219
+            ],
+            [
+              "TCS",
+              46
+            ],
+            [
+              "TCS",
+              277
+            ],
+            [
+              "TCS",
+              205
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1349,
+          "retrieved": [
+            [
+              "TCS",
+              56
+            ],
+            [
+              "TCS",
+              23
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              302
+            ],
+            [
+              "TCS",
+              46
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              48
+            ],
+            [
+              "TCS",
+              205
+            ],
+            [
+              "TCS",
+              313
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q026",
+      "type": "table",
+      "question": "What share of TCS's total employees were female in FY2026 (BRSR)?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 108
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 58,
+          "retrieved": [
+            [
+              "TCS",
+              106
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              130
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              95
+            ],
+            [
+              "TCS",
+              129
+            ],
+            [
+              "TCS",
+              108
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 43,
+          "retrieved": [
+            [
+              "TCS",
+              117
+            ],
+            [
+              "TCS",
+              117
+            ],
+            [
+              "TCS",
+              352
+            ],
+            [
+              "TCS",
+              350
+            ],
+            [
+              "TCS",
+              352
+            ],
+            [
+              "TCS",
+              117
+            ],
+            [
+              "TCS",
+              351
+            ],
+            [
+              "TCS",
+              351
+            ],
+            [
+              "TCS",
+              133
+            ],
+            [
+              "TCS",
+              295
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 90,
+          "retrieved": [
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              23
+            ],
+            [
+              "TCS",
+              106
+            ],
+            [
+              "TCS",
+              130
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              95
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1272,
+          "retrieved": [
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              119
+            ],
+            [
+              "TCS",
+              106
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              108
+            ],
+            [
+              "TCS",
+              129
+            ],
+            [
+              "TCS",
+              228
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              130
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q027",
+      "type": "explanation",
+      "question": "What is TCS's dividend distribution approach?",
+      "relevant": [
+        {
+          "company": "TCS",
+          "page": 90
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 75,
+          "retrieved": [
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              90
+            ],
+            [
+              "TCS",
+              95
+            ],
+            [
+              "TCS",
+              54
+            ],
+            [
+              "TCS",
+              59
+            ],
+            [
+              "TCS",
+              258
+            ],
+            [
+              "TCS",
+              21
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 5,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 39,
+          "retrieved": [
+            [
+              "TCS",
+              99
+            ],
+            [
+              "TCS",
+              316
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              238
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              325
+            ],
+            [
+              "TCS",
+              326
+            ],
+            [
+              "TCS",
+              97
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              90
+            ]
+          ],
+          "rank_tol0": 10,
+          "rank_tol1": 10,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 82,
+          "retrieved": [
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              90
+            ],
+            [
+              "TCS",
+              99
+            ],
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              58
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              95
+            ],
+            [
+              "TCS",
+              54
+            ],
+            [
+              "TCS",
+              59
+            ]
+          ],
+          "rank_tol0": 3,
+          "rank_tol1": 3,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1297,
+          "retrieved": [
+            [
+              "TCS",
+              36
+            ],
+            [
+              "TCS",
+              90
+            ],
+            [
+              "TCS",
+              24
+            ],
+            [
+              "TCS",
+              59
+            ],
+            [
+              "TCS",
+              33
+            ],
+            [
+              "TCS",
+              12
+            ],
+            [
+              "TCS",
+              54
+            ],
+            [
+              "TCS",
+              75
+            ],
+            [
+              "TCS",
+              54
+            ],
+            [
+              "TCS",
+              258
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q030",
+      "type": "table",
+      "question": "What was Wipro's consolidated revenue from operations in FY2026, in Indian rupees million?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 284
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 99,
+          "retrieved": [
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              185
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 72,
+          "retrieved": [
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              521
+            ],
+            [
+              "Wipro",
+              296
+            ],
+            [
+              "Wipro",
+              407
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              339
+            ],
+            [
+              "Wipro",
+              274
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 92,
+          "retrieved": [
+            [
+              "Wipro",
+              274
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              387
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1360,
+          "retrieved": [
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              274
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              292
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q031",
+      "type": "fact",
+      "question": "What was Wipro's consolidated net profit for FY2026, in Indian rupees million?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 96
+        },
+        {
+          "company": "Wipro",
+          "page": 97
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 74,
+          "retrieved": [
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              185
+            ],
+            [
+              "Wipro",
+              375
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              116
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 4,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 51,
+          "retrieved": [
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              296
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              274
+            ],
+            [
+              "Wipro",
+              339
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              299
+            ],
+            [
+              "Wipro",
+              28
+            ]
+          ],
+          "rank_tol0": 8,
+          "rank_tol1": 8,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 99,
+          "retrieved": [
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              185
+            ],
+            [
+              "Wipro",
+              375
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              116
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1692,
+          "retrieved": [
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              381
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              185
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q032",
+      "type": "fact",
+      "question": "What dividend per equity share, in Indian rupees, did Wipro pay for FY2026?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 44
+        },
+        {
+          "company": "Wipro",
+          "page": 213
+        },
+        {
+          "company": "Wipro",
+          "page": 337
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 65,
+          "retrieved": [
+            [
+              "Wipro",
+              44
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              154
+            ],
+            [
+              "Wipro",
+              385
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              458
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 47,
+          "retrieved": [
+            [
+              "Wipro",
+              242
+            ],
+            [
+              "Wipro",
+              44
+            ],
+            [
+              "Wipro",
+              464
+            ],
+            [
+              "Wipro",
+              356
+            ],
+            [
+              "Wipro",
+              100
+            ],
+            [
+              "Wipro",
+              337
+            ],
+            [
+              "Wipro",
+              213
+            ],
+            [
+              "Wipro",
+              358
+            ],
+            [
+              "Wipro",
+              458
+            ],
+            [
+              "Wipro",
+              192
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 88,
+          "retrieved": [
+            [
+              "Wipro",
+              44
+            ],
+            [
+              "Wipro",
+              154
+            ],
+            [
+              "Wipro",
+              458
+            ],
+            [
+              "Wipro",
+              242
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              385
+            ],
+            [
+              "Wipro",
+              403
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              25
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1579,
+          "retrieved": [
+            [
+              "Wipro",
+              154
+            ],
+            [
+              "Wipro",
+              44
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              458
+            ],
+            [
+              "Wipro",
+              242
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              385
+            ],
+            [
+              "Wipro",
+              292
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q033",
+      "type": "fact",
+      "question": "How many total employees did Wipro report in its FY2026 highlights?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 17
+        },
+        {
+          "company": "Wipro",
+          "page": 29
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 57,
+          "retrieved": [
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              513
+            ],
+            [
+              "Wipro",
+              509
+            ],
+            [
+              "Wipro",
+              467
+            ],
+            [
+              "Wipro",
+              237
+            ],
+            [
+              "Wipro",
+              514
+            ],
+            [
+              "Wipro",
+              116
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              17
+            ],
+            [
+              "Wipro",
+              20
+            ]
+          ],
+          "rank_tol0": 9,
+          "rank_tol1": 9,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 64,
+          "retrieved": [
+            [
+              "Wipro",
+              2
+            ],
+            [
+              "Wipro",
+              505
+            ],
+            [
+              "Wipro",
+              100
+            ],
+            [
+              "Wipro",
+              392
+            ],
+            [
+              "Wipro",
+              533
+            ],
+            [
+              "Wipro",
+              416
+            ],
+            [
+              "Wipro",
+              538
+            ],
+            [
+              "Wipro",
+              513
+            ],
+            [
+              "Wipro",
+              67
+            ],
+            [
+              "Wipro",
+              196
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 90,
+          "retrieved": [
+            [
+              "Wipro",
+              513
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              509
+            ],
+            [
+              "Wipro",
+              467
+            ],
+            [
+              "Wipro",
+              237
+            ],
+            [
+              "Wipro",
+              514
+            ],
+            [
+              "Wipro",
+              116
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              17
+            ]
+          ],
+          "rank_tol0": 10,
+          "rank_tol1": 10,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1410,
+          "retrieved": [
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              17
+            ],
+            [
+              "Wipro",
+              513
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              265
+            ],
+            [
+              "Wipro",
+              116
+            ],
+            [
+              "Wipro",
+              509
+            ],
+            [
+              "Wipro",
+              260
+            ],
+            [
+              "Wipro",
+              266
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q034",
+      "type": "table",
+      "question": "What was Wipro's voluntary attrition (excluding DOP) in FY26?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 45
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 86,
+          "retrieved": [
+            [
+              "Wipro",
+              341
+            ],
+            [
+              "Wipro",
+              218
+            ],
+            [
+              "Wipro",
+              543
+            ],
+            [
+              "Wipro",
+              545
+            ],
+            [
+              "Wipro",
+              439
+            ],
+            [
+              "Wipro",
+              523
+            ],
+            [
+              "Wipro",
+              70
+            ],
+            [
+              "Wipro",
+              67
+            ],
+            [
+              "Wipro",
+              348
+            ],
+            [
+              "Wipro",
+              239
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 41,
+          "retrieved": [
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              114
+            ],
+            [
+              "Wipro",
+              464
+            ],
+            [
+              "Wipro",
+              356
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              55
+            ],
+            [
+              "Wipro",
+              114
+            ],
+            [
+              "Wipro",
+              113
+            ],
+            [
+              "Wipro",
+              242
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 87,
+          "retrieved": [
+            [
+              "Wipro",
+              341
+            ],
+            [
+              "Wipro",
+              218
+            ],
+            [
+              "Wipro",
+              543
+            ],
+            [
+              "Wipro",
+              545
+            ],
+            [
+              "Wipro",
+              439
+            ],
+            [
+              "Wipro",
+              523
+            ],
+            [
+              "Wipro",
+              70
+            ],
+            [
+              "Wipro",
+              67
+            ],
+            [
+              "Wipro",
+              348
+            ],
+            [
+              "Wipro",
+              239
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1429,
+          "retrieved": [
+            [
+              "Wipro",
+              67
+            ],
+            [
+              "Wipro",
+              59
+            ],
+            [
+              "Wipro",
+              70
+            ],
+            [
+              "Wipro",
+              51
+            ],
+            [
+              "Wipro",
+              545
+            ],
+            [
+              "Wipro",
+              523
+            ],
+            [
+              "Wipro",
+              519
+            ],
+            [
+              "Wipro",
+              143
+            ],
+            [
+              "Wipro",
+              341
+            ],
+            [
+              "Wipro",
+              218
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        }
+      }
+    },
+    {
+      "id": "q035",
+      "type": "fact",
+      "question": "What percentage of Wipro's employees were women in FY2026 (highlights)?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 17
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 48,
+          "retrieved": [
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              17
+            ],
+            [
+              "Wipro",
+              514
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              513
+            ],
+            [
+              "Wipro",
+              41
+            ],
+            [
+              "Wipro",
+              491
+            ]
+          ],
+          "rank_tol0": 5,
+          "rank_tol1": 5,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 60,
+          "retrieved": [
+            [
+              "Wipro",
+              505
+            ],
+            [
+              "Wipro",
+              67
+            ],
+            [
+              "Wipro",
+              416
+            ],
+            [
+              "Wipro",
+              196
+            ],
+            [
+              "Wipro",
+              515
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              85
+            ],
+            [
+              "Wipro",
+              108
+            ],
+            [
+              "Wipro",
+              85
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": null,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 86,
+          "retrieved": [
+            [
+              "Wipro",
+              17
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              514
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              513
+            ],
+            [
+              "Wipro",
+              41
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1404,
+          "retrieved": [
+            [
+              "Wipro",
+              41
+            ],
+            [
+              "Wipro",
+              17
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              81
+            ],
+            [
+              "Wipro",
+              507
+            ],
+            [
+              "Wipro",
+              364
+            ],
+            [
+              "Wipro",
+              491
+            ],
+            [
+              "Wipro",
+              18
+            ],
+            [
+              "Wipro",
+              514
+            ],
+            [
+              "Wipro",
+              507
+            ]
+          ],
+          "rank_tol0": 2,
+          "rank_tol1": 2,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q036",
+      "type": "table",
+      "question": "How much did Wipro spend on CSR in financial year 2025-26, in Indian rupees million?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 130
+        },
+        {
+          "company": "Wipro",
+          "page": 17
+        },
+        {
+          "company": "Wipro",
+          "page": 29
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 80,
+          "retrieved": [
+            [
+              "Wipro",
+              492
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              375
+            ],
+            [
+              "Wipro",
+              262
+            ],
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              292
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              185
+            ],
+            [
+              "Wipro",
+              27
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 2,
+          "all_companies_covered": false
+        },
+        "keyword": {
+          "latency_ms": 72,
+          "retrieved": [
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              26
+            ],
+            [
+              "Wipro",
+              281
+            ],
+            [
+              "Wipro",
+              129
+            ],
+            [
+              "Wipro",
+              169
+            ],
+            [
+              "Wipro",
+              168
+            ],
+            [
+              "Wipro",
+              139
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              114
+            ]
+          ],
+          "rank_tol0": null,
+          "rank_tol1": 5,
+          "all_companies_covered": false
+        },
+        "hybrid": {
+          "latency_ms": 139,
+          "retrieved": [
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              130
+            ],
+            [
+              "Wipro",
+              492
+            ],
+            [
+              "Wipro",
+              25
+            ],
+            [
+              "Wipro",
+              375
+            ],
+            [
+              "Wipro",
+              262
+            ],
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              292
+            ]
+          ],
+          "rank_tol0": 4,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1348,
+          "retrieved": [
+            [
+              "Wipro",
+              130
+            ],
+            [
+              "Wipro",
+              96
+            ],
+            [
+              "Wipro",
+              387
+            ],
+            [
+              "Wipro",
+              130
+            ],
+            [
+              "Wipro",
+              437
+            ],
+            [
+              "Wipro",
+              28
+            ],
+            [
+              "Wipro",
+              375
+            ],
+            [
+              "Wipro",
+              262
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              28
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    },
+    {
+      "id": "q037",
+      "type": "explanation",
+      "question": "How does Wipro compute its payout ratio?",
+      "relevant": [
+        {
+          "company": "Wipro",
+          "page": 45
+        }
+      ],
+      "modes": {
+        "dense": {
+          "latency_ms": 53,
+          "retrieved": [
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              356
+            ],
+            [
+              "Wipro",
+              242
+            ],
+            [
+              "Wipro",
+              464
+            ],
+            [
+              "Wipro",
+              433
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              27
+            ],
+            [
+              "Wipro",
+              320
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "keyword": {
+          "latency_ms": 41,
+          "retrieved": [
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              328
+            ],
+            [
+              "Wipro",
+              447
+            ],
+            [
+              "Wipro",
+              227
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              114
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid": {
+          "latency_ms": 82,
+          "retrieved": [
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              356
+            ],
+            [
+              "Wipro",
+              242
+            ],
+            [
+              "Wipro",
+              464
+            ],
+            [
+              "Wipro",
+              433
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        },
+        "hybrid_rerank": {
+          "latency_ms": 1369,
+          "retrieved": [
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              98
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              20
+            ],
+            [
+              "Wipro",
+              464
+            ],
+            [
+              "Wipro",
+              356
+            ],
+            [
+              "Wipro",
+              270
+            ],
+            [
+              "Wipro",
+              242
+            ],
+            [
+              "Wipro",
+              45
+            ],
+            [
+              "Wipro",
+              270
+            ]
+          ],
+          "rank_tol0": 1,
+          "rank_tol1": 1,
+          "all_companies_covered": true
+        }
+      }
+    }
+  ]
+}
