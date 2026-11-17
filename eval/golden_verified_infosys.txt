@@ -1,0 +1,26 @@
+# INFOSYS FY2026 - CANDIDATE golden-set questions (verified)
+# Source: infosys_fy2026.pdf, 383 pages. "page" = PHYSICAL PDF page (the number in your PDF viewer's page box).
+# NOTE: Infosys prints TWO pages on each PDF page in the early part (e.g. PDF p.26 shows printed pages 50-51)
+#       and one page per PDF page later (PDF p.38 = printed 69, PDF p.144 = printed 175). Always use the viewer number.
+# Format: type | question | expected answer | company | page(s) | note
+# Move a line into your real golden set ONLY after you have checked it in the PDF yourself.
+
+table | What was Infosys's consolidated revenue from operations in FY2026, in rupees crore? | ₹1,78,650 crore | Infosys | 33 (also 10, 16) | Consolidated column, not standalone (standalone is ₹1,48,819 crore)
+fact | By what percentage did Infosys's consolidated revenue grow in FY2026? | 9.6% | Infosys | 33 (also 16, 26) | In rupee terms; constant-currency growth is a different number (3.1%, p.16)
+table | What was Infosys's net profit attributable to owners of the company in FY2026, in rupees crore? | ₹29,440 crore | Infosys | 16 | Wording matters: p.33 shows profit after tax of ₹29,474 crore, a different measure. Keep "attributable to owners"
+table | What was the total dividend per share for FY2026? | ₹48 per share (interim ₹23 + final ₹25) | Infosys | 38 (also 18) | Table "Buyback and dividend"
+table | What interim dividend per share did Infosys declare for FY2026? | ₹23.00 | Infosys | 38 |
+table | What final dividend per share did Infosys recommend for FY2026? | ₹25.00, subject to shareholder approval at the AGM | Infosys | 38 | Footnote says approval at the AGM on June 23, 2026
+fact | What buyback did Infosys complete, in size and price per share? | ₹18,000 crore at ₹1,800 per share | Infosys | 38 (also 16, 36, 61) |
+table | What was the total voluntary attrition (turnover) rate for permanent employees in fiscal 2026? | 12.6% | Infosys | 144 | Male 13.2%, female 11.6%. FY2025 total was 14.1%
+fact | How many permanent employees does Infosys have? | 3,28,594 | Infosys | 10 (also 143) | Say "permanent". Total incl. other-than-permanent is 3,52,095 (p.143)
+fact | What share of Infosys's workforce is women? | 39.5% | Infosys | 25 (also 143) | p.143 shows 39.5% for permanent employees; 38.1% for all employees. Keep wording on "workforce"/permanent
+fact | How many active clients does Infosys have? | 1,965 | Infosys | 10 (also 25, 88) |
+fact | How many clients contribute more than US$100 million in revenue, and how did that change from last year? | 41, up from 39 | Infosys | 88 | VERIFY on the page: found in extracted text only
+fact | How much did Infosys spend on CSR globally in fiscal 2026? | ₹666 crore | Infosys | 25, 31 | "Global CSR spends". Different from the statutory figure below
+table | Under the Companies Act CSR disclosure, what total amount did Infosys spend for the financial year? | ₹558.44 crore | Infosys | 65 | Obligation was ₹577.36 crore. Do NOT mix with ₹666 crore (different definition)
+fact | How much has Infosys returned to shareholders for fiscal 2026? | Over ₹37,500 crore | Infosys | 26 |
+explanation | What is Infosys's capital allocation policy for returning cash to shareholders? | About 85% of free cash flow cumulatively over five years, via semi-annual dividends and/or buybacks and/or special dividends | Infosys | 38 | Footnote (2) on the dividend table
+unanswerable | What is Infosys's target share price? | NOT IN REPORT | Infosys | - | Searched the PDF text: no match
+unanswerable | How many Infosys employees work in Antarctica? | NOT IN REPORT | Infosys | - | Searched the PDF text: no match
+unanswerable | What is Infosys's revenue from Mars? | NOT IN REPORT | Infosys | - | Searched the PDF text: no match
