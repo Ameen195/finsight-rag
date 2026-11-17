@@ -24,6 +24,7 @@ import groq
 from finsight.config import get_settings
 from finsight.generation import agent, llm
 from finsight.generation.citations import is_refusal
+from finsight.retrieval.filters import extract_companies
 
 CACHE = Path("eval/results/answers_cache.jsonl")
 JUDGED_TYPES = {"explanation", "comparison"}
@@ -46,7 +47,8 @@ def _numbers(text: str) -> list[tuple[float, str]]:
     for m in NUM_TOKEN.finditer(text):
         raw, unit = m.group(1).rstrip(",."), (m.group(2) or "").lower()
         digits = raw.replace(",", "")
-        if not digits or re.fullmatch(r"(19|20)\d{2}", digits):
+        # a year has no thousands separator; "1,965" is a count
+        if not digits or ("," not in raw and re.fullmatch(r"(19|20)\d{2}", digits)):
             continue
         unit = (
             "crore" if unit in ("crore", "cr") else "million" if unit in ("million", "mn") else ""
@@ -181,11 +183,17 @@ class TokenMeter:
         llm.complete_with_usage = self._orig
 
 
-def answer_row(row: dict) -> dict:
+def oracle_companies(row: dict) -> list[str] | None:
+    """Golden companies for a question that names none (simulates picking it in the UI)."""
+    return None if extract_companies(row["question"]) else row["companies"]
+
+
+def answer_row(row: dict, companies: list[str] | None = None) -> dict:
     """Run the agent on one golden question; return the cache payload."""
     with TokenMeter() as meter:
-        response, state = agent.answer(row["question"])
+        response, state = agent.answer(row["question"], companies)
     return {
+        "user_companies": companies,
         "answer": response.answer,
         "refused": response.refused or is_refusal(response.answer),
         "citations": [
@@ -236,20 +244,33 @@ def judge_row(row: dict, cached: dict) -> dict:
 
 
 def run(
-    rows: list[dict], commit: str, reuse_old: bool, max_tokens: int, delay: float
+    rows: list[dict],
+    commit: str,
+    reuse_old: bool,
+    max_tokens: int,
+    delay: float,
+    oracle: bool = False,
 ) -> dict[str, dict]:
-    """Answer (and judge) rows not yet cached; stop before the big-model token budget."""
+    """Answer (and judge) rows not yet cached; stop before the big-model token budget.
+
+    With `oracle`, rows whose question names no company get the golden companies as the
+    explicit filter; a cached entry is reused only if it was made with the same filter.
+    """
     cache = load_cache(commit, reuse_old)
     big = get_settings().big_model
     spent = 0
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     for row in rows:
+        companies = oracle_companies(row) if oracle else None
         entry, changed = cache.get(row["id"]), False
+        if entry is not None and entry.get("user_companies") != companies:
+            entry = None
         if entry is None:
             if spent >= max_tokens:
                 print(f"token budget reached ({spent} >= {max_tokens}); stopping, rerun to resume")
                 break
-            entry, changed = {"id": row["id"], "commit": commit, **answer_row(row)}, True
+            entry = {"id": row["id"], "commit": commit, **answer_row(row, companies)}
+            changed = True
             spent += entry["tokens"].get(big, 0)
             if delay:
                 time.sleep(delay)
@@ -273,7 +294,8 @@ def summarize(rows: list[dict], cache: dict[str, dict]) -> dict:
         una = [s for r, _, s in items if r["type"] == "unanswerable"]
         cits = [s["citations"] for s in ans]
         n_cit = sum(c["n"] for c in cits)
-        judged = [e["judge"] for r, e, _ in items if "judge" in e]
+        # a refusal makes no claims, so it is left out of faithfulness (it still scores 0 correct)
+        judged = [e["judge"] for _, e, s in items if "judge" in e and not s["refused"]]
         return {
             "n": len(items),
             "correct": round(statistics.mean(s["correct"] for s in ans), 3) if ans else None,
@@ -407,6 +429,16 @@ def main() -> None:
     ap.add_argument(
         "--reuse-old", action="store_true", help="accept cache entries from other commits"
     )
+    ap.add_argument(
+        "--from-commit",
+        help="re-score the cached answers of this commit (missing rows are answered and tagged "
+        "with it); safer than --reuse-old when trial runs share the cache",
+    )
+    ap.add_argument(
+        "--oracle-company",
+        action="store_true",
+        help="rows whose question names no company use the golden companies as the filter",
+    )
     args = ap.parse_args()
 
     rows = [json.loads(x) for x in args.golden.read_text(encoding="utf-8").splitlines() if x]
@@ -417,8 +449,8 @@ def main() -> None:
         rows = rows[: args.limit]
     if not rows:
         sys.exit("no golden rows selected")
-    commit = git_commit()
-    cache = run(rows, commit, args.reuse_old, args.max_tokens, args.delay)
+    commit = args.from_commit or git_commit()
+    cache = run(rows, commit, args.reuse_old, args.max_tokens, args.delay, args.oracle_company)
     summary = summarize(rows, cache)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     (args.out_dir / "answers.json").write_text(

@@ -1,0 +1,1347 @@
+{
+  "commit": "d9fdb2c68134dc939d50e78ba0d23cacc3794ae8",
+  "overall": {
+    "n": 67,
+    "correct": 0.661,
+    "false_refusals": 9,
+    "refusal_acc_unanswerable": 1.0,
+    "citation_retrieved": 1.0,
+    "citation_golden_exact": 0.517,
+    "citation_golden_pm1": 0.534,
+    "faithfulness": 0.556
+  },
+  "by_company": {
+    "HCLTech": {
+      "n": 10,
+      "correct": 0.75,
+      "false_refusals": 1,
+      "refusal_acc_unanswerable": 1.0,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.857,
+      "citation_golden_pm1": 0.857,
+      "faithfulness": 0
+    },
+    "Infosys": {
+      "n": 19,
+      "correct": 0.688,
+      "false_refusals": 0,
+      "refusal_acc_unanswerable": 1.0,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.318,
+      "citation_golden_pm1": 0.318,
+      "faithfulness": 0
+    },
+    "TCS": {
+      "n": 10,
+      "correct": 0.875,
+      "false_refusals": 0,
+      "refusal_acc_unanswerable": 1.0,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.75,
+      "citation_golden_pm1": 0.75,
+      "faithfulness": 1
+    },
+    "Tech Mahindra": {
+      "n": 10,
+      "correct": 0.625,
+      "false_refusals": 2,
+      "refusal_acc_unanswerable": 1.0,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.429,
+      "citation_golden_pm1": 0.429,
+      "faithfulness": 1
+    },
+    "Wipro": {
+      "n": 10,
+      "correct": 0.625,
+      "false_refusals": 2,
+      "refusal_acc_unanswerable": 1.0,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.833,
+      "citation_golden_pm1": 0.833,
+      "faithfulness": 1
+    },
+    "comparison": {
+      "n": 8,
+      "correct": 0.375,
+      "false_refusals": 4,
+      "refusal_acc_unanswerable": null,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.375,
+      "citation_golden_pm1": 0.5,
+      "faithfulness": 0.5
+    }
+  },
+  "by_type": {
+    "comparison": {
+      "n": 8,
+      "correct": 0.375,
+      "false_refusals": 4,
+      "refusal_acc_unanswerable": null,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.375,
+      "citation_golden_pm1": 0.5,
+      "faithfulness": 0.5
+    },
+    "explanation": {
+      "n": 5,
+      "correct": 0.8,
+      "false_refusals": 0,
+      "refusal_acc_unanswerable": null,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.5,
+      "citation_golden_pm1": 0.5,
+      "faithfulness": 0.6
+    },
+    "fact": {
+      "n": 26,
+      "correct": 0.615,
+      "false_refusals": 4,
+      "refusal_acc_unanswerable": null,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.696,
+      "citation_golden_pm1": 0.696,
+      "faithfulness": null
+    },
+    "table": {
+      "n": 17,
+      "correct": 0.824,
+      "false_refusals": 1,
+      "refusal_acc_unanswerable": null,
+      "citation_retrieved": 1.0,
+      "citation_golden_exact": 0.381,
+      "citation_golden_pm1": 0.381,
+      "faithfulness": null
+    },
+    "unanswerable": {
+      "n": 11,
+      "correct": null,
+      "false_refusals": 0,
+      "refusal_acc_unanswerable": 1.0,
+      "citation_retrieved": null,
+      "citation_golden_exact": null,
+      "citation_golden_pm1": null,
+      "faithfulness": null
+    }
+  },
+  "tokens": {
+    "openai/gpt-oss-20b": 29668,
+    "openai/gpt-oss-120b": 144486
+  },
+  "tokens_per_question": 2599,
+  "latency_ms": {
+    "p50": 53639,
+    "p95": 59641
+  },
+  "rows": [
+    {
+      "id": "q001",
+      "type": "table",
+      "question": "What was Infosys's consolidated revenue from operations in FY2026, in rupees crore?",
+      "expected": "₹1,78,650 crore",
+      "answer": "Infosys’s consolidated revenue from operations for FY 2026 was ₹ 1,78,650 crore[Infosys, FY2026, p.33].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q002",
+      "type": "fact",
+      "question": "By what percentage did Infosys's consolidated revenue grow in FY2026?",
+      "expected": "9.6%",
+      "answer": "Infosys’s consolidated revenue grew 9.6% year‑on‑year in FY 2026[Infosys, FY2026, p.16].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q003",
+      "type": "table",
+      "question": "What was Infosys's net profit attributable to owners of the company in FY2026, in rupees crore?",
+      "expected": "₹29,440 crore",
+      "answer": "Infosys reported a profit attributable to owners of the Company of **₹ 29,440 crore** for the fiscal year ended March 31 2026[Infosys, FY2026, p.288].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q004",
+      "type": "table",
+      "question": "What was the total dividend per share for FY2026?",
+      "expected": "₹48 per share (interim ₹23 + final ₹25)",
+      "answer": "- **Wipro** – The interim dividend of ₹11 per equity share was adopted as the final dividend for the year ended 31 March 2026, giving a total dividend of **₹11 per share**[Wipro, FY2026, p.44].  \n\n- **Tech Mahindra** – The Board proposed a final dividend of ₹36 per equity share and an interim dividend of ₹15 per equity share for FY 2025‑26, resulting in a total dividend of **₹51 per share**[Tech Mahindra, FY2026, p.255].  \n\n- **TCS** – The Board recommended a final dividend of ₹31 per equity share for the financial year ended 31 March 2026[TCS, FY2026, p.325].  \n\n**Comparison:**  \nTech Mahindra’s total FY 2026 dividend per share (₹51) is higher than both Wipro’s (₹11) and TCS’s (₹31).",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 3,
+        "retrieved": 3,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q005",
+      "type": "table",
+      "question": "What interim dividend per share did Infosys declare for FY2026?",
+      "expected": "₹23.00",
+      "answer": "Infosys declared an interim dividend of ₹23 per equity share for fiscal 2026[Infosys, FY2026, p.322].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q006",
+      "type": "table",
+      "question": "What final dividend per share did Infosys recommend for FY2026?",
+      "expected": "₹25.00, subject to shareholder approval at the AGM",
+      "answer": "Infosys’ Board recommended a final dividend of ₹25 per equity share for the financial year ended 31 March 2026[Infosys, FY2026, p.361].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q007",
+      "type": "fact",
+      "question": "What buyback did Infosys complete, in size and price per share?",
+      "expected": "₹18,000 crore at ₹1,800 per share",
+      "answer": "Infosys bought back 10,00,00,000 (ten crore) fully‑paid equity shares at a price of ₹1,800 per share[Infosys, FY2026, p.61].",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q008",
+      "type": "table",
+      "question": "What was the total voluntary attrition (turnover) rate for permanent employees in fiscal 2026?",
+      "expected": "12.6%",
+      "answer": "- Infosys: total voluntary attrition rate for permanent employees was **12.6 %** in fiscal 2026[Infosys, FY2026, p.144].  \n- TCS: total voluntary attrition rate for permanent employees was **13.7 %** in fiscal 2026[TCS, FY2026, p.108].  \n- HCLTech: total voluntary attrition rate for permanent employees was **12.51 %** in fiscal 2026[HCLTech, FY2026, p.217].  \n- Tech Mahindra: total voluntary attrition rate for permanent employees was **12.1 %** in fiscal 2026[Tech Mahindra, FY2026, p.381].  \n\n**Comparison:** Among the four companies, TCS had the highest total turnover rate (13.7 %), while Infosys (12.6 %) and HCLTech (12.51 %) were close, and Tech Mahindra had the lowest (12.1 %).",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 4,
+        "retrieved": 4,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q009",
+      "type": "fact",
+      "question": "How many permanent employees does Infosys have?",
+      "expected": "3,28,594",
+      "answer": "Infosys had 3,28,594 employees on a consolidated basis as of March 31, 2026, and the report notes that the employees referenced in the remuneration exhibit “have/had permanent employment contracts with the Company”[Infosys, FY2026, p.40].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q010",
+      "type": "fact",
+      "question": "What share of Infosys's workforce is women?",
+      "expected": "39.5%",
+      "answer": "Infosys reports that women make up **39.5 % of its workforce**[Infosys, FY2026, p.25].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q011",
+      "type": "fact",
+      "question": "How many active clients does Infosys have?",
+      "expected": "1,965",
+      "answer": "Infosys has **1,965 active clients**[Infosys, FY2026, p.10].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q012",
+      "type": "fact",
+      "question": "How many clients contribute more than US$100 million in revenue, and how did that change from last year?",
+      "expected": "41, up from 39",
+      "answer": "- HCLTech had **23 clients** contributing more than US $100 million in FY 26, up from **22** in FY 25 (an increase of 1)[HCLTech, FY2026, p.95].  \n- Wipro had **16 clients** in the >$100 million revenue bucket in FY 26, down from **17** in FY 25 (a decrease of 1)[Wipro, FY2026, p.27].  \n\n**Comparison:** HCLTech’s count of >$100 million clients rose by one, while Wipro’s fell by one over the same period.",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 2,
+        "retrieved": 2,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q013",
+      "type": "fact",
+      "question": "How much did Infosys spend on CSR globally in fiscal 2026?",
+      "expected": "₹666 crore",
+      "answer": "Infosys spent ₹558.04 crore on CSR projects in India during fiscal 2026 and an additional ₹43.03 crore on CSR activities outside India, giving a total global CSR expenditure of **₹601.07 crore** for fiscal 2026[Infosys, FY2026, p.105][Infosys, FY2026, p.105]",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q014",
+      "type": "table",
+      "question": "Under the Companies Act CSR disclosure, what total amount did Infosys spend for the financial year?",
+      "expected": "₹558.44 crore",
+      "answer": "Infosys reported that the total amount spent on CSR for the financial year 2026 was ₹ 558.44 crore[Infosys, FY2026, p.65].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q015",
+      "type": "fact",
+      "question": "How much has Infosys returned to shareholders for fiscal 2026?",
+      "expected": "Over ₹37,500 crore",
+      "answer": "Infosys returned approximately ₹55,523 crore to shareholders for fiscal 2026 through dividends and buybacks[Infosys, FY2026, p.36].",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q016",
+      "type": "explanation",
+      "question": "What is Infosys's capital allocation policy for returning cash to shareholders?",
+      "expected": "About 85% of free cash flow cumulatively over five years, via semi-annual dividends and/or buybacks and/or special dividends",
+      "answer": "Infosys’s Capital Allocation Policy states that, effective from FY 2025, the company will aim to return **approximately 85% of its free cash flow** over a five‑year horizon to shareholders through a mix of semi‑annual dividends and/or share buybacks (including special dividends), subject to applicable laws and approvals. The policy also calls for a progressive increase in the annual dividend per share (excluding any special dividend)[Infosys, FY2026, p.36].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 1.0,
+        "reason": "Answer adds a progressive dividend increase claim not supported by cited passages.",
+        "tokens": {
+          "openai/gpt-oss-20b": 939
+        }
+      }
+    },
+    {
+      "id": "q017",
+      "type": "unanswerable",
+      "question": "What is Infosys's target share price?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q018",
+      "type": "unanswerable",
+      "question": "How many Infosys employees work in Antarctica?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q019",
+      "type": "unanswerable",
+      "question": "What is Infosys's revenue from Mars?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q020",
+      "type": "table",
+      "question": "What was TCS's consolidated revenue from operations in FY2026, in rupees crore?",
+      "expected": "₹2,67,021 crore",
+      "answer": "TCS’s consolidated revenue from operations in FY 2026 was ₹ 267,021 crore[TCS, FY2026, p.58].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q021",
+      "type": "fact",
+      "question": "What was TCS's consolidated profit attributable to shareholders excluding exceptional items in FY2026?",
+      "expected": "₹52,820 crore (growth of 8.8%)",
+      "answer": "TCS reported a consolidated profit attributable to shareholders, **excluding exceptional items, of ₹ 52,820 crore for FY 2026**[TCS, FY2026, p.35].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q022",
+      "type": "fact",
+      "question": "What was TCS's total dividend per share for FY2026?",
+      "expected": "₹110 per share (three interims of ₹11, special ₹46, final ₹31)",
+      "answer": "TCS’s total dividend declared for FY 2026 was **₹110 per equity share**[TCS, FY2026, p.24].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q023",
+      "type": "table",
+      "question": "What was TCS's headcount at the end of FY2026 in its ten-year financial summary?",
+      "expected": "584,519",
+      "answer": "TCS’s headcount at the end of FY 2026 was **584,519** employees[TCS, FY2026, p.69].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q024",
+      "type": "fact",
+      "question": "What was TCS's voluntary attrition in IT services for FY2026?",
+      "expected": "13.7%",
+      "answer": "TCS’s voluntary attrition in IT services for FY 2026 was 13.7%[TCS, FY2026, p.55].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q025",
+      "type": "fact",
+      "question": "How much did TCS spend on CSR globally in FY2026?",
+      "expected": "₹1,153 crore",
+      "answer": "TCS’s total CSR expenditure for FY 2026 was ₹1,017 crore[TCS, FY2026, p.302].",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q026",
+      "type": "table",
+      "question": "What share of TCS's total employees were female in FY2026 (BRSR)?",
+      "expected": "35.3%",
+      "answer": "35.3% of TCS’s total employees were female in FY 2026 (BRSR)[TCS, FY2026, p.108]",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q027",
+      "type": "explanation",
+      "question": "What is TCS's dividend distribution approach?",
+      "expected": "Three interim dividends after each of the first three quarters, topped up with a final dividend after the fourth quarter; accumulated surplus cash has been returned through a special dividend",
+      "answer": "TCS follows a dividend distribution policy that normally **pays three interim dividends – one after each of the first three quarters of the fiscal year – and then tops them up with a final dividend after the fourth quarter**. In FY 2026 the Board also declared a **special dividend**, bringing the total payout to 110 per share (three interim dividends of ₹11 each, a special dividend of 46 and a recommended final dividend of 31)[TCS, FY2026, p.90]. This approach is outlined in the company’s Dividend Distribution Policy disclosed on its website[TCS, FY2026, p.90].",
+      "refused": false,
+      "number_match": null,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": {
+        "faithfulness": 1,
+        "correctness": 1.0,
+        "reason": "All factual claims are supported by the cited passage.",
+        "tokens": {
+          "openai/gpt-oss-20b": 825
+        }
+      }
+    },
+    {
+      "id": "q028",
+      "type": "unanswerable",
+      "question": "How many TCS employees work in Antarctica?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q029",
+      "type": "unanswerable",
+      "question": "What is TCS's target share price for FY2027?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q030",
+      "type": "table",
+      "question": "What was Wipro's consolidated revenue from operations in FY2026, in Indian rupees million?",
+      "expected": "₹926,240 million",
+      "answer": "Wipro’s consolidated revenue from operations in FY 2026 was ₹ 928,093 million[Wipro, FY2026, p.45].",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q031",
+      "type": "fact",
+      "question": "What was Wipro's consolidated net profit for FY2026, in Indian rupees million?",
+      "expected": "₹132,655 million (increase of 0.36%)",
+      "answer": "Wipro’s consolidated net profit for FY 2026 was ₹ 132,655 million[Wipro, FY2026, p.96].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q032",
+      "type": "fact",
+      "question": "What dividend per equity share, in Indian rupees, did Wipro pay for FY2026?",
+      "expected": "₹11 per share (interim dividend adopted as the final dividend)",
+      "answer": "Wipro paid a dividend of **₹11 per equity share** for FY 2026[Wipro, FY2026, p.44].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q033",
+      "type": "fact",
+      "question": "How many total employees did Wipro report in its FY2026 highlights?",
+      "expected": "242,156",
+      "answer": "Wipro reported a total workforce of **242,156 employees** in its FY 2026 highlights[Wipro, FY2026, p.17].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q034",
+      "type": "table",
+      "question": "What was Wipro's voluntary attrition (excluding DOP) in FY26?",
+      "expected": "15.0%",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q035",
+      "type": "fact",
+      "question": "What percentage of Wipro's employees were women in FY2026 (highlights)?",
+      "expected": "37.6%",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q036",
+      "type": "table",
+      "question": "How much did Wipro spend on CSR in financial year 2025-26, in Indian rupees million?",
+      "expected": "₹2,274 million (CSR obligation ₹1,304 million)",
+      "answer": "Wipro spent **H 2,274 Million** on CSR in the financial year 2025‑26[Wipro, FY2026, p.130].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q037",
+      "type": "explanation",
+      "question": "How does Wipro compute its payout ratio?",
+      "expected": "Payout (interim and final dividend declared for the financial year, plus any buyback based on the date of Board approval) divided by net income on a trailing three-year basis",
+      "answer": "Wipro calculates its payout ratio by dividing the total payout (the sum of interim and final dividends declared for the financial year, plus any share‑buyback approved by the Board) by Net Income, using a trailing three‑year basis[Wipro, FY2026, p.45].",
+      "refused": false,
+      "number_match": null,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": {
+        "faithfulness": 1,
+        "correctness": 1.0,
+        "reason": "Answer fully matches the expected definition and cites the correct supporting passage.",
+        "tokens": {
+          "openai/gpt-oss-20b": 727
+        }
+      }
+    },
+    {
+      "id": "q038",
+      "type": "unanswerable",
+      "question": "How many Wipro employees work in Antarctica?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q039",
+      "type": "unanswerable",
+      "question": "What is Wipro's target share price for FY2027, in Indian rupees?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q040",
+      "type": "table",
+      "question": "What was HCLTech's consolidated revenue from operations in FY2026, in rupees crore?",
+      "expected": "₹1,30,144 crore (up 11.2%)",
+      "answer": "HCLTech’s consolidated revenue from operations in FY 2026 was ₹130,144 crores[HCLTech, FY2026, p.129].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q041",
+      "type": "fact",
+      "question": "What was HCLTech's profit after tax attributable to owners of the company in FY2026?",
+      "expected": "₹16,642 crore (down 4.3%)",
+      "answer": "HCLTech’s profit after tax (PAT) attributable to the owners of the company in FY 2026 was **₹16,642 crores**[HCLTech, FY2026, p.12].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q042",
+      "type": "fact",
+      "question": "What total dividend per share did HCLTech pay for FY2026?",
+      "expected": "₹60 per share",
+      "answer": "HCLTech paid a total dividend of **₹60 per share** for FY 2026[HCLTech, FY2026, p.8].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q043",
+      "type": "fact",
+      "question": "What was HCLTech's global workforce as of March 31, 2026?",
+      "expected": "2,27,181",
+      "answer": "HCLTech’s global workforce totaled **227,181 employees** as of 31 March 2026[HCLTech, FY2026, p.135].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q044",
+      "type": "fact",
+      "question": "What was HCLTech's IT services voluntary attrition rate in FY2026?",
+      "expected": "12.5%",
+      "answer": "HCLTech’s IT services voluntary attrition rate stood at **12.5%** in FY2026[HCLTech, FY2026, p.94].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q045",
+      "type": "fact",
+      "question": "What share of HCLTech's workforce were women in FY2026 (highlights)?",
+      "expected": "29.6%",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q046",
+      "type": "table",
+      "question": "How many HCLTech clients contributed more than $100 million in revenue in FY26?",
+      "expected": "23 (22 in FY25)",
+      "answer": "23 HCLTech clients contributed more than $100 million in revenue in FY 26 [HCLTech, FY2026, p.95].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q047",
+      "type": "explanation",
+      "question": "Why did HCLTech's consolidated net profit ratio fall in FY26?",
+      "expected": "It fell to 12.8% from 14.9%, mainly due to the one-time impact of the new Labour Codes (₹719 crore net of tax) and a one-time restructuring cost (₹640 crore net of tax)",
+      "answer": "HCLTech’s profitability was pressured in FY‑26 because non‑recurring restructuring costs reduced earnings by 65 basis points, which lowered the consolidated net‑profit ratio for the year[HCLTech, FY2026, p.83].",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.0,
+        "reason": "Answer lacks the key details and numbers from the expected answer.",
+        "tokens": {
+          "openai/gpt-oss-20b": 818
+        }
+      }
+    },
+    {
+      "id": "q048",
+      "type": "unanswerable",
+      "question": "How many HCLTech employees work in Antarctica?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q049",
+      "type": "unanswerable",
+      "question": "What is HCLTech's target share price for FY2027?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q050",
+      "type": "table",
+      "question": "What was Tech Mahindra's consolidated revenue from operations in FY2026, in rupees million?",
+      "expected": "₹568,154 million (growth of 7.2%)",
+      "answer": "Tech Mahindra’s consolidated revenue from operations for FY 2026 was ₹ 568,154 million[Tech Mahindra, FY2026, p.656].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q051",
+      "type": "fact",
+      "question": "What was Tech Mahindra's net profit for FY2026, in rupees crore?",
+      "expected": "₹4,811 crore (grew 13.2%)",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q052",
+      "type": "fact",
+      "question": "What was Tech Mahindra's total dividend per share for FY2026?",
+      "expected": "₹51 per share (interim ₹15 + final ₹36)",
+      "answer": "Tech Mahindra proposed a total dividend of **Rs 51 per equity share** for FY 2026 (Rs 36 final dividend + Rs 15 interim dividend)[Tech Mahindra, FY2026, p.255].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q053",
+      "type": "fact",
+      "question": "What was Tech Mahindra's global headcount as on March 31, 2026?",
+      "expected": "147,623 (148,731 a year earlier)",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q054",
+      "type": "fact",
+      "question": "What was Tech Mahindra's LTM IT attrition in FY2026?",
+      "expected": "12.1% (11.8% the previous year)",
+      "answer": "Tech Mahindra’s LTM voluntary attrition rate for IT employees in FY 2026 was 12.1%[Tech Mahindra, FY2026, p.122].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q055",
+      "type": "table",
+      "question": "What percentage of Tech Mahindra's total workforce were women in FY26?",
+      "expected": "34.59%",
+      "answer": "Tech Mahindra’s women made up about **34.6 %** of its total workforce in FY 26[Tech Mahindra, FY2026, p.23].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q056",
+      "type": "fact",
+      "question": "How much did Tech Mahindra spend on CSR in financial year 2025-26?",
+      "expected": "₹796.4 million (2% of average net profit, standalone)",
+      "answer": "Tech Mahindra spent **₹ 841 million** on CSR in the financial year 2025‑26[Tech Mahindra, FY2026, p.601].",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 1,
+        "retrieved": 1,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": null
+    },
+    {
+      "id": "q057",
+      "type": "explanation",
+      "question": "What is Tech Mahindra's policy for distributing cash to shareholders?",
+      "expected": "It aims to distribute 85% or more of free cash flow over five years through dividends and/or buybacks; the Board decides each year's payout based on excess cash available",
+      "answer": "Tech Mahindra’s Dividend Distribution Policy states that the Board aims to distribute **85 % or more of the free cash flow generated over a five‑year period** to shareholders, using a combination of dividends and/or share buy‑backs, subject to the company’s cash availability and investment needs[Tech Mahindra, FY2026, p.279]. The policy also specifies a minimum payout ratio of 85 % of free cash flow over five years in the form of dividends and/or buy‑back[Tech Mahindra, FY2026, p.254].",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 2,
+        "retrieved": 2,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": {
+        "faithfulness": 1,
+        "correctness": 1.0,
+        "reason": "Answer accurately reflects the policy details from the cited passages.",
+        "tokens": {
+          "openai/gpt-oss-20b": 1059
+        }
+      }
+    },
+    {
+      "id": "q058",
+      "type": "unanswerable",
+      "question": "How many Tech Mahindra employees work in Antarctica?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q059",
+      "type": "unanswerable",
+      "question": "What is Tech Mahindra's target share price for FY2027?",
+      "expected": "NOT IN REPORT",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "correct": 1.0,
+      "judge": null
+    },
+    {
+      "id": "q060",
+      "type": "comparison",
+      "question": "Compare the consolidated revenue from operations of TCS and HCLTech in FY2026.",
+      "expected": "TCS ₹2,67,021 crore; HCLTech ₹1,30,144 crore",
+      "answer": "- TCS reported consolidated revenue from operations of **₹267,021 crore** in FY 2026[TCS, FY2026, p.58].  \n- HCLTech reported consolidated revenue of **₹130,144 crore** in FY 2026[HCLTech, FY2026, p.83].  \n\n**Comparison:** TCS’s FY 2026 revenue from operations is roughly double that of HCLTech.",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 2,
+        "retrieved": 2,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 1.0,
+      "judge": {
+        "faithfulness": 1,
+        "correctness": 1.0,
+        "reason": "Both figures match the expected answer and are supported by the cited passages.",
+        "tokens": {
+          "openai/gpt-oss-20b": 1036
+        }
+      }
+    },
+    {
+      "id": "q061",
+      "type": "comparison",
+      "question": "Compare the consolidated revenue from operations of Infosys and Tech Mahindra in FY2026, in rupees crore.",
+      "expected": "Infosys ₹1,78,650 crore; Tech Mahindra ₹56,815 crore (₹568,154 million)",
+      "answer": "- Infosys reported consolidated revenue from operations of **₹ 1,78,650 crore** in FY 2026[Infosys, FY2026, p.16].  \n- Tech Mahindra reported revenue from operations of **₹ 568,154 million** in FY 2026[Tech Mahindra, FY2026, p.22], which equals **₹ 56,815.4 crore** (1 crore = 10 million).  \n\n**Comparison:** Infosys’s FY 2026 revenue of ₹ 1,78,650 crore is roughly three times higher than Tech Mahindra’s revenue of about ₹ 56,815 crore.",
+      "refused": false,
+      "number_match": true,
+      "code_correct": 1.0,
+      "citations": {
+        "n": 2,
+        "retrieved": 2,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 1.0,
+      "judge": {
+        "faithfulness": 1,
+        "correctness": 1.0,
+        "reason": "All facts match the cited passages and expected answer.",
+        "tokens": {
+          "openai/gpt-oss-20b": 1355
+        }
+      }
+    },
+    {
+      "id": "q062",
+      "type": "comparison",
+      "question": "Compare the year-end employee numbers of HCLTech and Tech Mahindra for FY2026.",
+      "expected": "HCLTech 2,27,181 (global workforce); Tech Mahindra 147,623 (global headcount)",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.0,
+        "reason": "Answer does not provide the requested employee numbers.",
+        "tokens": {
+          "openai/gpt-oss-20b": 351
+        }
+      }
+    },
+    {
+      "id": "q063",
+      "type": "comparison",
+      "question": "Compare the headcount of TCS and Infosys at the end of FY2026.",
+      "expected": "TCS 584,519 (headcount); Infosys 3,28,594 (permanent employees)",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.0,
+        "reason": "Answer does not provide the required numbers.",
+        "tokens": {
+          "openai/gpt-oss-20b": 344
+        }
+      }
+    },
+    {
+      "id": "q064",
+      "type": "comparison",
+      "question": "Compare attrition at Wipro and HCLTech in FY2026.",
+      "expected": "Wipro 15.0% voluntary attrition (excluding DOP); HCLTech 12.5% IT services voluntary attrition",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.0,
+        "reason": "Answer does not provide the required figures",
+        "tokens": {
+          "openai/gpt-oss-20b": 320
+        }
+      }
+    },
+    {
+      "id": "q065",
+      "type": "comparison",
+      "question": "Compare the IT attrition of TCS and Tech Mahindra in FY2026.",
+      "expected": "TCS 13.7% voluntary IT services attrition; Tech Mahindra 12.1% LTM IT attrition",
+      "answer": "I don't have enough information in the annual reports to answer that.",
+      "refused": true,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 0,
+        "retrieved": 0,
+        "golden_exact": 0,
+        "golden_pm1": 0
+      },
+      "correct": 0.0,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.0,
+        "reason": "The answer states there is no information, which is not supported by the cited passages and does not match the expected data.",
+        "tokens": {
+          "openai/gpt-oss-20b": 424
+        }
+      }
+    },
+    {
+      "id": "q066",
+      "type": "comparison",
+      "question": "Compare the total dividend per share of TCS and Infosys for FY2026.",
+      "expected": "TCS ₹110 per share; Infosys ₹48 per share",
+      "answer": "- TCS: total dividend for FY 2026 was ₹110 per share (three interim dividends of ₹11 each, a special dividend of ₹46 and a final dividend of ₹31)[TCS, FY2026, p.24]  \n- Infosys: dividend per share for FY 2026 was ₹71.58[Infosys, FY2026, p.26]\n\n**Comparison:** TCS’s FY 2026 dividend per share (₹110) was higher than Infosys’s FY 2026 dividend per share (₹71.58).",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 2,
+        "retrieved": 2,
+        "golden_exact": 1,
+        "golden_pm1": 1
+      },
+      "correct": 0.5,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.5,
+        "reason": "The answer incorrectly states Infosys dividend as ₹71.58, whereas the expected answer is ₹48 per share.",
+        "tokens": {
+          "openai/gpt-oss-20b": 1251
+        }
+      }
+    },
+    {
+      "id": "q067",
+      "type": "comparison",
+      "question": "Compare the total dividend per share of HCLTech and Tech Mahindra for FY2026.",
+      "expected": "HCLTech ₹60 per share; Tech Mahindra ₹51 per share",
+      "answer": "- HCLTech approved a dividend of **₹60 per share** for FY 2026[HCLTech, FY2026, p.8].  \n- Tech Mahindra paid an **interim dividend of ₹15 per share** for FY 2025‑26 (the FY 2026 year)[Tech Mahindra, FY2026, p.254].  \n\n**Comparison:** HCLTech’s FY 2026 dividend per share (₹60) is four times higher than Tech Mahindra’s interim dividend per share (₹15) for the same fiscal year.",
+      "refused": false,
+      "number_match": false,
+      "code_correct": 0.0,
+      "citations": {
+        "n": 2,
+        "retrieved": 2,
+        "golden_exact": 1,
+        "golden_pm1": 2
+      },
+      "correct": 0.5,
+      "judge": {
+        "faithfulness": 0,
+        "correctness": 0.5,
+        "reason": "The answer does not provide the correct total dividend per share for Tech Mahindra, contradicting the expected answer.",
+        "tokens": {
+          "openai/gpt-oss-20b": 1051
+        }
+      }
+    }
+  ]
+}

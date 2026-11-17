@@ -31,6 +31,41 @@ def test_number_match_ignores_years() -> None:
     assert ea.number_match("₹48 per share for FY2026", "₹48.00 per share") is True
 
 
+def test_number_match_bare_count_that_looks_like_a_year() -> None:
+    assert ea.number_match("1,965", "Infosys has **1,965 active clients**[Infosys, p.10].") is True
+    assert ea.number_match("1,965", "Infosys has 1,900 active clients.") is False
+
+
+def test_refusals_left_out_of_faithfulness() -> None:
+    row = {
+        "id": "q1",
+        "type": "comparison",
+        "expected_answer": "A 1; B 2",
+        "relevant_pages": [],
+        "companies": ["A", "B"],
+        "question": "Compare A and B",
+    }
+    base = {"citations": [], "retrieved": [], "latency_ms": 1, "tokens": {}}
+    judge = {"faithfulness": 0, "correctness": 0.0, "reason": "no numbers", "tokens": {}}
+    good = {
+        **base,
+        "answer": "A 1, B 2",
+        "refused": False,
+        "judge": {**judge, "faithfulness": 1, "correctness": 1.0},
+    }
+    refused = {**base, "answer": "I don't have enough information", "refused": True, "judge": judge}
+    rows = [row, {**row, "id": "q2"}]
+    s = ea.summarize(rows, {"q1": {"id": "q1", **good}, "q2": {"id": "q2", **refused}})
+    assert s["overall"]["faithfulness"] == 1.0 and s["overall"]["correct"] == 0.5
+
+
+def test_oracle_companies_only_when_question_names_none() -> None:
+    assert ea.oracle_companies({"question": "Total dividend?", "companies": ["Infosys"]}) == [
+        "Infosys"
+    ]
+    assert ea.oracle_companies({"question": "Infosys dividend?", "companies": ["Infosys"]}) is None
+
+
 def test_phrase_match() -> None:
     exp = "Three interim dividends after each quarter, topped up with a final dividend"
     assert ea.phrase_match(
@@ -81,7 +116,7 @@ def test_run_resumes_and_respects_commit(tmp_path: Path, monkeypatch: pytest.Mon
     monkeypatch.setattr(ea, "CACHE", tmp_path / "cache.jsonl")
     calls: list[str] = []
 
-    def fake_answer(row: dict) -> dict:
+    def fake_answer(row: dict, companies: list[str] | None = None) -> dict:
         calls.append(row["id"])
         return {
             "answer": "₹1 crore",
@@ -112,13 +147,41 @@ def test_run_resumes_and_respects_commit(tmp_path: Path, monkeypatch: pytest.Mon
     assert last["q2"]["judge"]["reason"] == "ok" and last["q1"]["commit"] == "def"
 
 
+def test_run_oracle_reanswers_only_rows_without_a_named_company(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(ea, "CACHE", tmp_path / "cache.jsonl")
+    seen: list[tuple[str, list[str] | None]] = []
+
+    def fake_answer(row: dict, companies: list[str] | None = None) -> dict:
+        seen.append((row["id"], companies))
+        return {
+            "user_companies": companies,
+            "answer": "",
+            "refused": False,
+            "citations": [],
+            "retrieved": [],
+            "latency_ms": 1,
+            "tokens": {},
+        }
+
+    monkeypatch.setattr(ea, "answer_row", fake_answer)
+    rows = [
+        {"id": "q1", "type": "fact", "question": "Total dividend?", "companies": ["Infosys"]},
+        {"id": "q2", "type": "fact", "question": "TCS revenue?", "companies": ["TCS"]},
+    ]
+    ea.run(rows, "abc", reuse_old=False, max_tokens=10_000, delay=0)
+    ea.run(rows, "abc", reuse_old=False, max_tokens=10_000, delay=0, oracle=True)
+    assert seen == [("q1", None), ("q2", None), ("q1", ["Infosys"])]
+
+
 def test_run_stops_at_token_budget(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(ea, "CACHE", tmp_path / "cache.jsonl")
     big = ea.get_settings().big_model
     monkeypatch.setattr(
         ea,
         "answer_row",
-        lambda row: {
+        lambda row, companies=None: {
             "answer": "",
             "refused": False,
             "citations": [],
